@@ -1,0 +1,40 @@
+/*  TOC
+─────────────────────────────────
+Centered Max Inline Content
+Position
+Visually hidden
+─────────────────────────────── */
+
+/* 
+// MARK: Centered Content
+Centered Content
+*/
+
+.max-inline-content { padding-inline: max(var(--space-sm-lg), calc(50vw - var(--content-size, 90em) / 2)) }
+
+/* 
+// MARK: Position
+Position
+*/
+
+.relative { position: relative }
+.absolute { position: absolute }
+.fixed { position: fixed } 
+.sticky { position: sticky } 
+
+/* 
+// MARK: Visually Hidden
+Visually Hidden
+*/
+
+:is(.visually-hidden, .sr-only) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

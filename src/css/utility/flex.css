@@ -1,0 +1,91 @@
+/*  TOC
+─────────────────────────────────
+Display
+Direction
+Wrap
+Justify
+Align Items
+Align Content
+Align Self
+─────────────────────────────── */
+
+/* 
+// MARK: Display
+Display
+*/
+
+.flex { display: flex; }
+.flex-inline { display: inline-flex; }
+
+:where(.flex, .flex-inline) > * { min-width: 0 }
+
+/* 
+// MARK: Direction
+Direction
+*/
+
+.flex-row { flex-direction: row }
+.flex-row-reverse { flex-direction: row-reverse }
+.flex-column { flex-direction: column }
+.flex-column-reverse { flex-direction: column-reverse }
+
+/* 
+// MARK: Wrap
+Wrap
+*/
+
+.flex-nowrap { flex-wrap: nowrap }
+.flex-wrap { flex-wrap: wrap }
+.flex-wrap-reverse { flex-wrap: wrap-reverse }
+
+/* 
+// MARK: Justify
+Justify
+*/
+
+.justify-normal { justify-content: normal }
+.justify-start { justify-content: flex-start }
+.justify-end { justify-content: flex-end }
+.justify-center { justify-content: center }
+.justify-between { justify-content: space-between }
+.justify-around { justify-content: space-around }
+.justify-evenly { justify-content: space-evenly }
+.justify-stretch { justify-content: space-stretch }
+
+/* 
+// MARK: Align Items
+Align Items
+*/
+
+.items-start { align-items: flex-start }
+.items-end { align-items: flex-end }
+.items-center { align-items: center }
+.items-baseline { align-items: baseline }
+.items-stretch { align-items: stretch }
+
+/* 
+// MARK: Align Content
+Align Content
+*/
+
+.content-normal { align-content: normal }
+.content-start { align-content: flex-start }
+.content-end { align-content: flex-end }
+.content-center { align-content: center }
+.content-between { align-content: space-between }
+.content-around { align-content: space-around }
+.content-evenly { align-content: space-evenly }
+.content-baseline { align-content: baseline }
+.content-stretch { align-content: stretch }
+
+/* 
+// MARK: Align self
+Align self
+*/
+
+.align-self-auto { align-self: auto }
+.align-self-start { align-self: flex-start }
+.align-self-center { align-self: center }
+.align-self-end { align-self: flex-end }
+.align-self-stretch { align-self: stretch }
+.align-self-baseline { align-self: baseline }

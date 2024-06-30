@@ -1,0 +1,28 @@
+/*  TOC
+─────────────────────────────────
+Display
+Layouts
+  RAM Grid
+  12 Span Grid
+─────────────────────────────── */
+
+/* 
+// MARK: Display
+Display
+*/
+
+.grid { display: grid; }
+.grid-inline { display: inline-grid; }
+
+:where(.grid, .grid-inline) > * { min-width: 0 }
+
+/* 
+// MARK: Layouts
+Layouts
+*/
+
+/* (Repeat, Auto, Minmax) */
+.ram-grid { grid-template-columns: repeat(var(--grid-fill, auto-fit), minmax(var(--grid-item, 10rem), 1fr)) }
+
+/* 12 Span Grid */
+.col-grid { grid-template-columns: repeat(12, 1fr) }

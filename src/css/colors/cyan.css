@@ -1,0 +1,26 @@
+/*
+Example use: 
+.color { 
+  background-color: var(--cyan-4); 
+  --color-opacity: .5;
+}
+*/
+* {
+  --cyan-0: oklch(99% 0.03 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-1: oklch(95% 0.06 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-2: oklch(88% 0.12 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-3: oklch(80% 0.14 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-4: oklch(74% 0.16 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-5: oklch(68% 0.19 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-6: oklch(63% 0.2 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-7: oklch(58% 0.21 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-8: oklch(53% 0.2 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-9: oklch(49% 0.19 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-10: oklch(42% 0.17 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-11: oklch(35% 0.15 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-12: oklch(27% 0.12 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-13: oklch(20% 0.09 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-14: oklch(14% 0.07 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-15: oklch(11% 0.05 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-bright: oklch(65% 0.3 var(--hue-cyan, 0) / var(--color-opacity, 1));
+}

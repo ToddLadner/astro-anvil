@@ -1,0 +1,215 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="Container Querries">
+	<main class="max-inline-content stack">
+    <section>
+      <h1>Smart design patterns with container queries</h1>
+    </section>
+    
+    <section class="stack">
+      <h2>Featured Articles</h2>
+      
+      <div class="grid ram-grid">
+        <article class="card">
+          <img src='https://images.unsplash.com/photo-1523380262778-076eb862d38f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTgwMjc2NTd8&ixlib=rb-4.0.3&q=70&w=800' alt='desk in a dark room, with a lamp illuminating a closed laptop'>
+          <h3>The Art of Minimalism</h3>
+          <p>Dive into the art of minimalism in interior design, exploring how less can indeed be more.</p>
+          <p> <a href="#">Read more about minimalism</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Color Theory in Interior Design</h3>
+          <p>Discover the profound impact of color choices on mood and aesthetics in interior design.</p>
+          <p> <a href="#">Read more about color theory</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Article title</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, eius?</p>
+          <p> <a href="#">Read more about XYZ</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Maximizing Small Spaces</h3>
+          <p>Learn creative strategies to maximize small spaces, making them feel larger and more inviting.</p>
+          <p> <a href="#">Read more about maximizing small spaces</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Eco-Friendly Interiors</h3>
+          <p>Explore how to create stunning interiors using eco-friendly materials and sustainable practices.</p>
+          <p> <a href="#">Read more about eco-friendly interior design</a></p>
+        </article>
+
+        <article class="card">
+          <h3>The Influence of Art Deco in Modern Homes</h3>
+          <p>Examine the enduring influence of Art Deco on modern home design and how to incorporate it.</p>
+          <p> <a href="#">Read more about using Art Deco in modern homes</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Article title</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, eius?</p>
+          <p> <a href="#">Read more about XYZ</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Incorporating Plants into Your Decor</h3>
+          <p>Discover how to breathe life into your home by incorporating plants into your decor.</p>
+          <p> <a href="#">Read more about using plants in your decor</a></p>
+        </article>
+
+        <article class="card">
+          <h3>The Psychology of Interior Design</h3>
+          <p>Understand the psychology behind interior design and how it affects our emotions and behavior.</p>
+          <p> <a href="#">Read more about the psychology of interior design</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Trends in Kitchen Design</h3>
+          <p>Stay up-to-date with the latest trends in kitchen design, from smart appliances to color schemes.</p>
+          <p> <a href="#">Read more about kitchen design trends</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Creating a Home Office That Works</h3>
+          <p>Create a home office that boosts productivity and balances work with home life.</p>
+          <p><a href="#">Read more about improving your home office</a></p>
+        </article>
+      </div>
+    </section>
+		<ul role="list" class="grid col-grid">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <section>
+      <h2>Some other content that follows</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit vitae delectus quo labore quidem corrupti ipsam, quasi velit ex temporibus amet numquam? Necessitatibus corrupti error inventore in. Voluptate, esse dolorum!</p>
+      <p>Ratione quo, accusantium commodi unde consequatur quidem dolorem numquam molestiae officia impedit, pariatur iure corrupti quaerat explicabo molestias. Impedit deleniti ipsam numquam voluptatem laboriosam dolorem atque deserunt quidem reprehenderit officia.</p>
+      <p>Praesentium quisquam tempora, voluptate animi quos consequatur aliquid ipsa repellat reprehenderit vel enim necessitatibus! Quas quaerat deleniti necessitatibus harum voluptates repellendus, voluptate earum delectus nemo. Nulla, quis. Velit, fugit beatae!</p>
+      <p>Eos, aperiam consectetur eius sed excepturi pariatur deserunt incidunt vel voluptatibus officia voluptates voluptatum expedita. Facere consequatur et quo perferendis atque, ducimus libero debitis nobis fugiat corporis quisquam sapiente recusandae?</p>
+    </section>
+	</main>
+</Layout>
+
+<style>
+main {
+  container: main / inline-size;
+}
+
+.ram-grid {
+  --grid-item: min(30ch, 100%);
+  
+  container: ram-grid / inline-size;
+  
+  display: grid;
+  gap: 1rem;
+}
+
+.card:has(> img) {
+  border: 2px solid var(--clr-primary-300);
+
+  @container ram-grid (inline-size > calc(30ch * 2 + 1rem)) {
+    grid-column: span 2;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: 0;
+
+    > img {
+      grid-column: 2;
+      grid-row: 1 / 4;
+    }
+  }
+
+  @container ram-grid (inline-size > calc(30ch * 4 + 3rem)) {
+    grid-column: span 2;
+    grid-row: span 2;
+
+    > :not(img) {
+      grid-column: 1 / -1;
+    }
+
+    > img {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+  }
+}
+
+.card {
+    --padding: 1rem;
+
+    display: grid;
+    background: hsl(0 0% 50% / 0.2);
+    background-image: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgb(0 0 0 / 0.3)
+    );
+    overflow: hidden;
+    border-radius: 0.25rem;
+
+    h2,
+    h3 {
+      color: var(--clr-primary-200);
+    }
+
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    > :not(img) {
+      margin-block-start: 0;
+      margin-inline: 1rem;
+    }
+
+    > :not(img):first-child {
+      margin-block-start: 1rem;
+    }
+
+    > :not(img):last-child {
+      margin-block-end: 1rem;
+    }
+  }
+  
+
+  
+  .col-grid { gap: 1rem; }
+  
+  .col-grid > * { 
+    border: 1px solid var(--purple-5); padding: 2rem;
+
+    &:nth-child(1) { grid-column: span 6; }
+    &:nth-child(2) { grid-column: span 6; }
+    &:nth-child(3) { grid-column: span 3; }
+    &:nth-child(4) { grid-column: span 9; }
+    &:nth-child(5) { grid-column: span 4; }
+    &:nth-child(6) { grid-column: span 8; }
+    &:nth-child(5) { grid-column: span 4; }
+    &:nth-child(6) { grid-column: span 8; }
+    &:nth-child(7) { grid-column: span 5; }
+    &:nth-child(8) { grid-column: span 7; }
+    &:nth-child(9) { grid-column: span 2; }
+    &:nth-child(10) { grid-column: span 3; }
+    &:nth-child(11) { grid-column: span 3; }
+    &:nth-child(12) { grid-column: span 4; }
+  }
+
+
+</style>

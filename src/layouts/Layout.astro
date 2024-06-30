@@ -1,0 +1,28 @@
+---
+import Head from '@layouts/Head.astro';
+import TheHeader from '@layouts/TheHeader.astro';
+import TheFooter from '@layouts/TheFooter.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { 
+	title = "My Astro Blog",
+	description = "My musings about the Astro framework", 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<Head {title} {description} />
+	<body class="grid">
+		<TheHeader/>
+		<slot />
+		<TheFooter/>
+	</body>
+</html>
+<style is:global>
+	body { grid-template-rows: auto 1fr auto; }
+</style>

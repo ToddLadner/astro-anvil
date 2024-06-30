@@ -1,0 +1,188 @@
+/*  TOC
+─────────────────────────────────
+Box sizing
+HTML
+Body - Fallback font
+Body - Adaptive typography
+Typography
+Elements
+Faster taps
+─────────────────────────────── */
+@layer reset {
+
+  /* 
+  // MARK: Box sizing
+  */
+  
+  /* Box sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 
+  // MARK: HTML
+  */
+  
+  /* HTML */
+  html {
+    color: var(--text-2);
+    background-color: var(--surface-1);
+    
+    scrollbar-color: var(--brand) transparent;
+    accent-color: var(--brand);
+    caret-color: var(--brand);
+    caret-shape: block; /* values: auto, block, underscore, triangle, inherit */
+    
+    scroll-behavior: smooth;
+    
+    /* Prevent font size inflation */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+  /* 
+  // MARK: Body & Font
+  Body & Font
+  */
+
+  /* Body - Fallback font */
+  body {
+    min-height: 100dvh;
+    font-family: var(--font-sans);
+    line-height: var(--lineheight-md);
+  }
+
+  /* Body - Variable Font */
+  @supports (font-variation-settings: normal) {
+    body {
+      font-family: var(--font-sans);
+      
+      font-variation-settings: 
+        "wght" var(--base-weight, 0),
+        "GRAD" var(--base-grade);
+      
+      /* when the preference is for high contrast */
+      @media (--highContrast) { --base-weight: 700; }
+      
+      /* when the preference is for low contrast */
+      @media (--lowContrast) { --base-weight: 200; }
+      
+      /* when the preference is for dark mode */
+      @media (--OSdark) { --base-grade: -25; }
+    }
+  }
+
+  /* 
+  // MARK: Typography
+  Typography
+  */
+
+  /* Sets font-size, line-height, and adaptive base color */
+  h1 { font-size: var(--font-size-2xl) }
+  h2 { font-size: var(--font-size-xl) }
+  h3 { font-size: var(--font-size-lg) }
+  h4 { font-size: var(--font-size-md) }
+  h5 { font-size: var(--font-size-sm) }
+  h6 { font-size: var(--font-size-xs) }
+
+  :is(h1, h2, h3, h4, h5, h6, dt, label) { color: var(--text-1); }
+
+  :is(h1, h2, h3, h4, h5, h6) { text-wrap: balance; }
+
+  :is(h1, h2, h3, h4) {
+    line-height: var(--lineheight-xs);
+    margin-block: 0;
+  }
+
+  p {
+    text-wrap: pretty;
+    font-size: var(--font-size-md);
+    overflow-wrap: break-word;
+
+    &:last-child { margin-block-end: 0; }
+  }
+
+  /* Font-style: italic; */
+  :is(i, em, .italic) { font-variation-settings: "ital" 1 }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  :is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) { margin: 0 }
+
+  /* Set shorter line heights on headings and interactive elements */
+  :is(h1, h2, h3, h4, button, input, label) { line-height: var(--lineheight-2xs) }
+
+  /* Inherit fonts for inputs and buttons */
+  :is(input, button, textarea, select) { font: inherit }
+
+  /* 
+  // MARK: Images
+  Images */
+  
+  /* Better img defaults */
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+  }
+  @media (--OSdark) {
+    img {
+      filter: brightness(.8) contrast(1.2);
+    }
+  }
+
+  /* 
+  // MARK: Links
+  Links */
+
+  a {
+    margin-block: calc(var(--space-3xs) * -1);
+    margin-inline: calc(var(--space-3xs) * -1);
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-3xs);
+
+    &:not(:hover) { text-decoration: inherit; }
+
+    :link {
+      --color-hue: var(--hue-indigo);
+      text-decoration-color: var(--color-2);
+    }
+
+    :visited {
+      --color-hue: var(--hue-purple);
+      text-decoration-color: var(--color-2);
+    }
+  }
+
+  /* 
+  // MARK: Lists
+  Lists */
+
+  /* Safari do some wild shit, which includes this one: if you remove list styling, they’ll remove the semantics for VoiceOver. Some will say it’s a feature and some will say it’s a bug. But to make sure that a role is added, I remove the list styling by default for it as a little reward. */
+  ul[role="list"] {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* 
+  // MARK: Scroll Margin
+  Scroll Margin */
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target { scroll-margin-block: 5ex }
+
+  /* 
+  // MARK: Mobile Tap Delay
+  Mobile Tap Delay */
+
+  /* Make taps 300ms faster */
+  :is(a[href],area,button,input,label[for],select,summary,textarea,[tabindex]:not([tabindex*="-"])) {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}

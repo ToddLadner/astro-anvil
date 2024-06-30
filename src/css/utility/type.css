@@ -1,0 +1,21 @@
+/* Type Styles */
+:is(h1, h2, h3, h4) + .subhead { --space: var(--space-3xs); }
+
+/* This should turn Roboto Flex into a monospaced font */
+:where(.monospaced) { font-variant-numeric: tabular-nums; }
+
+/* Should be font-style: oblique 10deg; */
+:where(.slanted) { font-variation-settings: "slnt" 10; }
+:where(.kinda-light) { font-weight: 125; }
+:where(.kinda-narrow) { font-stretch: 33.3%; }
+:where(.font-bold) { font-weight: 900; }
+
+@supports (font-variation-settings: normal) {
+  .font-bold {
+    --base-weight: 900;
+    
+    font-variation-settings: 
+      "wght" var(--base-weight, 0),
+      "GRAD" var(--base-grade);
+  }
+}

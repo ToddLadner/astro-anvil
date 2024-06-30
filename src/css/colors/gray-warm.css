@@ -1,0 +1,25 @@
+/*
+Example use: 
+.color { 
+  background-color: var(--gray-warm-4); 
+  --color-opacity: .5;
+}
+*/
+* {
+  --gray-warm-0: oklch(99% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-1: oklch(95% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-2: oklch(88% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-3: oklch(80% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-4: oklch(74% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-5: oklch(68% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-6: oklch(63% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-7: oklch(58% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-8: oklch(53% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-9: oklch(49% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-10: oklch(43% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-11: oklch(37% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-12: oklch(31% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-13: oklch(25% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-14: oklch(18% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-15: oklch(10% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+}

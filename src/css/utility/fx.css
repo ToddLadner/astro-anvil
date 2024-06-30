@@ -1,0 +1,22 @@
+/*  TOC
+─────────────────────────────────
+─────────────────────────────── */
+
+/* Prev Next Hover Effect */
+.scale-hover li { 
+  transition: .125s var(--ease-in-1); 
+  padding: 1rem; 
+}
+
+.scale-hover li:hover {
+  transform: 
+    translate3d(0, -.5rem, 0) 
+    scale(1.125);
+}
+
+.scale-hover li:hover + li,
+.scale-hover li:has(+ li:hover) {
+  transform: 
+    translate3d(0, -.25rem, 0) 
+    scale(1.1);
+}
