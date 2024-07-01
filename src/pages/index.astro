@@ -2,14 +2,24 @@
 import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
+import Button from '@components/Button.astro';
 
 import heroImage from '@images/fungi.jpg';
 ---
 
-<Layout title="Welcome to Astro.">
-	
-	
+<Layout title="Welcome to Astro." description="The official site of Astro.">
 	<main>
+		
+		<Button
+			text='This is a button'
+			icon='skull'
+			theme='primary'
+			shape='circle'
+			varient='icon'
+			size='xl'
+			classes='fx-spring'
+		/>
+		
 		<div class="test">
 			<div class="test"></div>
 		</div>

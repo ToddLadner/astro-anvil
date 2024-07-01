@@ -12,7 +12,7 @@
 
 /* 01 Primary */
 .primary {
-  --bg: linear-gradient(var(--brand-5), var(--brand-6));
+  --background: linear-gradient(var(--brand-5), var(--brand-6));
   --border: transparent;
   --text: hsl(228 89% 100%);
   --ink-shadow: 0 1px 0 hsl(228 57% 50%);
@@ -21,20 +21,20 @@
   outline-color: var(--brand);
 
   &:hover {
-    --bg: linear-gradient(var(--brand-6), var(--brand-7));
+    --background: linear-gradient(var(--brand-6), var(--brand-7));
   }
 }
 
 /* 02 Secondary */
 .secondary {
-  --bg: transparent;
+  --background: transparent;
   --text: var(--text-1);
   --ink-shadow: 0 1px 0 hsl(228 57% 50%);
 }
 
 /* 03 Plain */
 .plain {
-  --bg: transparent;
+  --background: transparent;
   --border: none;
   --ink-shadow: 0 1px 0 hsl(228 57% 50%);
   --highlight: 0;
@@ -43,7 +43,7 @@
 /* 04 Hug */
 .hug {
   --padding-inline: 0;
-  --bg: transparent;
+  --background: transparent;
   --border: none;
   --ink-shadow: 0 1px 0 hsl(228 57% 50%);
   --highlight: 0;
@@ -51,7 +51,7 @@
 
 /* 05 Custom */
 .custom {
-  --bg: hsl(210 7% 56% / 20%);
+  --background: hsl(210 7% 56% / 20%);
   --border: transparent;
   --border-width: 0;
   /* --text: hsl(228 89% 100%); */

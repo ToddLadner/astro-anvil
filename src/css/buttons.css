@@ -30,54 +30,33 @@
   --size: var(--font-size-md);
   --base-weight: 500;
 
-  --accent-light: hsl(210 100% 40%);
-  --accent-dark: hsl(210 50% 70%);
-  --accent: var(--accent-light);
+  --accent: light-dark(hsl(210 100% 40%), hsl(210 50% 70%));
 
-  --text-light: hsl(210 10% 30%);
-  --text-dark: hsl(210 5% 95%);
-  --text: var(--text-light);
-  
-  --bg-light: hsl(0 0% 100%);
-  --bg-dark: hsl(210 9% 31%);
-  --bg: var(--bg-light);
-
-  --input-well-light: hsl(210 16% 87%);
-  --input-well-dark: hsl(204 10% 10%);
-  --input-well: var(--input-well-light);
+  --text: light-dark(hsl(210 10% 30%), hsl(210 5% 95%));
+  --background: light-dark(hsl(0 0% 100%), hsl(210 9% 31%));
+  --input-well: light-dark(hsl(210 16% 87%), hsl(204 10% 10%));
 
   --padding-inline: 1.75ch;
   --padding-block: .75ch;
   
   --border-radius: var(--radius-md);
-  --border-light: hsl(210 14% 89%);
-  --border-dark: var(--bg-dark);
-  --border: var(--border-light);
+
+  --border: light-dark(hsl(210 14% 89%), hsl(210 9% 31%));
   
   --highlight-size: 0;
-  --highlight-light: hsl(210 10% 71% / 25%);
-  --highlight-dark: hsl(210 10% 5% / 25%);
-  --highlight: var(--highlight-light);
+  --highlight: light-dark(hsl(210 10% 71% / 25%), hsl(210 10% 5% / 25%));
   
-  --ink-shadow-light: 0 1px 0 var(--border-light);
-  --ink-shadow-dark: 0 1px 0 hsl(210 11% 15%);
-  --ink-shadow: var(--ink-shadow-light);
+  --ink-shadow: light-dark(0 1px 0 hsl(210 14% 89%), 0 1px 0 hsl(210 11% 15%));
   
-  --icon-size: .625lh;
+  --icon-size: 1.125cap;
   --icon-color: var(--accent);
 
-  --shadow-color-light: 220 3% 15%;
-  --shadow-color-dark: 220 40% 2%;
-  --shadow-color: var(--shadow-color-light);
-  --shadow-strength-light: 1%;
-  --shadow-strength-dark: 25%;
-  --shadow-strength: var(--shadow-strength-light);
+  --shadow-color: light-dark(220 3% 15%, 220 40% 2%);
+  --shadow-strength: light-dark(1%, 25%);
   --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 9%));
   --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 3%)),0 7px 14px -5px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 5%));
   
-  --shadow-depth-light: 0 1px var(--border-light);
-  --shadow-depth-dark: 0 1px var(--bg-dark);
-  --shadow-depth: var(--shadow-depth-light);
+  --shadow-depth: light-dark(0 1px hsl(210 14% 89%), 0 1px hsl(210 9% 31%));
 
   /* 
   --transition-motion-reduce: ;
@@ -101,22 +80,6 @@
   appearance: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :where(button,input[type="button"],input[type="submit"],input[type="reset"],input[type="file"]),
-  :where(input[type="file"])::file-selector-button {
-    --bg: var(--bg-dark);
-    --text: var(--text-dark);
-    --border: var(--border-dark);
-    --accent: var(--accent-dark);
-    --highlight: var(--highlight-dark);
-    --input-well: var(--input-well-dark);
-    --ink-shadow: var(--ink-shadow-dark);
-    --shadow-depth: var(--shadow-depth-dark);
-    --shadow-color: var(--shadow-color-dark);
-    --shadow-strength: var(--shadow-strength-dark);
-  }
-}
-
 /* 
 @media (prefers-reduced-motion: no-preference) {
   :where(button,input[type="button"],input[type="submit"],input[type="reset"],input[type="file"]),
@@ -133,7 +96,7 @@
   touch-action: manipulation;
 
   font-size: var(--size, 1rem);
-  background: var(--bg);
+  background: var(--background);
   color: var(--text);
   border: 2px solid var(--border);
   box-shadow: 
@@ -180,7 +143,7 @@
 
 /* disabled */
 :where(button,input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
-  --bg: none;
+  --background: none;
   --text-light: hsl(210 7% 40%);
   --text-dark: hsl(210 11% 71%);
 
@@ -221,6 +184,6 @@ form button:not([type],[disabled])) {
 /* special dark theme styles */
 @media (prefers-color-scheme: dark) {
   :where([type="submit"],[type="reset"],[disabled],form button:not([type="button"])) {
-    --bg: var(--input-well);
+    --background: var(--input-well);
   }
 }
