@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import Button from '@components/Button.astro';
 ---
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-  <main>
+  <main class="max-inline-content">
 <h1>Buttons</h1>
 
 <Button text='Default' />
@@ -23,51 +23,23 @@ import Button from '@components/Button.astro';
 <Button text='hug' theme='hug' />
 
 <hr>
+
 <Button text='Square' shape='square'/>
-<Button text='pill' shape='pill'/>
+<Button text='Pill' shape='pill'/>
 <Button text='CIR' shape='circle'/>
 
 <hr>
 
-<button type="button" class="square">Button square</button>
-<button type="button" class="pill">Button pill</button>
-<button type="button" class="circle">BC</button>
+<Button text='Extra small' size='xs'/>
+<Button text='Small' size='sm' />
+<Button text='Medium'  size='md'/>
+<Button text='large' size='lg' />
+<Button text='Extra large' size='xl' />
 
-<button type="button" class="xs square">Button square</button>
-<button type="button" class="xs pill">Button pill</button>
-<button type="button" class="xs circle">BC</button>
-<button type="button" class="circle">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path class="" opacity=".4" d="M162.4 6c-1.5-3.6-5-6-8.9-6h-19c-3.9 0-7.5 2.4-8.9 6L104.9 57.7c-3.2 8-14.6 8-17.8 0L66.4 6c-1.5-3.6-5-6-8.9-6H48C21.5 0 0 21.5 0 48V256v22.4V288H9.6 374.4 384v-9.6V256 48c0-26.5-21.5-48-48-48H230.5c-3.9 0-7.5 2.4-8.9 6L200.9 57.7c-3.2 8-14.6 8-17.8 0L162.4 6z"/><path class="fa-primary" d="M0 288H384v32c0 35.3-28.7 64-64 64H256v64c0 35.3-28.7 64-64 64s-64-28.7-64-64V384H64c-35.3 0-64-28.7-64-64V288zM192 464a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/></svg>
-  <span class="sr-only">Accessible name</span>
-</button>
+<hr />
 
 <div>
-  <button type="button" class="xs">Button</button>
-  <button type="button" class="xs circle">BC</button>
-  <button type="button" class="xs pill">Button</button>
-</div>
-<div>
-  <button type="button" class="sm">Button</button>
-  <button type="button" class="sm circle">C</button>
-  <button type="button" class="sm pill">Button</button>
-</div>
-<div>
-  <button type="button" class="md">Button</button>
-  <button type="button" class="md circle">BC</button>
-  <button type="button" class="md pill">Button</button>
-</div>
-<div>
-  <button type="button" class="lg">Button</button>
-  <button type="button" class="lg circle">B</button>
-  <button type="button" class="lg pill">Button</button>
-</div>
-<div>
-  <button type="button" class="xl">Button</button>
-  <button type="button" class="xl circle">BC</button>
-  <button type="button" class="xl pill">Button</button>
-</div>
-<div style="width: 200px; aspect-ratio:1; display: grid; place-content: center;">
-  <span style="padding-bottom: 1rem;">Press me Im springy</span>
+  <p style="padding-bottom: 1rem;">Press me Im springy</p>
   <button type="button" class="xl fx-spring">Button</button>
 </div>
 </main>

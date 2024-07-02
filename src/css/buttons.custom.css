@@ -29,14 +29,13 @@
 .secondary {
   --background: transparent;
   --text: var(--text-1);
-  --ink-shadow: 0 1px 0 hsl(228 57% 50%);
+
 }
 
 /* 03 Plain */
 .plain {
   --background: transparent;
   --border: none;
-  --ink-shadow: 0 1px 0 hsl(228 57% 50%);
   --highlight: 0;
 }
 
@@ -45,7 +44,6 @@
   --padding-inline: 0;
   --background: transparent;
   --border: none;
-  --ink-shadow: 0 1px 0 hsl(228 57% 50%);
   --highlight: 0;
 }
 

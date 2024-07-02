@@ -8,11 +8,11 @@
 :where(.slanted) { font-variation-settings: "slnt" 10; }
 :where(.kinda-light) { font-weight: 125; }
 :where(.kinda-narrow) { font-stretch: 33.3%; }
-:where(.font-bold) { font-weight: 900; }
+:where(.font-bold) { font-weight: 700; }
 
 @supports (font-variation-settings: normal) {
   .font-bold {
-    --base-weight: 900;
+    --base-weight: 700;
     
     font-variation-settings: 
       "wght" var(--base-weight, 0),

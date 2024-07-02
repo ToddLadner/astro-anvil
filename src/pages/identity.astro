@@ -1,0 +1,889 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/Card.astro';
+import Button from '@components/Button.astro';
+
+import heroImage from '@images/fungi.jpg';
+---
+
+<Layout title="Welcome to Astro." description="The official site of Astro.">
+  
+  <main class="stack max-inline-content" style="--space: 2em">
+    <header class="brand-identity">
+      <h1>Brand identity</h1>
+      <p class="subhead">
+        This color scheme and font represents TalkingParents.
+      </p>
+    </header>
+
+    <h2 id="color-pallette">Color Pallette</h2>
+    <p class="subhead">These colors keep our materials on-brand</p>
+    
+    <ul role="list" class="pallette-swatch-list scroll-x-overflow">
+      <li>
+        <span class="prop-code">--brand</span>
+        <div style="background-color: var(--brand)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--surface-1</span>
+        <div style="background-color: var(--surface-1)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--surface-2</span>
+        <div style="background-color: var(--surface-2)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--surface-3</span>
+        <div style="background-color: var(--surface-3)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--surface-4</span>
+        <div style="background-color: var(--surface-4)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--text-1</span>
+        <div style="background-color: var(--text-1)"></div>
+      </li>
+      <li>
+        <span class="prop-code">--text-2</span>
+        <div style="background-color: var(--text-2)"></div>
+      </li>
+      <li>
+        <span class="prop-code">.success-bg</span>
+        <div class="success-bg"></div>
+      </li>
+      <li>
+        <span class="prop-code">.info-bg</span>
+        <div class="info-bg"></div>
+      </li>
+      <li>
+        <span class="prop-code">.warning-bg</span>
+        <div class="warning-bg"></div>
+      </li>
+      <li>
+        <span class="prop-code">.danger-bg</span>
+        <div class="danger-bg"></div>
+      </li>
+    </ul>
+
+    <div class="grid-type">
+      <article class="stack" style="flex: 1">       
+          <h2 id="typography">Typography</h2>
+          <p class="subhead">
+            This is a guide for body copy, headlines, and subheads
+          </p>
+        
+        <div>
+          <span class="prop-code">--font-size-2xl</span>
+          <h1>Whereas a common understanding of these rights and freedoms is</h1>
+        </div>
+        
+        <div>
+          <span class="prop-code">--font-size-xl</span>
+          <h2>
+            No one shall be held in slavery or servitude; slavery and the slave
+            trade shall be prohibited in all their forms.
+          </h2>
+        </div>
+        
+        <div>
+          <span class="prop-code">--font-size-lg</span>
+          <h3>
+            Everyone has the right to an effective remedy by the competent
+            national tribunals for acts violating the fundamental rights granted
+            him by the constitution or by law.
+          </h3>
+        </div>
+        
+        <div>
+          <span class="prop-code">--font-size-md</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        
+        <div>
+          <span class="prop-code">--font-size-sm</span>
+          <p style="font-size: var(--font-size-sm)">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+        </div>
+      </article>
+      
+      <hr />
+      
+      <article class="stack" style="flex: 1">
+        <header>
+          <h2>Fonts in use</h2>
+          <p>These fonts have been crafted specifically for the brand</p>
+        </header>
+        <div class="stack">
+          <p class="flex flex-column">
+            <span class="font-example" style="font-size: var(--font-size-3xl)">
+              Aa
+            </span>
+            <span class="font-name">Roboto Flex 400</span>
+          </p>
+          <p class="grid-font-family">
+            <span >A</span><span >B</span><span >C</span><span >D</span
+            ><span >E</span><span >F</span><span >G</span><span >H</span
+            ><span >I</span><span >J</span><span >K</span><span >L</span
+            ><span >M</span><span >N</span><span >O</span><span >P</span
+            ><span >Q</span><span >R</span><span >S</span><span >T</span
+            ><span >U</span><span >V</span><span >W</span><span >X</span
+            ><span >Y</span><span >Z</span><span >a</span><span >b</span
+            ><span >c</span><span >d</span><span >e</span><span >f</span
+            ><span >g</span><span >h</span><span >i</span><span >j</span
+            ><span >k</span><span >l</span><span >m</span><span >n</span
+            ><span >o</span><span >p</span><span >q</span><span >r</span
+            ><span >s</span><span >t</span><span >u</span><span >v</span
+            ><span >w</span><span >x</span><span >y</span><span >z</span
+            ><span >1</span><span >2</span><span >3</span><span >4</span
+            ><span >5</span><span >6</span><span >7</span><span >8</span
+            ><span >9</span><span >0</span><span >+</span><span >=</span
+            ><span >!</span><span >@</span><span >#</span><span >%</span
+            ><span >$</span><span >%</span><span >^</span><span>&amp;</span>
+          </p>
+        </div>
+        <div class="font-bold">
+          <p class="flex flex-column">
+            <span class="font-example" style="font-size: var(--font-size-3xl)"
+              >Aa</span
+            >
+            <span class="font-name">Roboto Flex 900</span>
+          </p>
+          <p class="grid-font-family">
+            <span>A</span><span>B</span><span>C</span><span>D</span
+            ><span>E</span><span>F</span><span>G</span><span>H</span
+            ><span>I</span><span>J</span><span>K</span><span>L</span
+            ><span>M</span><span>N</span><span>O</span><span>P</span
+            ><span>Q</span><span>R</span><span>S</span><span>T</span
+            ><span>U</span><span>V</span><span>W</span><span>X</span
+            ><span>Y</span><span>Z</span><span>a</span><span>b</span
+            ><span>c</span><span>d</span><span>e</span><span>f</span
+            ><span>g</span><span>h</span><span>i</span><span>j</span
+            ><span>k</span><span>l</span><span>m</span><span>n</span
+            ><span>o</span><span>p</span><span>q</span><span>r</span
+            ><span>s</span><span>t</span><span>u</span><span>v</span
+            ><span>w</span><span>x</span><span>y</span><span>z</span
+            ><span>1</span><span>2</span><span>3</span><span>4</span
+            ><span>5</span><span>6</span><span>7</span><span>8</span
+            ><span>9</span><span>0</span><span>+</span><span>=</span
+            ><span>!</span><span>@</span><span>#</span><span>%</span
+            ><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+          </p>
+        </div>
+      </article>
+    </div>
+    
+    <article class="stack">
+      <h2 id="lineheight">Line height</h2>
+      <div class="stack">
+        <div>
+          <span class="prop-code">--lineheight-3xs</span>
+          <p style="line-height: var(--lineheight-3xs); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-2xs</span>
+          <p style="line-height: var(--lineheight-2xs); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-xs</span>
+          <p style="line-height: var(--lineheight-xs); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-sm</span>
+          <p style="line-height: var(--lineheight-sm); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-md</span>
+          <p style="line-height: var(--lineheight-md); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-lg</span>
+          <p style="line-height: var(--lineheight-lg); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--lineheight-xl</span>
+          <p style="line-height: var(--lineheight-xl); max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack">
+      <h2 id="letterspacing">Letter spacing</h2>
+      <div class="stack">
+        <div>
+          <span class="prop-code">--letterspacing-xs</span>
+          <p style="letter-spacing: var(--letterspacing-xs)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-sm</span>
+          <p style="letter-spacing: var(--letterspacing-sm)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-md</span>
+          <p style="letter-spacing: var(--letterspacing-md)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-lg</span>
+          <p style="letter-spacing: var(--letterspacing-lg)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-xl</span>
+          <p style="letter-spacing: var(--letterspacing-xl)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-2xl</span>
+          <p style="letter-spacing: var(--letterspacing-2xl)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <span class="prop-code">--letterspacing-3xl</span>
+          <p style="letter-spacing: var(--letterspacing-3xl)">Lorem, ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+    </article>
+    
+    <article class="stack">
+      <h2 id="measure">Measure</h2>
+      <p>measure is the readable line length</p>
+      <div class="stack">
+        <div>
+          <span class="prop-code">--content-size-sm</span>
+          <p style="max-width: var(--content-size-sm);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div>
+          <span class="prop-code">--content-size-md</span>
+          <p style="max-width: var(--content-size-md);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        <div>
+          <span class="prop-code">--content-size-lg</span>
+          <p style="max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+        </div>
+        
+      </div>
+    </article>
+
+    <article>
+      <h2 id="fluid-sizes">Fluid Sizes</h2>
+        <section class="flex" style="gap: 3rem" >
+        <div>
+          <p class="subhead">Fluid sizes</p>
+          <ul role="list" class="grid-sizes">
+            <li>
+              <span class="prop-code">--space-3xs</span>
+              <div style="width: var(--space-3xs)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-2xs</span>
+              <div style="width: var(--space-2xs)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-xs</span>
+              <div style="width: var(--space-xs)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-sm</span>
+              <div style="width: var(--space-sm)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-md</span>
+              <div style="width: var(--space-md)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-lg</span>
+              <div style="width: var(--space-lg)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-xl</span>
+              <div style="width: var(--space-xl)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-2xl</span>
+              <div style="width: var(--space-2xl)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-3xl</span>
+              <div style="width: var(--space-3xl)"></div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="subhead">One-up pairs</p>
+          <ul role="list" class="grid-sizes">
+            <li>
+              <span class="prop-code">--space-3xs-2xs</span>
+              <div style="width: var(--space-3xs-2xs)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-2xs-xs</span>
+              <div style="width: var(--space-2xs-xs)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-xs-sm</span>
+              <div style="width: var(--space-xs-sm)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-sm-md</span>
+              <div style="width: var(--space-sm-md)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-md-lg</span>
+              <div style="width: var(--space-md-lg)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-lg-xl</span>
+              <div style="width: var(--space-lg-xl)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-xl-2xl</span>
+              <div style="width: var(--space-xl-2xl)"></div>
+            </li>
+            <li>
+              <span class="prop-code">--space-2xl-3xl</span>
+              <div style="width: var(--space-2xl-3xl)"></div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="subhead">Custom pairs</p>
+          <ul role="list" class="grid-sizes">
+            <li>
+              <span class="prop-code">--space-sm-lg</span>
+              <div style="width: var(--space-sm-lg)"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <header>
+        <h1 id="shadows">Shadows</h1>
+        <p>Expertly crafted, light and dark adaptive, shadows! All of the complexity is hidden behind the easy to use `var(--shadow-6)`</p>
+      </header>
+      <ul role="list" class="shadows-list box-shadow scroll-x-overflow">
+        <li><span class="prop-code">--shadow-1</span><div></div></li>
+        <li><span class="prop-code">--shadow-2</span><div></div></li>
+        <li><span class="prop-code">--shadow-3</span><div></div></li>
+        <li><span class="prop-code">--shadow-4</span><div></div></li>
+        <li><span class="prop-code">--shadow-5</span><div></div></li>
+        <li><span class="prop-code">--shadow-6</span><div></div></li>
+      </ul>
+    
+
+      <ul role="list" class="shadows-list inset-shadow scroll-x-overflow">
+        <li><span class="prop-code">--inner-shadow-1</span><div></div></li>
+        <li><span class="prop-code">--inner-shadow-2</span><div></div></li>
+        <li><span class="prop-code">--inner-shadow-3</span><div></div></li>
+        <li><span class="prop-code">--inner-shadow-4</span><div></div></li>
+        <li><span class="prop-code">--inner-shadow-5</span><div></div></li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h1 id="overflowhint">Overflow hint</h1>
+        <p>An adaptive way to siginal an overflow</p>
+      </header>
+      <ul role="list" class="overflow-hint-list scroll-x-overflow overflow-x-hint" style="padding: var(--space-sm)">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </article>
+
+    <article class="stack">
+      <h2 id="border-size">Border Size</h2>
+      <ul role="list" class="flex border-size scroll-x-overflow" style="gap: 2rem; padding: var(--space-sm);">
+        <li><span>--border-size-sm</span><div style="border-width: var(--border-size-sm);"></div></li>
+        <li><span>--border-size-md</span><div style="border-width: var(--border-size-md);"></div></li>
+        <li><span>--border-size-lg</span><div style="border-width: var(--border-size-lg);"></div></li>
+      </ul>
+
+      <h2 id="border-radius">Border radius</h2>
+      <ul role="list" class="flex border-radius scroll-x-overflow" style="gap: 2rem; padding: var(--space-sm);">
+        <li><span>--radius-sm</span><div style="border-radius: var(--radius-sm);"></div></li>
+        <li><span>--radius-md</span><div style="border-radius: var(--radius-md);"></div></li>
+        <li><span>--radius-lg</span><div style="border-radius: var(--radius-lg);"></div></li>
+        <li><span>--radius-xl</span><div style="border-radius: var(--radius-xl);"></div></li>
+        <li><span>--radius-2xl</span><div style="border-radius: var(--radius-2xl);"></div></li>
+        <li><span>--radius-3xl</span><div style="border-radius: var(--radius-3xl);"></div></li>
+      </ul>
+
+      <!-- <h2>Border radius conditional</h2>
+      <ul role="list" class="border-radius-conditional stack">
+        <li><span>--radius-conditional-sm</span><div style="border-radius: var(--radius-conditional-sm);"></div></li>
+        <li><span>--radius-conditional-md</span><div style="border-radius: var(--radius-conditional-md);"></div></li>
+        <li><span>--radius-conditional-lg</span><div style="border-radius: var(--radius-conditional-lg);"></div></li>
+        <li><span>--radius-conditional-xl</span><div style="border-radius: var(--radius-conditional-xl);"></div></li>
+        <li><span>--radius-conditional-2xl</span><div style="border-radius: var(--radius-conditional-2xl);"></div></li>
+        <li><span>--radius-conditional-3xl</span><div style="border-radius: var(--radius-conditional-3xl);"></div></li>
+      </ul> -->
+    </article>
+
+    <article id="aspect-ratio" class="stack">
+      <h2>Aspect Ratio</h2>
+      <ul role="list" class="aspect-ratio flex scroll-x-overflow" style="gap: 2rem;">
+        <li>
+          <span>--ratio-square</span>
+          <div style="aspect-ratio: var(--ratio-square);"></div></li>
+        <li>
+          <span>--ratio-landscape</span>
+          <div style="aspect-ratio: var(--ratio-landscape);"></div></li>
+        <li>
+          <span>--ratio-portrait</span>
+          <div style="aspect-ratio: var(--ratio-portrait);"></div></li>
+        <li>
+          <span>--ratio-widescreen</span>
+          <div style="aspect-ratio: var(--ratio-widescreen);"></div></li>
+        <li>
+          <span>--ratio-ultrawide</span>
+          <div style="aspect-ratio: var(--ratio-ultrawide);"></div></li>
+        <li>
+          <span>--ratio-golden</span>
+          <div style="aspect-ratio: var(--ratio-golden);"></div></li>
+      </ul>
+    </article>
+
+    <article id="gradients" class="stack">
+      <h2>Gradients</h2>
+      <ul role="list" class="gradients-list flex scroll-x-overflow" style="gap: 2rem;">
+        <li>
+          <span>--gradient-1</span>
+          <div style="background-image: var(--gradient-1);"></div>
+        </li>
+        <li>
+          <span>--gradient-2</span>
+          <div style="background-image: var(--gradient-2);"></div>
+        </li>
+        <li>
+          <span>--gradient-3</span>
+          <div style="background-image: var(--gradient-3);"></div>
+        </li>
+        <li>
+          <span>--gradient-4</span>
+          <div style="background-image: var(--gradient-4);"></div>
+        </li>
+        <li>
+          <span>--gradient-5</span>
+          <div style="background-image: var(--gradient-5);"></div>
+        </li>
+        <li>
+          <span>--gradient-6</span>
+          <div style="background-image: var(--gradient-6);"></div>
+        </li>
+        <li>
+          <span>--gradient-7</span>
+          <div style="background-image: var(--gradient-7);"></div>
+        </li>
+        <li>
+          <span>--gradient-8</span>
+          <div style="background-image: var(--gradient-8);"></div>
+        </li>
+        <li>
+          <span>--gradient-9</span>
+          <div style="background-image: var(--gradient-9);"></div>
+        </li>
+        <li>
+          <span>--gradient-10</span>
+          <div style="background-image: var(--gradient-10);"></div>
+        </li>
+        <li>
+          <span>--gradient-11</span>
+          <div style="background-image: var(--gradient-11);"></div>
+        </li>
+        <li>
+          <span>--gradient-12</span>
+          <div style="background-image: var(--gradient-12);"></div>
+        </li>
+        <li>
+          <span>--gradient-13</span>
+          <div style="background-image: var(--gradient-13);"></div>
+        </li>
+        <li>
+          <span>--gradient-15</span>
+          <div style="background-image: var(--gradient-14);"></div>
+        </li>
+        <li>
+          <span>--gradient-15</span>
+          <div style="background-image: var(--gradient-15);"></div>
+        </li>
+        <li>
+          <span>--gradient-16</span>
+          <div style="background-image: var(--gradient-16);"></div>
+        </li>
+        <li>
+          <span>--gradient-17</span>
+          <div style="background-image: var(--gradient-17);"></div>
+        </li>
+        <li>
+          <span>--gradient-18</span>
+          <div style="background-image: var(--gradient-18);"></div>
+        </li>
+        <li>
+          <span>--gradient-19</span>
+          <div style="background-image: var(--gradient-19);"></div>
+        </li>
+        <li>
+          <span>--gradient-20</span>
+          <div style="background-image: var(--gradient-20);"></div>
+        </li>
+        <li>
+          <span>--gradient-21</span>
+          <div style="background-image: var(--gradient-21);"></div>
+        </li>
+        <li>
+          <span>--gradient-22</span>
+          <div style="background-image: var(--gradient-22);"></div>
+        </li>
+        <li>
+          <span>--gradient-23</span>
+          <div style="background-image: var(--gradient-23);"></div>
+        </li>
+        <li>
+          <span>--gradient-24</span>
+          <div style="background-image: var(--gradient-24);"></div>
+        </li>
+        <li>
+          <span>--gradient-25</span>
+          <div style="background-image: var(--gradient-25);"></div>
+        </li>
+        <li>
+          <span>--gradient-26</span>
+          <div style="background-image: var(--gradient-26);"></div>
+        </li>
+        <li>
+          <span>--gradient-27</span>
+          <div style="background-image: var(--gradient-27);"></div>
+        </li>
+        <li>
+          <span>--gradient-28</span>
+          <div style="background-image: var(--gradient-28);"></div>
+        </li>
+        <li>
+          <span>--gradient-29</span>
+          <div style="background-image: var(--gradient-29);"></div>
+        </li>
+        <li>
+          <span>--gradient-30</span>
+          <div style="background-image: var(--gradient-30);"></div>
+        </li>
+      </ul>
+    </article>
+
+    <article id="gradients" class="stack">
+      <h2>Noise Gradients</h2>
+      <ul role="list" class="gradients-list noise-gradients flex scroll-x-overflow" style="gap: 2rem;">
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: var(--gradient-3), var(--noise-5);"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2);"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5)"></div>
+        </li>
+        <li>
+          <span>Inspect Code</span>
+          <div style="background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2)"></div>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2 id="forms">Form elements</h2>
+      <form action="" class="stack">
+        
+        <div class="form-group">
+          <label for="name">
+            Name:
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="validation-icon success" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+          </label>
+          <div class="field-validation error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon error" viewBox="0 0 512 512"><path d="M34.5 420.4c-1.6 2.8-2.5 6-2.5 9.3c0 10.2 8.2 18.4 18.4 18.4H461.6c10.2 0 18.4-8.2 18.4-18.4c0-3.3-.9-6.4-2.5-9.3L276.5 75.8C272.2 68.5 264.4 64 256 64s-16.2 4.5-20.5 11.8L34.5 420.4zM6.9 404.2l201-344.6C217.9 42.5 236.2 32 256 32s38.1 10.5 48.1 27.6l201 344.6c4.5 7.7 6.9 16.5 6.9 25.4c0 27.8-22.6 50.4-50.4 50.4H50.4C22.6 480 0 457.4 0 429.6c0-8.9 2.4-17.7 6.9-25.4zM256 160c8.8 0 16 7.2 16 16V304c0 8.8-7.2 16-16 16s-16-7.2-16-16V176c0-8.8 7.2-16 16-16zM232 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Please fill in your name
+          </div>
+          <div class="flex items-center input-md relative">
+            <input type="text" id="name" name="name" required="required">
+          </div>
+          <div class="field-helper">Lastname, Firstname</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">
+            Email:
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="validation-icon success" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+          </label>
+          <div class="field-validation error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon error" viewBox="0 0 512 512"><path d="M34.5 420.4c-1.6 2.8-2.5 6-2.5 9.3c0 10.2 8.2 18.4 18.4 18.4H461.6c10.2 0 18.4-8.2 18.4-18.4c0-3.3-.9-6.4-2.5-9.3L276.5 75.8C272.2 68.5 264.4 64 256 64s-16.2 4.5-20.5 11.8L34.5 420.4zM6.9 404.2l201-344.6C217.9 42.5 236.2 32 256 32s38.1 10.5 48.1 27.6l201 344.6c4.5 7.7 6.9 16.5 6.9 25.4c0 27.8-22.6 50.4-50.4 50.4H50.4C22.6 480 0 457.4 0 429.6c0-8.9 2.4-17.7 6.9-25.4zM256 160c8.8 0 16 7.2 16 16V304c0 8.8-7.2 16-16 16s-16-7.2-16-16V176c0-8.8 7.2-16 16-16zM232 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Please fill in your email
+          </div>
+          <div class="flex items-center input-md relative">
+            <input type="email" id="email" name="email" required="required">
+          </div>
+          <div class="field-helper">email@gmail.com</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">
+            Password:
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="validation-icon success" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+          </label>
+          <div class="field-validation error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon error" viewBox="0 0 512 512"><path d="M34.5 420.4c-1.6 2.8-2.5 6-2.5 9.3c0 10.2 8.2 18.4 18.4 18.4H461.6c10.2 0 18.4-8.2 18.4-18.4c0-3.3-.9-6.4-2.5-9.3L276.5 75.8C272.2 68.5 264.4 64 256 64s-16.2 4.5-20.5 11.8L34.5 420.4zM6.9 404.2l201-344.6C217.9 42.5 236.2 32 256 32s38.1 10.5 48.1 27.6l201 344.6c4.5 7.7 6.9 16.5 6.9 25.4c0 27.8-22.6 50.4-50.4 50.4H50.4C22.6 480 0 457.4 0 429.6c0-8.9 2.4-17.7 6.9-25.4zM256 160c8.8 0 16 7.2 16 16V304c0 8.8-7.2 16-16 16s-16-7.2-16-16V176c0-8.8 7.2-16 16-16zM232 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Your password does not match 
+          </div>
+          <div class="flex items-center input-md relative">
+            <input type="password" id="password" name="password" required="required">
+          </div>
+          <div class="field-helper">email@gmail.com</div>
+        </div>
+        
+        <fieldset class="input-md relative">
+          <legend>
+            Gender
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon success" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+          </legend>
+          
+          <div class="field-validation error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon error" viewBox="0 0 512 512"><path d="M34.5 420.4c-1.6 2.8-2.5 6-2.5 9.3c0 10.2 8.2 18.4 18.4 18.4H461.6c10.2 0 18.4-8.2 18.4-18.4c0-3.3-.9-6.4-2.5-9.3L276.5 75.8C272.2 68.5 264.4 64 256 64s-16.2 4.5-20.5 11.8L34.5 420.4zM6.9 404.2l201-344.6C217.9 42.5 236.2 32 256 32s38.1 10.5 48.1 27.6l201 344.6c4.5 7.7 6.9 16.5 6.9 25.4c0 27.8-22.6 50.4-50.4 50.4H50.4C22.6 480 0 457.4 0 429.6c0-8.9 2.4-17.7 6.9-25.4zM256 160c8.8 0 16 7.2 16 16V304c0 8.8-7.2 16-16 16s-16-7.2-16-16V176c0-8.8 7.2-16 16-16zM232 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Please fill in your name
+          </div>
+          
+          <label for="gender-male">
+            <input type="radio" id="gender-male" name="gender" value="male">
+            <!-- <span>Male</span> -->
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eveniet amet minima atque animi deleniti voluptatem fuga id asperiores.</span>
+          </label>
+
+          <label for="gender-female">
+            <input type="radio" id="gender-female" name="gender" value="female">
+            <span>Male</span>
+          </label>
+
+        </fieldset>
+        
+        <div class="form-group input-md relative">
+          <label for="textarea">
+            Textarea:
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon success" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+          </label>
+          <div class="field-validation error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="validation-icon error" viewBox="0 0 512 512"><path d="M34.5 420.4c-1.6 2.8-2.5 6-2.5 9.3c0 10.2 8.2 18.4 18.4 18.4H461.6c10.2 0 18.4-8.2 18.4-18.4c0-3.3-.9-6.4-2.5-9.3L276.5 75.8C272.2 68.5 264.4 64 256 64s-16.2 4.5-20.5 11.8L34.5 420.4zM6.9 404.2l201-344.6C217.9 42.5 236.2 32 256 32s38.1 10.5 48.1 27.6l201 344.6c4.5 7.7 6.9 16.5 6.9 25.4c0 27.8-22.6 50.4-50.4 50.4H50.4C22.6 480 0 457.4 0 429.6c0-8.9 2.4-17.7 6.9-25.4zM256 160c8.8 0 16 7.2 16 16V304c0 8.8-7.2 16-16 16s-16-7.2-16-16V176c0-8.8 7.2-16 16-16zM232 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Please fill out the description
+          </div>
+          <div class="flex input-md relative">
+            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        
+        <label for="newsletter">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <span>Subscribe to our newsletter</span>
+        </label>
+        
+        
+        <div class="form-group input-md">
+          <label for="language">Preferred language:</label>
+          <select id="language" name="language">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+          </select>
+        </div>
+        
+         <div>
+          <button type="submit">submit</button>
+        </div>
+      </form>
+    </article>
+  </main>
+</Layout>
+
+<style>
+.pallette-swatch-list {
+  display: flex;
+  /* gap: var(--space-md); */
+  border-block: 1px solid var(--surface-4);
+  padding-block: var(--space-md);
+  
+  li { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3xs)
+  }
+
+  div {
+    width: 4rem;
+    aspect-ratio: 1/2;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-3);
+  }
+}
+
+.grid-type {
+    @media (width >= 1024px) {
+        display: grid;
+        gap: var(--space-md);
+        grid-template-columns: 1fr auto 1fr;
+    }
+}
+
+.grid-font-family {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(1rem, 2rem));
+}
+
+.shadows-list {
+  display: flex;
+  gap: var(--space-md);
+  padding-block-end: var(--space-xl);
+
+  div {
+    width: 7rem;
+    aspect-ratio: 1;
+    display: block;
+    border-radius: var(--radius-md);
+  }
+}
+
+.box-shadow {
+  li {
+    &:nth-child(1) div {
+      box-shadow: var(--shadow-1);
+    }
+    &:nth-child(2) div {
+      box-shadow: var(--shadow-2);
+    }
+    &:nth-child(3) div {
+      box-shadow: var(--shadow-3);
+    }
+    &:nth-child(4) div {
+      box-shadow: var(--shadow-4);
+    }
+    &:nth-child(5) div {
+      box-shadow: var(--shadow-5);
+    }
+    &:nth-child(6) div {
+      box-shadow: var(--shadow-6);
+    }
+  }
+}
+
+.inset-shadow {
+  li {
+    &:nth-child(1) div {
+      box-shadow: var(--inner-shadow-1);
+    }
+    &:nth-child(2) div {
+      box-shadow: var(--inner-shadow-2);
+    }
+    &:nth-child(3) div {
+      box-shadow: var(--inner-shadow-3);
+    }
+    &:nth-child(4) div {
+      box-shadow: var(--inner-shadow-4);
+    }
+    &:nth-child(5) div {
+      box-shadow: var(--inner-shadow-5);
+    }
+    &:nth-child(6) div {
+      box-shadow: var(--inner-shadow-6);
+    }
+  }
+}
+
+.swatch-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  position: relative;
+
+  li:first-child {
+    position: absolute;
+  }
+
+  > *:not(:first-child) {
+    width: 150px;
+    aspect-ratio: 1;
+  }
+}
+
+.grid-type {
+  @media (width >= 1024px) {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+
+.grid-sizes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding: var(--space-sm);
+  
+  div {
+    outline: 1px solid var(--brand);
+    aspect-ratio: 1;
+  }
+}
+
+:is(.border-size, .border-radius, .border-radius-conditional) div {
+  width: 10rem;
+  aspect-ratio: var(--ratio-portrait);
+  border: 1px solid var(--brand);
+}
+
+.aspect-ratio div { width: 15rem; border: 1px solid var(--brand); }
+
+
+.gradients-list {padding-block-end: 2rem;}
+.gradients-list span {}
+.gradients-list div { 
+  width: 20rem;
+  aspect-ratio: 1;
+  background-size: cover;
+ }
+.noise-gradients > * {
+  background-size: cover;
+  filter: var(--noise-filter-1);
+}
+</style>
