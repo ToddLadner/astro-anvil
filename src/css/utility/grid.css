@@ -25,4 +25,7 @@ Layouts
 .ram-grid { grid-template-columns: repeat(var(--grid-fill, auto-fit), minmax(var(--grid-item, 10rem), 1fr)) }
 
 /* 12 Span Grid */
-.col-grid { grid-template-columns: repeat(12, 1fr) }
+.col-grid { 
+  grid-template-columns: repeat(12, 1fr); 
+  gap: var(--space-s-l, clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem));
+}
