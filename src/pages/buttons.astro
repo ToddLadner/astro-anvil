@@ -38,9 +38,22 @@ import Button from '@components/Button.astro';
 
 <hr />
 
-<div>
-  <p style="padding-bottom: 1rem;">Press me Im springy</p>
+<div class="slide-fade">
+  <p class="loaded" style="padding-bottom: 1rem;">Press me Im springy</p>
   <button type="button" class="xl fx-spring">Button</button>
 </div>
 </main>
 </Layout>
+
+<style>
+.loaded {
+  animation: var(--animation-fade-in);
+}
+.slide-fade {
+  animation:
+    var(--animation-fade-out) forwards,
+    var(--animation-slide-out-down);
+  animation-timing-function: var(--ease-elastic-in-out-3);
+  animation-duration: 1s;
+}
+</style>

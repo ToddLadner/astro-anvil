@@ -1,11 +1,10 @@
 module.exports = {
   plugins: [
-    require('autoprefixer'),
-    require('postcss-preset-env')({
-      stage: 0,
-    }),
     require('postcss-import'),
+    require('postcss-preset-env'),
     require('postcss-size'),
-    require('postcss-font-magician')
+    require('postcss-font-magician'),
+    require('postcss-jit-props')({files: ['./src/css/props.css']}),
+    require('autoprefixer')
   ],
 }

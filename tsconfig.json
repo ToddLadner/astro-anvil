@@ -7,7 +7,8 @@
       "@images/*": ["src/img/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@scripts/*": ["src/js/*"]
+      "@scripts/*": ["src/js/*"],
+      "@styles/*": ["src/css/*"],
     },
     "strictNullChecks": true,
   }

@@ -17,6 +17,7 @@
     "autoprefixer": "^10.4.19",
     "postcss-font-magician": "^4.0.0",
     "postcss-import": "^16.1.0",
+    "postcss-jit-props": "^1.0.14",
     "postcss-preset-env": "^9.5.14",
     "postcss-size": "^5.0.0",
     "sharp": "^0.33.4",
