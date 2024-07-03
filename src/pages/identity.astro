@@ -437,22 +437,22 @@ import heroImage from '@images/fungi.jpg';
       <ul role="list" class="aspect-ratio flex scroll-x-overflow" style="gap: 2rem;">
         <li>
           <span>--ratio-square</span>
-          <div style="aspect-ratio: var(--ratio-square);"></div></li>
+          <div class="ratio-square" style="aspect-ratio: var(--ratio-square);"></div></li>
         <li>
           <span>--ratio-landscape</span>
-          <div style="aspect-ratio: var(--ratio-landscape);"></div></li>
+          <div class="ratio-landscape" style="aspect-ratio: var(--ratio-landscape);"></div></li>
         <li>
           <span>--ratio-portrait</span>
-          <div style="aspect-ratio: var(--ratio-portrait);"></div></li>
+          <div class="ratio-portrait" style="aspect-ratio: var(--ratio-portrait);"></div></li>
         <li>
           <span>--ratio-widescreen</span>
-          <div style="aspect-ratio: var(--ratio-widescreen);"></div></li>
+          <div class="ratio-widescreen" style="aspect-ratio: var(--ratio-widescreen);"></div></li>
         <li>
           <span>--ratio-ultrawide</span>
-          <div style="aspect-ratio: var(--ratio-ultrawide);"></div></li>
+          <div class="ratio-ultrawide" style="aspect-ratio: var(--ratio-ultrawide);"></div></li>
         <li>
           <span>--ratio-golden</span>
-          <div style="aspect-ratio: var(--ratio-golden);"></div></li>
+          <div class="ratio-golden" style="aspect-ratio: var(--ratio-golden);"></div></li>
       </ul>
     </article>
 
@@ -586,40 +586,40 @@ import heroImage from '@images/fungi.jpg';
       <h2>Noise Gradients</h2>
       <ul role="list" class="gradients-list noise-gradients flex scroll-x-overflow" style="gap: 2rem;">
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: var(--gradient-3), var(--noise-5);"></div>
+          <span>Inspect Code1</span>
+          <div class="grad3noise5" style="background-image: var(--gradient-3), var(--noise-5);"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2);"></div>
+          <span>Inspect Code2</span>
+          <div class="noise-5-filter-2"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3)"></div>
+          <span>Inspect Code3</span>
+          <div class="noise-3" ></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4)"></div>
+          <span>Inspect Code4</span>
+          <div class="noise-1-filter-4"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1)"></div>
+          <span>Inspect Code5</span>
+          <div class="noise-5-filter-1"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2)"></div>
+          <span>Inspect Code6</span>
+          <div class="noise-5-filter-2v2"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3)"></div>
+          <span>Inspect Code7</span>
+          <div class="grad20-noise-5filter-3"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5)"></div>
+          <span>Inspect Code8</span>
+          <div class="noise-23-filter-5"></div>
         </li>
         <li>
-          <span>Inspect Code</span>
-          <div style="background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2)"></div>
+          <span>Inspect Code9</span>
+          <div class="noise-25-filter-2"></div>
         </li>
       </ul>
     </article>
@@ -774,8 +774,24 @@ import heroImage from '@images/fungi.jpg';
   .gradient-28 { background-image: var(--gradient-28); }
   .gradient-29 { background-image: var(--gradient-29); }
   .gradient-30 { background-image: var(--gradient-30); }
-
-.pallette-swatch-list {
+  .ratio-square { aspect-ratio: var(--ratio-square) };
+  .ratio-landscape { aspect-ratio: var(--ratio-landscape) };
+  .ratio-portrait { aspect-ratio: var(--ratio-portrait) };
+  .ratio-widescreen { aspect-ratio: var(--ratio-widescreen) };
+  .ratio-ultrawide { aspect-ratio: var(--ratio-ultrawide) };
+  .ratio-golden { aspect-ratio: var(--ratio-golden) };
+ 
+  .noise-5 { background-image: var(--gradient-3), var(--noise-5); } 
+  .noise-5-filter-2 { background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2); }
+  .noise-3 { background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3); }
+  .noise-1-filter-4 { background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4); }
+  .noise-5-filter-1 { background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1); }
+  .noise-5-filter-2v2 { background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2) }
+  .grad20-noise-5filter-3 { background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3) }
+  .noise-23-filter-5 { background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5); }
+  .noise-25-filter-2 { background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2); }
+  
+  .pallette-swatch-list {
   display: flex;
   /* gap: var(--space-md); */
   border-block: 1px solid var(--surface-4);
