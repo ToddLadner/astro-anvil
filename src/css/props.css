@@ -78,9 +78,9 @@ Z INDEX
   --letterspacing-4xl: 1em;
 
   /* 06 Measure */
-  --content-size-sm: 20ch;
-  --content-size-md: 45ch;
-  --content-size-lg: 60ch;
+  --measure-sm: 20ch;
+  --measure-md: 45ch;
+  --measure-lg: 65ch;
   
   /* 
   // MARK: Spacing

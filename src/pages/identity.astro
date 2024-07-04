@@ -256,16 +256,16 @@ import heroImage from '@images/fungi.jpg';
       <p>measure is the readable line length</p>
       <div class="stack">
         <div>
-          <span class="prop-code">--content-size-sm</span>
-          <p style="max-width: var(--content-size-sm);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <span class="prop-code">--measure-sm</span>
+          <p class="measure-sm" style="max-width: var(--measure-sm);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
         </div>
         <div>
-          <span class="prop-code">--content-size-md</span>
-          <p style="max-width: var(--content-size-md);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+          <span class="prop-code">--measure-md</span>
+          <p class="measure-md" style="max-width: var(--measure-md);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
         </div>
         <div>
-          <span class="prop-code">--content-size-lg</span>
-          <p style="max-width: var(--content-size-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
+          <span class="prop-code">--measure-lg</span>
+          <p class="measure-lg" style="max-width: var(--measure-lg);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde sapiente quibusdam voluptatum eos eius fugiat adipisci perferendis. Labore autem totam magnam delectus atque soluta adipisci aut ex rerum! Consectetur?</p>
         </div>
         
       </div>
@@ -791,6 +791,10 @@ import heroImage from '@images/fungi.jpg';
   .noise-23-filter-5 { background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5); }
   .noise-25-filter-2 { background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2); }
   
+  .measure-sm { max-width: var(--measure-sm); }
+  .measure-md { max-width: var(--measure-md); }
+  .measure-lg { max-width: var(--measure-lg); }
+
   .pallette-swatch-list {
   display: flex;
   /* gap: var(--space-md); */
