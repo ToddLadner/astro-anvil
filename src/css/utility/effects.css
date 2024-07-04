@@ -1,0 +1,66 @@
+/*  TOC
+─────────────────────────────────
+─────────────────────────────── */
+
+/* 
+// MARK: Hover
+Prev Next Hover Effect
+*/
+
+.fx-sibling > * { transition: transform .125s var(--ease-in-1); }
+
+.fx-sibling > *:hover {
+  transform: 
+    translate3d(0, -.5rem, 0) 
+    scale(1.125);
+}
+
+.fx-sibling > *:hover + *,
+.fx-sibling > *:has(+ *:hover) {
+  transform: 
+    translate3d(0, -.25rem, 0) 
+    scale(1.1);
+}
+
+/* 
+// MARK: Spring Effect
+Spring Effect
+*/
+
+.fx-spring {
+  /* hook into button api and customize */
+  --border: none;
+  --highlight: none;
+  
+  /* build our own props for nifty progressive enhancement */
+  --spring-easing: var(--ease-3);
+  --spring-duration: 145ms;
+
+  /* bump up the depth for this springy button */
+  box-shadow: var(--shadow-4);
+  
+  /* regular ease scale and box-shadow */
+  @media (prefers-reduced-motion: no-preference) {
+    transition: 
+      transform var(--spring-duration) var(--spring-easing),
+      box-shadow var(--spring-duration) var(--spring-easing),
+      /* this ensures the Open Props expando :focus outline effect */
+      outline-offset 145ms var(--ease-4);
+  }
+  
+  /* progressive enhancement to linear() spring */
+  /* https://developer.chrome.com/articles/css-linear-easing-function/ */
+  @supports (animation-timing-function: linear(0,.1, 1)) {
+    /* springy scale and box-shadow */
+    --spring-easing: var(--ease-spring-5);
+    
+    /* increase duration so there's time to spring */
+    --spring-duration: 1s;
+  }
+  
+  /* 10% smaller and weak shadow when pressing */
+  &:active {
+    transform: scale(.9);
+    box-shadow: var(--shadow-1);
+  }
+}

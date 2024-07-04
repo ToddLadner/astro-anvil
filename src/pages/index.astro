@@ -20,10 +20,10 @@ import heroImage from '@images/fungi.jpg';
 			classes='fx-spring'
 		/>
 		
-		<div class="test">
+		<div class="test alert">
 			<div class="test"></div>
 		</div>
-		<ul role="list" class="scale-hover flex" >
+		<ul role="list" class="nav-list fx-sibling flex" >
 			<li><span>item</span></li>
 			<li><span>item</span></li>
 			<li><span>item</span></li>
@@ -90,6 +90,36 @@ import heroImage from '@images/fungi.jpg';
 </Layout>
 
 <style>
+
+.loaded {
+		opacity:0;
+  	animation: var(--animation-fade-in) forwards;
+}
+.alert {
+  animation: var(--animation-blink);
+}
+.push-out {
+  animation:
+    var(--animation-scale-down),
+    var(--animation-fade-out);
+  animation-timing-function: var(--ease-elastic-in-out-4);
+}
+.shake-in {
+  animation:
+    var(--animation-shake-y),
+    var(--animation-fade-in),
+    var(--animation-slide-in-left);
+}
+.push-out {
+  animation:
+    var(--animation-scale-down),
+    var(--animation-fade-out);
+  animation-timing-function: var(--ease-elastic-in-out-4);
+}
+
+	.nav-list li{
+		padding: 1rem; 
+	}
 	div.test {
 		size: 10rem;
 		padding: 1rem;

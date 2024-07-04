@@ -1,10 +1,7 @@
 @import "./utility/flex.css";
-@import "./utility/fx.css";
+@import "./utility/effects.css";
 @import "./utility/grid.css";
-@import "./utility/helpers.css";
-@import "./utility/info.css";
-@import "./utility/overflow.css";
-@import "./utility/stack.css";
+@import "./utility/layout.css";
 @import "./utility/styles.css";
 @import "./utility/type.css";
 
