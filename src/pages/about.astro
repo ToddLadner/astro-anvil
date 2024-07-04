@@ -95,7 +95,7 @@ import Layout from '@layouts/Layout.astro';
       <li></li>
       <li></li>
     </ul>
-    <section>
+    <section class="stack">
       <h2>Some other content that follows</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit vitae delectus quo labore quidem corrupti ipsam, quasi velit ex temporibus amet numquam? Necessitatibus corrupti error inventore in. Voluptate, esse dolorum!</p>
       <p>Ratione quo, accusantium commodi unde consequatur quidem dolorem numquam molestiae officia impedit, pariatur iure corrupti quaerat explicabo molestias. Impedit deleniti ipsam numquam voluptatem laboriosam dolorem atque deserunt quidem reprehenderit officia.</p>
@@ -120,7 +120,7 @@ main {
 }
 
 .card:has(> img) {
-  border: 2px solid var(--clr-primary-300);
+  border: 2px solid var(--primary-3);
 
   @container ram-grid (inline-size > calc(30ch * 2 + 1rem)) {
     grid-column: span 2;
@@ -189,8 +189,7 @@ main {
   }
   
 
-  
-  .col-grid { gap: var(--space-sm-lg); }
+  .col-grid { --col-gap: var(--space-2xs); }
   
   .col-grid > * { 
     border: 1px solid var(--purple-5); padding: 2rem;

@@ -20,9 +20,14 @@ import heroImage from '@images/fungi.jpg';
 			classes='fx-spring'
 		/>
 		
-		<div class="test alert">
-			<div class="test"></div>
-		</div>
+	<div class="flex">
+		<div class="test push-out"></div>
+		<div class="test alert"></div>
+		<div class="test shake-in"></div>
+	</div>
+		
+		
+		
 		<ul role="list" class="nav-list fx-sibling flex" >
 			<li><span>item</span></li>
 			<li><span>item</span></li>
@@ -98,12 +103,7 @@ import heroImage from '@images/fungi.jpg';
 .alert {
   animation: var(--animation-blink);
 }
-.push-out {
-  animation:
-    var(--animation-scale-down),
-    var(--animation-fade-out);
-  animation-timing-function: var(--ease-elastic-in-out-4);
-}
+
 .shake-in {
   animation:
     var(--animation-shake-y),
