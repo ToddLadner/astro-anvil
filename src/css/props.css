@@ -188,372 +188,372 @@ Z INDEX
   --gray-warm-chroma: 0.01;
   
   /* 04 Gray Neutral */
-  --gray-cool-hue: 179; /* 270 */
+  --gray-cool-hue: 270; /* 270 */
   --gray-cool-chroma: 0.02; /* 0.03 */
   
   /* 
   // MARK: Brand
   Brand
   */
-  --brand-0: oklch(99% 0.03 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-1: oklch(95% 0.06 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-2: oklch(88% 0.12 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-3: oklch(80% 0.14 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-4: oklch(74% 0.16 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-5: oklch(68% 0.19 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-6: oklch(63% 0.2 var(--hue-brand, 0) / var(--color-opacity, 1)); 
-  --brand-7: oklch(58% 0.21 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-8: oklch(53% 0.2 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-9: oklch(49% 0.19 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-10: oklch(42% 0.17 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-11: oklch(35% 0.15 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-12: oklch(27% 0.12 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-13: oklch(20% 0.09 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-14: oklch(14% 0.07 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-15: oklch(11% 0.05 var(--hue-brand, 0) / var(--color-opacity, 1));
-  --brand-bright: oklch(65% 0.3 var(--hue-brand, 0) / var(--color-opacity, 1));
+  --brand-0: oklch(99% 0.03 var(--hue-brand, 0)); 
+  --brand-1: oklch(95% 0.06 var(--hue-brand, 0)); 
+  --brand-2: oklch(88% 0.12 var(--hue-brand, 0)); 
+  --brand-3: oklch(80% 0.14 var(--hue-brand, 0)); 
+  --brand-4: oklch(74% 0.16 var(--hue-brand, 0)); 
+  --brand-5: oklch(68% 0.19 var(--hue-brand, 0)); 
+  --brand-6: oklch(63% 0.2 var(--hue-brand, 0)); 
+  --brand-7: oklch(58% 0.21 var(--hue-brand, 0));
+  --brand-8: oklch(53% 0.2 var(--hue-brand, 0));
+  --brand-9: oklch(49% 0.19 var(--hue-brand, 0));
+  --brand-10: oklch(42% 0.17 var(--hue-brand, 0));
+  --brand-11: oklch(35% 0.15 var(--hue-brand, 0));
+  --brand-12: oklch(27% 0.12 var(--hue-brand, 0));
+  --brand-13: oklch(20% 0.09 var(--hue-brand, 0));
+  --brand-14: oklch(14% 0.07 var(--hue-brand, 0));
+  --brand-15: oklch(11% 0.05 var(--hue-brand, 0));
+  --brand-bright: oklch(65% 0.3 var(--hue-brand, 0));
 
   /* 
   // MARK: Red
   Red
   */
 
-  --red-0: oklch(99% 0.03 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-1: oklch(95% 0.06 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-2: oklch(88% 0.12 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-3: oklch(80% 0.14 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-4: oklch(74% 0.16 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-5: oklch(68% 0.19 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-6: oklch(63% 0.2 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-7: oklch(58% 0.21 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-8: oklch(53% 0.2 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-9: oklch(49% 0.19 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-10: oklch(42% 0.17 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-11: oklch(35% 0.15 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-12: oklch(27% 0.12 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-13: oklch(20% 0.09 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-14: oklch(14% 0.07 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-15: oklch(11% 0.05 var(--hue-red, 0) / var(--color-opacity, 1));
-  --red-bright: oklch(65% 0.3 var(--hue-red, 0) / var(--color-opacity, 1));
+  --red-0: oklch(99% 0.03 var(--hue-red, 0));
+  --red-1: oklch(95% 0.06 var(--hue-red, 0));
+  --red-2: oklch(88% 0.12 var(--hue-red, 0));
+  --red-3: oklch(80% 0.14 var(--hue-red, 0));
+  --red-4: oklch(74% 0.16 var(--hue-red, 0));
+  --red-5: oklch(68% 0.19 var(--hue-red, 0));
+  --red-6: oklch(63% 0.2 var(--hue-red, 0));
+  --red-7: oklch(58% 0.21 var(--hue-red, 0));
+  --red-8: oklch(53% 0.2 var(--hue-red, 0));
+  --red-9: oklch(49% 0.19 var(--hue-red, 0));
+  --red-10: oklch(42% 0.17 var(--hue-red, 0));
+  --red-11: oklch(35% 0.15 var(--hue-red, 0));
+  --red-12: oklch(27% 0.12 var(--hue-red, 0));
+  --red-13: oklch(20% 0.09 var(--hue-red, 0));
+  --red-14: oklch(14% 0.07 var(--hue-red, 0));
+  --red-15: oklch(11% 0.05 var(--hue-red, 0));
+  --red-bright: oklch(65% 0.3 var(--hue-red, 0));
 
   /* 
   // MARK: Pink
   Pink
   */
 
-  --pink-0: oklch(99% 0.03 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-1: oklch(95% 0.06 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-2: oklch(88% 0.12 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-3: oklch(80% 0.14 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-4: oklch(74% 0.16 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-5: oklch(68% 0.19 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-6: oklch(63% 0.2 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-7: oklch(58% 0.21 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-8: oklch(53% 0.2 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-9: oklch(49% 0.19 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-10: oklch(42% 0.17 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-11: oklch(35% 0.15 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-12: oklch(27% 0.12 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-13: oklch(20% 0.09 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-14: oklch(14% 0.07 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-15: oklch(11% 0.05 var(--hue-pink, 0) / var(--color-opacity, 1));
-  --pink-bright: oklch(65% 0.3 var(--hue-pink, 0) / var(--color-opacity, 1));
+  --pink-0: oklch(99% 0.03 var(--hue-pink, 0));
+  --pink-1: oklch(95% 0.06 var(--hue-pink, 0));
+  --pink-2: oklch(88% 0.12 var(--hue-pink, 0));
+  --pink-3: oklch(80% 0.14 var(--hue-pink, 0));
+  --pink-4: oklch(74% 0.16 var(--hue-pink, 0));
+  --pink-5: oklch(68% 0.19 var(--hue-pink, 0));
+  --pink-6: oklch(63% 0.2 var(--hue-pink, 0));
+  --pink-7: oklch(58% 0.21 var(--hue-pink, 0));
+  --pink-8: oklch(53% 0.2 var(--hue-pink, 0));
+  --pink-9: oklch(49% 0.19 var(--hue-pink, 0));
+  --pink-10: oklch(42% 0.17 var(--hue-pink, 0));
+  --pink-11: oklch(35% 0.15 var(--hue-pink, 0));
+  --pink-12: oklch(27% 0.12 var(--hue-pink, 0));
+  --pink-13: oklch(20% 0.09 var(--hue-pink, 0));
+  --pink-14: oklch(14% 0.07 var(--hue-pink, 0));
+  --pink-15: oklch(11% 0.05 var(--hue-pink, 0));
+  --pink-bright: oklch(65% 0.3 var(--hue-pink, 0));
 
   /* 
   // MARK: Purple
   Purple
   */
 
-  --purple-0: oklch(99% 0.03 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-1: oklch(95% 0.06 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-2: oklch(88% 0.12 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-3: oklch(80% 0.14 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-4: oklch(74% 0.16 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-5: oklch(68% 0.19 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-6: oklch(63% 0.2 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-7: oklch(58% 0.21 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-8: oklch(53% 0.2 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-9: oklch(49% 0.19 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-10: oklch(42% 0.17 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-11: oklch(35% 0.15 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-12: oklch(27% 0.12 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-13: oklch(20% 0.09 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-14: oklch(14% 0.07 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-15: oklch(11% 0.05 var(--hue-purple, 0) / var(--color-opacity, 1));
-  --purple-bright: oklch(65% 0.3 var(--hue-purple, 0) / var(--color-opacity, 1));
+  --purple-0: oklch(99% 0.03 var(--hue-purple, 0));
+  --purple-1: oklch(95% 0.06 var(--hue-purple, 0));
+  --purple-2: oklch(88% 0.12 var(--hue-purple, 0));
+  --purple-3: oklch(80% 0.14 var(--hue-purple, 0));
+  --purple-4: oklch(74% 0.16 var(--hue-purple, 0));
+  --purple-5: oklch(68% 0.19 var(--hue-purple, 0));
+  --purple-6: oklch(63% 0.2 var(--hue-purple, 0));
+  --purple-7: oklch(58% 0.21 var(--hue-purple, 0));
+  --purple-8: oklch(53% 0.2 var(--hue-purple, 0));
+  --purple-9: oklch(49% 0.19 var(--hue-purple, 0));
+  --purple-10: oklch(42% 0.17 var(--hue-purple, 0));
+  --purple-11: oklch(35% 0.15 var(--hue-purple, 0));
+  --purple-12: oklch(27% 0.12 var(--hue-purple, 0));
+  --purple-13: oklch(20% 0.09 var(--hue-purple, 0));
+  --purple-14: oklch(14% 0.07 var(--hue-purple, 0));
+  --purple-15: oklch(11% 0.05 var(--hue-purple, 0));
+  --purple-bright: oklch(65% 0.3 var(--hue-purple, 0));
 
   /* 
   // MARK: Violet
   Violet
   */
 
-  --violet-0: oklch(99% 0.03 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-1: oklch(95% 0.06 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-2: oklch(88% 0.12 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-3: oklch(80% 0.14 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-4: oklch(74% 0.16 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-5: oklch(68% 0.19 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-6: oklch(63% 0.2 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-7: oklch(58% 0.21 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-8: oklch(53% 0.2 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-9: oklch(49% 0.19 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-10: oklch(42% 0.17 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-11: oklch(35% 0.15 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-12: oklch(27% 0.12 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-13: oklch(20% 0.09 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-14: oklch(14% 0.07 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-15: oklch(11% 0.05 var(--hue-violet, 0) / var(--color-opacity, 1));
-  --violet-bright: oklch(65% 0.3 var(--hue-violet, 0) / var(--color-opacity, 1));
+  --violet-0: oklch(99% 0.03 var(--hue-violet, 0));
+  --violet-1: oklch(95% 0.06 var(--hue-violet, 0));
+  --violet-2: oklch(88% 0.12 var(--hue-violet, 0));
+  --violet-3: oklch(80% 0.14 var(--hue-violet, 0));
+  --violet-4: oklch(74% 0.16 var(--hue-violet, 0));
+  --violet-5: oklch(68% 0.19 var(--hue-violet, 0));
+  --violet-6: oklch(63% 0.2 var(--hue-violet, 0));
+  --violet-7: oklch(58% 0.21 var(--hue-violet, 0));
+  --violet-8: oklch(53% 0.2 var(--hue-violet, 0));
+  --violet-9: oklch(49% 0.19 var(--hue-violet, 0));
+  --violet-10: oklch(42% 0.17 var(--hue-violet, 0));
+  --violet-11: oklch(35% 0.15 var(--hue-violet, 0));
+  --violet-12: oklch(27% 0.12 var(--hue-violet, 0));
+  --violet-13: oklch(20% 0.09 var(--hue-violet, 0));
+  --violet-14: oklch(14% 0.07 var(--hue-violet, 0));
+  --violet-15: oklch(11% 0.05 var(--hue-violet, 0));
+  --violet-bright: oklch(65% 0.3 var(--hue-violet, 0));
   
   /* 
   // MARK: Indigo
   Indigo
   */
 
-  --indigo-0: oklch(99% 0.03 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-1: oklch(95% 0.06 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-2: oklch(88% 0.12 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-3: oklch(80% 0.14 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-4: oklch(74% 0.16 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-5: oklch(68% 0.19 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-6: oklch(63% 0.2 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-7: oklch(58% 0.21 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-8: oklch(53% 0.2 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-9: oklch(49% 0.19 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-10: oklch(42% 0.17 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-11: oklch(35% 0.15 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-12: oklch(27% 0.12 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-13: oklch(20% 0.09 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-14: oklch(14% 0.07 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-15: oklch(11% 0.05 var(--hue-indigo, 0) / var(--color-opacity, 1));
-  --indigo-bright: oklch(65% 0.3 var(--hue-indigo, 0) / var(--color-opacity, 1));
+  --indigo-0: oklch(99% 0.03 var(--hue-indigo, 0));
+  --indigo-1: oklch(95% 0.06 var(--hue-indigo, 0));
+  --indigo-2: oklch(88% 0.12 var(--hue-indigo, 0));
+  --indigo-3: oklch(80% 0.14 var(--hue-indigo, 0));
+  --indigo-4: oklch(74% 0.16 var(--hue-indigo, 0));
+  --indigo-5: oklch(68% 0.19 var(--hue-indigo, 0));
+  --indigo-6: oklch(63% 0.2 var(--hue-indigo, 0));
+  --indigo-7: oklch(58% 0.21 var(--hue-indigo, 0));
+  --indigo-8: oklch(53% 0.2 var(--hue-indigo, 0));
+  --indigo-9: oklch(49% 0.19 var(--hue-indigo, 0));
+  --indigo-10: oklch(42% 0.17 var(--hue-indigo, 0));
+  --indigo-11: oklch(35% 0.15 var(--hue-indigo, 0));
+  --indigo-12: oklch(27% 0.12 var(--hue-indigo, 0));
+  --indigo-13: oklch(20% 0.09 var(--hue-indigo, 0));
+  --indigo-14: oklch(14% 0.07 var(--hue-indigo, 0));
+  --indigo-15: oklch(11% 0.05 var(--hue-indigo, 0));
+  --indigo-bright: oklch(65% 0.3 var(--hue-indigo, 0));
 
   /* 
   // MARK: Blue
   Blue
   */
 
-  --blue-0: oklch(99% 0.03 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-1: oklch(95% 0.06 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-2: oklch(88% 0.12 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-3: oklch(80% 0.14 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-4: oklch(74% 0.16 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-5: oklch(68% 0.19 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-6: oklch(63% 0.2 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-7: oklch(58% 0.21 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-8: oklch(53% 0.2 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-9: oklch(49% 0.19 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-10: oklch(42% 0.17 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-11: oklch(35% 0.15 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-12: oklch(27% 0.12 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-13: oklch(20% 0.09 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-14: oklch(14% 0.07 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-15: oklch(11% 0.05 var(--hue-blue, 0) / var(--color-opacity, 1));
-  --blue-bright: oklch(65% 0.3 var(--hue-blue, 0) / var(--color-opacity, 1));
+  --blue-0: oklch(99% 0.03 var(--hue-blue, 0));
+  --blue-1: oklch(95% 0.06 var(--hue-blue, 0));
+  --blue-2: oklch(88% 0.12 var(--hue-blue, 0));
+  --blue-3: oklch(80% 0.14 var(--hue-blue, 0));
+  --blue-4: oklch(74% 0.16 var(--hue-blue, 0));
+  --blue-5: oklch(68% 0.19 var(--hue-blue, 0));
+  --blue-6: oklch(63% 0.2 var(--hue-blue, 0));
+  --blue-7: oklch(58% 0.21 var(--hue-blue, 0));
+  --blue-8: oklch(53% 0.2 var(--hue-blue, 0));
+  --blue-9: oklch(49% 0.19 var(--hue-blue, 0));
+  --blue-10: oklch(42% 0.17 var(--hue-blue, 0));
+  --blue-11: oklch(35% 0.15 var(--hue-blue, 0));
+  --blue-12: oklch(27% 0.12 var(--hue-blue, 0));
+  --blue-13: oklch(20% 0.09 var(--hue-blue, 0));
+  --blue-14: oklch(14% 0.07 var(--hue-blue, 0));
+  --blue-15: oklch(11% 0.05 var(--hue-blue, 0));
+  --blue-bright: oklch(65% 0.3 var(--hue-blue, 0));
   
   /* 
   // MARK: Cyan
   Cyan
   */
 
-  --cyan-0: oklch(99% 0.03 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-1: oklch(95% 0.06 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-2: oklch(88% 0.12 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-3: oklch(80% 0.14 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-4: oklch(74% 0.16 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-5: oklch(68% 0.19 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-6: oklch(63% 0.2 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-7: oklch(58% 0.21 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-8: oklch(53% 0.2 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-9: oklch(49% 0.19 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-10: oklch(42% 0.17 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-11: oklch(35% 0.15 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-12: oklch(27% 0.12 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-13: oklch(20% 0.09 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-14: oklch(14% 0.07 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-15: oklch(11% 0.05 var(--hue-cyan, 0) / var(--color-opacity, 1));
-  --cyan-bright: oklch(65% 0.3 var(--hue-cyan, 0) / var(--color-opacity, 1));
+  --cyan-0: oklch(99% 0.03 var(--hue-cyan, 0));
+  --cyan-1: oklch(95% 0.06 var(--hue-cyan, 0));
+  --cyan-2: oklch(88% 0.12 var(--hue-cyan, 0));
+  --cyan-3: oklch(80% 0.14 var(--hue-cyan, 0));
+  --cyan-4: oklch(74% 0.16 var(--hue-cyan, 0));
+  --cyan-5: oklch(68% 0.19 var(--hue-cyan, 0));
+  --cyan-6: oklch(63% 0.2 var(--hue-cyan, 0));
+  --cyan-7: oklch(58% 0.21 var(--hue-cyan, 0));
+  --cyan-8: oklch(53% 0.2 var(--hue-cyan, 0));
+  --cyan-9: oklch(49% 0.19 var(--hue-cyan, 0));
+  --cyan-10: oklch(42% 0.17 var(--hue-cyan, 0));
+  --cyan-11: oklch(35% 0.15 var(--hue-cyan, 0));
+  --cyan-12: oklch(27% 0.12 var(--hue-cyan, 0));
+  --cyan-13: oklch(20% 0.09 var(--hue-cyan, 0));
+  --cyan-14: oklch(14% 0.07 var(--hue-cyan, 0));
+  --cyan-15: oklch(11% 0.05 var(--hue-cyan, 0));
+  --cyan-bright: oklch(65% 0.3 var(--hue-cyan, 0));
 
   /* 
   // MARK: Teal
   Teal
   */
 
-  --teal-0: oklch(99% 0.03 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-1: oklch(95% 0.06 var(--hue-teal, 0) / var(--color-opacity, 1)); 
-  --teal-2: oklch(78.2% 0.12 var(--hue-teal, 0) / var(--color-opacity, 1)); 
-  --teal-3: oklch(80% 0.14 var(--hue-teal, 0) / var(--color-opacity, 1)); 
-  --teal-4: oklch(74% 0.16 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-5: oklch(68% 0.19 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-6: oklch(63% 0.2 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-7: oklch(58% 0.21 var(--hue-teal, 0) / var(--color-opacity, 1)); 
-  --teal-8: oklch(53% 0.2 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-9: oklch(49% 0.19 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-10: oklch(42% 0.17 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-11: oklch(35% 0.15 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-12: oklch(27% 0.12 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-13: oklch(20% 0.09 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-14: oklch(14% 0.07 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-15: oklch(11% 0.05 var(--hue-teal, 0) / var(--color-opacity, 1));
-  --teal-bright: oklch(65% 0.3 var(--hue-teal, 0) / var(--color-opacity, 1));
+  --teal-0: oklch(99% 0.03 var(--hue-teal, 0));
+  --teal-1: oklch(95% 0.06 var(--hue-teal, 0)); 
+  --teal-2: oklch(78.2% 0.12 var(--hue-teal, 0)); 
+  --teal-3: oklch(80% 0.14 var(--hue-teal, 0)); 
+  --teal-4: oklch(74% 0.16 var(--hue-teal, 0));
+  --teal-5: oklch(68% 0.19 var(--hue-teal, 0));
+  --teal-6: oklch(63% 0.2 var(--hue-teal, 0));
+  --teal-7: oklch(58% 0.21 var(--hue-teal, 0)); 
+  --teal-8: oklch(53% 0.2 var(--hue-teal, 0));
+  --teal-9: oklch(49% 0.19 var(--hue-teal, 0));
+  --teal-10: oklch(42% 0.17 var(--hue-teal, 0));
+  --teal-11: oklch(35% 0.15 var(--hue-teal, 0));
+  --teal-12: oklch(27% 0.12 var(--hue-teal, 0));
+  --teal-13: oklch(20% 0.09 var(--hue-teal, 0));
+  --teal-14: oklch(14% 0.07 var(--hue-teal, 0));
+  --teal-15: oklch(11% 0.05 var(--hue-teal, 0));
+  --teal-bright: oklch(65% 0.3 var(--hue-teal, 0));
 
   /* 
   // MARK: Green
   Green
   */
 
-  --green-0: oklch(99% 0.03 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-1: oklch(95% 0.06 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-2: oklch(88% 0.12 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-3: oklch(80% 0.14 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-4: oklch(74% 0.16 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-5: oklch(68% 0.19 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-6: oklch(63% 0.2 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-7: oklch(58% 0.21 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-8: oklch(53% 0.2 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-9: oklch(49% 0.19 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-10: oklch(42% 0.17 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-11: oklch(35% 0.15 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-12: oklch(27% 0.12 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-13: oklch(20% 0.09 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-14: oklch(14% 0.07 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-15: oklch(11% 0.05 var(--hue-green, 0) / var(--color-opacity, 1));
-  --green-bright: oklch(65% 0.3 var(--hue-green, 0) / var(--color-opacity, 1));
+  --green-0: oklch(99% 0.03 var(--hue-green, 0));
+  --green-1: oklch(95% 0.06 var(--hue-green, 0));
+  --green-2: oklch(88% 0.12 var(--hue-green, 0));
+  --green-3: oklch(80% 0.14 var(--hue-green, 0));
+  --green-4: oklch(74% 0.16 var(--hue-green, 0));
+  --green-5: oklch(68% 0.19 var(--hue-green, 0));
+  --green-6: oklch(63% 0.2 var(--hue-green, 0));
+  --green-7: oklch(58% 0.21 var(--hue-green, 0));
+  --green-8: oklch(53% 0.2 var(--hue-green, 0));
+  --green-9: oklch(49% 0.19 var(--hue-green, 0));
+  --green-10: oklch(42% 0.17 var(--hue-green, 0));
+  --green-11: oklch(35% 0.15 var(--hue-green, 0));
+  --green-12: oklch(27% 0.12 var(--hue-green, 0));
+  --green-13: oklch(20% 0.09 var(--hue-green, 0));
+  --green-14: oklch(14% 0.07 var(--hue-green, 0));
+  --green-15: oklch(11% 0.05 var(--hue-green, 0));
+  --green-bright: oklch(65% 0.3 var(--hue-green, 0));
 
   /* 
   // MARK: Lime
   Lime
   */
 
-  --lime-0: oklch(99% 0.03 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-1: oklch(95% 0.06 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-2: oklch(88% 0.12 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-3: oklch(80% 0.14 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-4: oklch(74% 0.16 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-5: oklch(68% 0.19 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-6: oklch(63% 0.2 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-7: oklch(58% 0.21 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-8: oklch(53% 0.2 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-9: oklch(49% 0.19 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-10: oklch(42% 0.17 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-11: oklch(35% 0.15 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-12: oklch(27% 0.12 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-13: oklch(20% 0.09 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-14: oklch(14% 0.07 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-15: oklch(11% 0.05 var(--hue-lime, 0) / var(--color-opacity, 1));
-  --lime-bright: oklch(65% 0.3 var(--hue-lime, 0) / var(--color-opacity, 1));
+  --lime-0: oklch(99% 0.03 var(--hue-lime, 0));
+  --lime-1: oklch(95% 0.06 var(--hue-lime, 0));
+  --lime-2: oklch(88% 0.12 var(--hue-lime, 0));
+  --lime-3: oklch(80% 0.14 var(--hue-lime, 0));
+  --lime-4: oklch(74% 0.16 var(--hue-lime, 0));
+  --lime-5: oklch(68% 0.19 var(--hue-lime, 0));
+  --lime-6: oklch(63% 0.2 var(--hue-lime, 0));
+  --lime-7: oklch(58% 0.21 var(--hue-lime, 0));
+  --lime-8: oklch(53% 0.2 var(--hue-lime, 0));
+  --lime-9: oklch(49% 0.19 var(--hue-lime, 0));
+  --lime-10: oklch(42% 0.17 var(--hue-lime, 0));
+  --lime-11: oklch(35% 0.15 var(--hue-lime, 0));
+  --lime-12: oklch(27% 0.12 var(--hue-lime, 0));
+  --lime-13: oklch(20% 0.09 var(--hue-lime, 0));
+  --lime-14: oklch(14% 0.07 var(--hue-lime, 0));
+  --lime-15: oklch(11% 0.05 var(--hue-lime, 0));
+  --lime-bright: oklch(65% 0.3 var(--hue-lime, 0));
 
   /* 
   // MARK: Yellow
   Yellow
   */
 
-  --yellow-0: oklch(99% 0.03 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-1: oklch(95% 0.06 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-2: oklch(88% 0.12 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-3: oklch(80% 0.14 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-4: oklch(74% 0.16 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-5: oklch(68% 0.19 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-6: oklch(63% 0.2 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-7: oklch(58% 0.21 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-8: oklch(53% 0.2 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-9: oklch(49% 0.19 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-10: oklch(42% 0.17 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-11: oklch(35% 0.15 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-12: oklch(27% 0.12 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-13: oklch(20% 0.09 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-14: oklch(14% 0.07 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-15: oklch(11% 0.05 var(--hue-yellow, 0) / var(--color-opacity, 1));
-  --yellow-bright: oklch(85% 0.3 var(--hue-yellow, 0) / var(--color-opacity, 1));
+  --yellow-0: oklch(99% 0.03 var(--hue-yellow, 0));
+  --yellow-1: oklch(95% 0.06 var(--hue-yellow, 0));
+  --yellow-2: oklch(88% 0.12 var(--hue-yellow, 0));
+  --yellow-3: oklch(80% 0.14 var(--hue-yellow, 0));
+  --yellow-4: oklch(74% 0.16 var(--hue-yellow, 0));
+  --yellow-5: oklch(68% 0.19 var(--hue-yellow, 0));
+  --yellow-6: oklch(63% 0.2 var(--hue-yellow, 0));
+  --yellow-7: oklch(58% 0.21 var(--hue-yellow, 0));
+  --yellow-8: oklch(53% 0.2 var(--hue-yellow, 0));
+  --yellow-9: oklch(49% 0.19 var(--hue-yellow, 0));
+  --yellow-10: oklch(42% 0.17 var(--hue-yellow, 0));
+  --yellow-11: oklch(35% 0.15 var(--hue-yellow, 0));
+  --yellow-12: oklch(27% 0.12 var(--hue-yellow, 0));
+  --yellow-13: oklch(20% 0.09 var(--hue-yellow, 0));
+  --yellow-14: oklch(14% 0.07 var(--hue-yellow, 0));
+  --yellow-15: oklch(11% 0.05 var(--hue-yellow, 0));
+  --yellow-bright: oklch(85% 0.3 var(--hue-yellow, 0));
 
   /* 
   // MARK: Orange
   Orange
   */
 
-  --orange-0: oklch(99% 0.03 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-1: oklch(95% 0.06 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-2: oklch(88% 0.12 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-3: oklch(80% 0.14 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-4: oklch(74% 0.16 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-5: oklch(68% 0.19 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-6: oklch(63% 0.2 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-7: oklch(58% 0.21 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-8: oklch(53% 0.2 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-9: oklch(49% 0.19 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-10: oklch(42% 0.17 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-11: oklch(35% 0.15 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-12: oklch(27% 0.12 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-13: oklch(20% 0.09 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-14: oklch(14% 0.07 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-15: oklch(11% 0.05 var(--hue-orange, 0) / var(--color-opacity, 1));
-  --orange-bright: oklch(65% 0.3 var(--hue-orange, 0) / var(--color-opacity, 1));
+  --orange-0: oklch(99% 0.03 var(--hue-orange, 0));
+  --orange-1: oklch(95% 0.06 var(--hue-orange, 0));
+  --orange-2: oklch(88% 0.12 var(--hue-orange, 0));
+  --orange-3: oklch(80% 0.14 var(--hue-orange, 0));
+  --orange-4: oklch(74% 0.16 var(--hue-orange, 0));
+  --orange-5: oklch(68% 0.19 var(--hue-orange, 0));
+  --orange-6: oklch(63% 0.2 var(--hue-orange, 0));
+  --orange-7: oklch(58% 0.21 var(--hue-orange, 0));
+  --orange-8: oklch(53% 0.2 var(--hue-orange, 0));
+  --orange-9: oklch(49% 0.19 var(--hue-orange, 0));
+  --orange-10: oklch(42% 0.17 var(--hue-orange, 0));
+  --orange-11: oklch(35% 0.15 var(--hue-orange, 0));
+  --orange-12: oklch(27% 0.12 var(--hue-orange, 0));
+  --orange-13: oklch(20% 0.09 var(--hue-orange, 0));
+  --orange-14: oklch(14% 0.07 var(--hue-orange, 0));
+  --orange-15: oklch(11% 0.05 var(--hue-orange, 0));
+  --orange-bright: oklch(65% 0.3 var(--hue-orange, 0));
 
   /* 
   // MARK: Gray
   Gray
   */
 
-  --gray-0: oklch(99% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-1: oklch(95% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-2: oklch(88% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-3: oklch(80% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-4: oklch(74% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-5: oklch(68% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-6: oklch(63% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-7: oklch(58% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-8: oklch(53% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-9: oklch(49% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-10: oklch(43% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-11: oklch(37% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-12: oklch(31% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-13: oklch(25% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-14: oklch(18% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
-  --gray-15: oklch(10% var(--gray-chroma, none) var(--gray-hue, none) / var(--color-opacity, 1));
+  --gray-0: oklch(99% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-1: oklch(95% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-2: oklch(88% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-3: oklch(80% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-4: oklch(74% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-5: oklch(68% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-6: oklch(63% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-7: oklch(58% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-8: oklch(53% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-9: oklch(49% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-10: oklch(43% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-11: oklch(37% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-12: oklch(31% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-13: oklch(25% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-14: oklch(18% var(--gray-chroma, none) var(--gray-hue, none));
+  --gray-15: oklch(10% var(--gray-chroma, none) var(--gray-hue, none));
   
   /* 
   // MARK: Gray Cool
   Gray Cool
   */
 
-  --gray-cool-0: oklch(99% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-1: oklch(95% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-2: oklch(88% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-3: oklch(80% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-4: oklch(74% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-5: oklch(68% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-6: oklch(63% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-7: oklch(58% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-8: oklch(53% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-9: oklch(49% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-10: oklch(43% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-11: oklch(37% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-12: oklch(31% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-13: oklch(25% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-14: oklch(18% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
-  --gray-cool-15: oklch(10% var(--gray-cool-chroma, none) var(--gray-cool-hue, none) / var(--color-opacity, 1));
+  --gray-cool-0: oklch(99% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-1: oklch(95% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-2: oklch(88% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-3: oklch(80% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-4: oklch(74% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-5: oklch(68% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-6: oklch(63% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-7: oklch(58% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-8: oklch(53% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-9: oklch(49% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-10: oklch(43% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-11: oklch(37% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-12: oklch(31% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-13: oklch(25% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-14: oklch(18% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
+  --gray-cool-15: oklch(10% var(--gray-cool-chroma, none) var(--gray-cool-hue, none));
   
   /* 
   // MARK: Gray Warm
   Gray Warm
   */
   
-  --gray-warm-0: oklch(99% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-1: oklch(95% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-2: oklch(88% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-3: oklch(80% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-4: oklch(74% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-5: oklch(68% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-6: oklch(63% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-7: oklch(58% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-8: oklch(53% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-9: oklch(49% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-10: oklch(43% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-11: oklch(37% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-12: oklch(31% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-13: oklch(25% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-14: oklch(18% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
-  --gray-warm-15: oklch(10% var(--gray-warm-chroma, none) var(--gray-warm-hue, none) / var(--color-opacity, 1));
+  --gray-warm-0: oklch(99% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-1: oklch(95% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-2: oklch(88% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-3: oklch(80% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-4: oklch(74% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-5: oklch(68% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-6: oklch(63% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-7: oklch(58% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-8: oklch(53% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-9: oklch(49% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-10: oklch(43% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-11: oklch(37% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-12: oklch(31% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-13: oklch(25% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-14: oklch(18% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
+  --gray-warm-15: oklch(10% var(--gray-warm-chroma, none) var(--gray-warm-hue, none));
 
   /* 
   // MARK: Easings

@@ -1,9 +1,10 @@
+@import "./utility/type.css";
 @import "./utility/flex.css";
-@import "./utility/effects.css";
 @import "./utility/grid.css";
 @import "./utility/layout.css";
 @import "./utility/styles.css";
-@import "./utility/type.css";
+@import "./utility/effects.css";
+
 
 /* BEM Modifiers in Pure CSS Nesting */
 /* 

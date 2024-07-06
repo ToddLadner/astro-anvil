@@ -3,13 +3,49 @@ import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import Button from '@components/Button.astro';
+import Hero from '@components/Hero.astro';
 
 import heroImage from '@images/fungi.jpg';
 ---
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-	<main>
+	<Hero background={heroImage.src}></Hero>
+	
+		<!-- <Hero backgroundValue={heroImage} ></Hero> -->
 		
+
+	<main>
+		<div class="scoreboard">
+		<ol>
+			<li style="--i: 1">
+				<span class="number">1</span>
+				<p>Cyberduck</p>
+				<span class="score">404</span>
+			</li>
+			<li style="--i: 2">
+				<span class="number">2</span>
+				<p>Ladylucifer</p>
+				<span class="score">388</span>
+			</li>
+			<li style="--i: 3">
+				<span class="number">3</span>
+				<p>RetroPirate</p>
+				<span class="score">303</span>
+			</li>
+			<li style="--i: 4">
+				<span class="number">4</span>
+				<p>KRmonster</p>
+				<span class="score">260</span>
+			</li>
+			<li style="--i: 5">
+				<span class="number">5</span>
+				<p>Superfox</p>
+				<span class="score">222</span>
+			</li>
+		</ol>
+		<input type="range" value="230" min="0" max="360" id="hue"> 
+	</div>
+		<hr>	
 		<Button
 			text='This is a button'
 			icon='skull'
@@ -24,6 +60,7 @@ import heroImage from '@images/fungi.jpg';
 		<div class="test push-out"></div>
 		<div class="test alert"></div>
 		<div class="test shake-in"></div>
+		<div class="test slide-fade"></div>
 	</div>
 		
 		
@@ -91,11 +128,134 @@ import heroImage from '@images/fungi.jpg';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		
 	</main>
 </Layout>
-
+<script>
+	hue.oninput = (e) =>
+	document.firstElementChild.style.setProperty('--hue', e.target.value);
+</script>
 <style>
+	@layer demo {
+  :root {
+    --hue: 230;
+    --primary: oklch(70% .2 var(--hue));
+    --primary-highlight: oklch(97% .2 var(--hue));
+    --header-bg: oklch(35% .01 200);
+    --text: white;
+  }
+  
+  li {
+    --_bg: oklch(
+      /* decrease lightness as list grows */
+      calc(75% - (var(--i) * 5%)) 
+      
+      /* decrease chroma as list grows */
+      calc(.2 - (var(--i) * .01)) 
+      
+      /* lightly rotate the hue as the list grows */
+      calc(var(--hue) - (var(--i) + 5))
+    );
+  }
+}
 
+@layer demo {
+  html {
+    background: radial-gradient(
+      circle at center, 
+      var(--primary-highlight), 
+      var(--primary)
+    );
+  }
+  
+  .scoreboard {
+    box-shadow:
+      3px 3px 2px oklch(0% .02 var(--hue) / 0.02),
+      7px 7px 5px oklch(0% .02 var(--hue) / 0.03),
+      13px 13px 10px oklch(0% .02 var(--hue) / 0.04),
+      22px 22px 18px oklch(0% .02 var(--hue) / 0.07),
+      42px 42px 33px oklch(0% .02 var(--hue) / 0.075),
+      100px 100px 80px oklch(0% .02 var(--hue) / 0.1)
+    ;
+    
+    & > header {
+      background: var(--header-bg);
+      color: var(--text);
+      
+      & > svg {
+        color: var(--primary);
+      }
+    }
+    
+    & li {
+      background: var(--_bg);
+      color: var(--text);
+    }
+    
+    & .number {
+      background: var(--text);
+      color: var(--_bg);
+    }
+  }
+}
+
+@layer demo {
+  .scoreboard {
+    --_pad: 1rem 1.5rem;
+    
+    border-radius: 10px;
+    overflow: clip;
+    
+    & > header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: var(--_pad);
+      
+      & > svg {
+        inline-size: 2.5ch;
+      }
+    }
+    
+    & > ol {
+      padding: 0;
+      
+      & > li {
+        padding: var(--_pad);
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        
+        &::marker {
+          display: inline-block;
+        }
+        
+        & > p {
+          flex: 1;
+          inline-size: clamp(10ch, 50vw, 30ch);
+        }
+        
+        & > .number {
+          aspect-ratio: 1;
+          border-radius: 1e3px;
+          block-size: 3ch;
+          font-size: .9rem;
+          line-height: 1;
+          display: inline-flex;
+          place-items: center;
+          place-content: center;
+        }
+      }
+    }
+  }
+}
+/**/
+
+	div.test {
+		size: 10rem;
+		padding: 1rem;
+		background-color: oklch(from var(--brand-5) l c h / 50% );
+	}
 .loaded {
 		opacity:0;
   	animation: var(--animation-fade-in) forwards;
@@ -116,15 +276,17 @@ import heroImage from '@images/fungi.jpg';
     var(--animation-fade-out);
   animation-timing-function: var(--ease-elastic-in-out-4);
 }
-
+.slide-fade {
+  animation:
+    var(--animation-fade-out) forwards,
+    var(--animation-slide-out-down);
+  animation-timing-function: var(--ease-elastic-in-out-3);
+  animation-duration: 1s;
+}
 	.nav-list li{
 		padding: 1rem; 
 	}
-	div.test {
-		size: 10rem;
-		padding: 1rem;
-		background-color: var(--brand-5);
-	}
+
 	
 	div.test .test {
 		size: 10rem;

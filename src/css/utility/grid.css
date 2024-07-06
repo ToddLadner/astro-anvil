@@ -4,6 +4,7 @@ Display
 Layouts
   RAM Grid
   12 Span Grid
+  Pile
 ─────────────────────────────── */
 
 /* 
@@ -28,4 +29,10 @@ Layouts
 .col-grid { 
   grid-template-columns: repeat(var(--grid-col, 12), 1fr); 
   gap: var(--col-gap, 0) var(--row-gap, var(--space-sm-lg, clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem)));
+}
+
+/* Pile */
+.pile-grid {
+  place-content: center;
+  > * { grid-area: 1/1; }
 }

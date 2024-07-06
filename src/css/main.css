@@ -1,11 +1,11 @@
-@layer reset, framework, base, layout, components, theme, utilities;
+@layer reset, framework, base, demo, layout, components, theme, utilities;
 
 @import "media.css";
 @import "fonts.css";
-@import "reset.css";
+@import "reset.css"; /* reset */
 @import "theme.css";
 @import "utility.css";
-@import "buttons.css";
+@import "buttons.css"; /* base */
 @import "buttons.custom.css";
 @import "forms.css";
 @import "keyframes.css";

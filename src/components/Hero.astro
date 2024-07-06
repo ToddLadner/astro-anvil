@@ -1,0 +1,56 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Image, getImage } from "astro:assets";
+
+import Button from '@components/Button.astro';
+
+import spaceWhale from '@images/space-whale.jpg';
+
+interface Props extends HTMLAttributes<"section"> {
+  background?: string;
+  height?: string;
+  classes?: string;
+}
+
+const { 
+  background, 
+  classes,
+  height,
+  ...rest 
+} = Astro.props;
+
+
+---
+
+<section class="relative grid " class:list={[background,classes]} {...rest}>
+  <div class="content">
+    <p>This is a label</p> 
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vero aliquam, natus quae architecto hic quod!</p>
+    <Button text="Get Started" /> 
+    <Button text="Get Started" theme="plain" />
+  </div>
+  <Image class="background" src={spaceWhale} alt="hero image" />
+</section>
+
+<style>
+section { 
+  isolation: isolate; 
+  display: grid;  
+  place-content: center;
+  aspect-ratio: var(--ratio-ultrawide);
+
+}
+.background {
+  position: absolute;
+  inset:0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  max-width: var(--measure-lg);
+  outline: 1px solid red;
+}
+</style>
