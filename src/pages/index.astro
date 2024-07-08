@@ -1,18 +1,27 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import Button from '@components/Button.astro';
 import Hero from '@components/Hero.astro';
 
+// Optimized background hero image
 import heroImage from '@images/fungi.jpg';
+const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
-
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-	<Hero background={heroImage.src}></Hero>
-	
-		<!-- <Hero backgroundValue={heroImage} ></Hero> -->
-		
+	<Hero 
+		classes="hero-section" 
+		ratio="ultrawide"
+		style={`background: url('${optimizedBackgroundImage.src}')`}
+	>
+	<div class="content">
+    <p>This is a label</p> 
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vero aliquam, natus quae architecto hic quod!</p>
+  </div>
+</Hero>
+
 
 	<main>
 		<div class="scoreboard">
@@ -132,17 +141,19 @@ import heroImage from '@images/fungi.jpg';
 	</main>
 </Layout>
 <script>
-	hue.oninput = (e) =>
-	document.firstElementChild.style.setProperty('--hue', e.target.value);
+	hue.oninput = (e) => document.firstElementChild.style.setProperty('--hue', e.target.value);
 </script>
 <style>
+.hero-section {
+	--hero-background: var(--teal-4);
+	--aspect-ratio: var(--ratio-widescreen);
+	background-position: center center;
+    background-size: cover;
+}
 	@layer demo {
   :root {
     --hue: 230;
-    --primary: oklch(70% .2 var(--hue));
-    --primary-highlight: oklch(97% .2 var(--hue));
-    --header-bg: oklch(35% .01 200);
-    --text: white;
+    
   }
   
   li {
@@ -312,13 +323,6 @@ import heroImage from '@images/fungi.jpg';
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
