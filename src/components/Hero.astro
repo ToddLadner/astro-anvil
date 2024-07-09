@@ -13,28 +13,34 @@ const {
   styles,
   ...rest 
 } = Astro.props;
+
+const aspectRatio = '--ratio-square';
+const backgroundColor = "rgb(24 121 78)";
 ---
 
-<style>
+<style define:vars={{ aspectRatio, backgroundColor }}>
 
-  .hero-section {
-    isolation: isolate;
-    display: grid;
-    place-content: center;
-    aspect-ratio: var(--aspect-ratio, var(--ratio-ultrawide));
-    background: var(--hero-background);
-    padding-block: var(--space-md);
-  }
+
 
   .content {
+    background-color: var(--backgroundColor);
+    aspect-ratio: var(--aspectRatio);
     max-width: var(--measure-lg);
     outline: 1px solid red;
    
   }
 
+  .section {
+    background-color: var(--backgroundColor);
+    isolation: isolate;
+    display: grid;
+    place-content: center;
+    padding-block: var(--space-md);
+  }
+
 </style>
 
-<section class:list={[ratio, classes]} {...rest}>
+<section class:list={['section', ratio, classes]} {...rest}>
   <div class="content">
     <slot/>
   </div>

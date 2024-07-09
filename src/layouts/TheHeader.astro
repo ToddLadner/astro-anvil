@@ -2,7 +2,9 @@
 import { Icon } from 'astro-icon/components';
 import TheNavigation from './TheNavigation.astro';
 ---
-<header class="max-inline-content flex flex-wrap items-center" >
+<header 
+  class="max-inline-content flex flex-wrap items-center adaptive-glass sticky" 
+  style="top:0;" >
   <!-- Logo -->
   <a href="/" class="logo inline-flex">
     <Icon name="skull" title="Geometric Skull"/>
@@ -15,10 +17,9 @@ import TheNavigation from './TheNavigation.astro';
 
 <style>
   header {
-
+    z-index: var(--layer-5);
     gap: var(--space-3xs-2xs); 
     padding-block: var(--space-2xs-xs);
-    border-bottom: 2px solid var(--surface-4);
   }
 
   [data-icon="skull"] { size: var(--space-sm-md) }
