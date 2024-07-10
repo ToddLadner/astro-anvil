@@ -70,11 +70,6 @@ button.circle {
 .sm { --size: var(--font-size-sm) }
 .xs { --size: var(--font-size-xs) }
 
-/* 07 Button shape */
-.square { --border-radius: 0 }
 
-:is(.pill, .circle) { --border-radius: 1e3px }
-
-.circle { aspect-ratio: var(--ratio-square) }
 
 
