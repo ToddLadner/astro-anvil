@@ -18,9 +18,9 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 		classes="hero-section" 
 
 	>
-	<div class="content">
+	<div class="content stack">
     <p>This is a label</p> 
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+    <h1 style="--space:.25em">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vero aliquam, natus quae architecto hic quod!</p>
   </div>
 </Hero>
@@ -166,7 +166,7 @@ document.firstElementChild.style.setProperty('--hue', e.target.value)
   }
   
   li {
-    --_bg: oklch(
+    --bg: oklch(
       /* decrease lightness as list grows */
       calc(75% - (var(--i) * 5%)) 
       
@@ -208,13 +208,13 @@ document.firstElementChild.style.setProperty('--hue', e.target.value)
     }
     
     & li {
-      background: var(--_bg);
+      background: var(--bg);
       color: var(--text);
     }
     
     & .number {
       background: var(--text);
-      color: var(--_bg);
+      color: var(--bg);
     }
   }
 }
