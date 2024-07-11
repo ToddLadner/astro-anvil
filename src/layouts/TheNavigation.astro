@@ -3,9 +3,12 @@ import { Icon } from 'astro-icon/components';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
+  { name: 'Buttons', path: '/buttons' },
+  { name: 'Props', path: '/props' },
   { name: 'Blog', path: '/blog' }
 ];
 ---
+
 <style>
   nav { margin-left: auto; }
 
@@ -17,22 +20,13 @@ const navLinks = [
 
 <nav>
   <ul role="list" class="nav-list">
-    <li>
-      <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Home</a>
-    </li>
-    <li>
-      <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
-    </li>
-    <li>
-      <a href="/buttons" aria-current={Astro.url.pathname === '/buttons' ? 'page' : undefined}>Buttons</a>
-    </li>
-    <li>
-      <a href="/props" aria-current={Astro.url.pathname === '/props' ? 'page' : undefined}>Props</a>
-    </li>
-    <li>
-      <a href="/blog" aria-current={Astro.url.pathname === '/blog' ? 'page' : undefined}>Blog</a>
-    </li>
+    {
+      navLinks.map(({ name, path }) => (
+        <li>
+          <a href={path} aria-current={Astro.url.pathname === path ? 'page' : undefined}>{name}</a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
-
 
