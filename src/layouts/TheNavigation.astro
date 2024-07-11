@@ -35,7 +35,7 @@ const navLinks = [
   },
   { 
     name: 'Blog', 
-    path: '/blog', 
+    path: '/blog/', 
     icon: 'skull' 
   }
 ];
@@ -48,7 +48,7 @@ const navLinks = [
   [data-icon] { size: var(--space-xs) }
 </style>
 
-<!-- YES: aria-label="primary" | NO: aria-label="primary navigation" Because od Landmarks, screen readers will announce this as "primary navigation navigation" -->
+<!-- YES: aria-label="primary" | NO: aria-label="primary navigation" Because of Landmarks, screen readers will announce this as "primary navigation navigation" -->
 <nav class="nav" aria-label={ariaLabel} class:list={[classes]} {...rest}>
   <ul role="list" class="nav-list flex">
     {

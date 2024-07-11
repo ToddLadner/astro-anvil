@@ -33,6 +33,6 @@ Layouts
 
 /* Pile */
 .pile-grid {
-  place-content: center;
+  place-content: var(--place-content, center);
   > * { grid-area: 1/1; }
 }

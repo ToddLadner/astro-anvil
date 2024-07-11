@@ -14,15 +14,23 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 			url('${optimizedBackgroundImage.src}')`} -->
 <Layout title="Welcome to Astro." description="The official site of Astro.">
 	<Hero 
+		gradient="linear-gradient(to right, #ff7e5f, #feb47b)"
 		classes="hero-section" 
-		ratio="square"
-
+		style="--place-content: start center;"
 	>
 	<div class="content">
     <p>This is a label</p> 
     <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vero aliquam, natus quae architecto hic quod!</p>
   </div>
+</Hero>
+
+<Hero color="#00ff00" classes="hero-section">
+  <h1>This is a solid color background</h1>
+</Hero>
+
+<Hero imagePath="/src/img/fungi.jpg" >
+  <h1>This is an image background</h1>
 </Hero>
 
 
