@@ -1,5 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Blog', path: '/blog' }
+];
 ---
 <style>
   nav { margin-left: auto; }
@@ -12,23 +17,22 @@ import { Icon } from 'astro-icon/components';
 
 <nav>
   <ul role="list" class="nav-list">
-    <li><a href="/" style="primary" class="nav-link">Home</a></li>
-    <li><a href="/about" style="primary" class="nav-link">About</a></li>
-    <li><a href="/buttons/" style="primary" class="nav-link">Buttons</a></li>
-    <li><a href="/props/" style="primary" class="nav-link">Props</a></li>
-    <li><a href="/blog/" style="primary" class="nav-link">Blog</a></li>
+    <li>
+      <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Home</a>
+    </li>
+    <li>
+      <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
+    </li>
+    <li>
+      <a href="/buttons" aria-current={Astro.url.pathname === '/buttons' ? 'page' : undefined}>Buttons</a>
+    </li>
+    <li>
+      <a href="/props" aria-current={Astro.url.pathname === '/props' ? 'page' : undefined}>Props</a>
+    </li>
+    <li>
+      <a href="/blog" aria-current={Astro.url.pathname === '/blog' ? 'page' : undefined}>Blog</a>
+    </li>
   </ul>
 </nav>
-
-<script>
-  // Sets an accessable aria-current='page' hook to use for styling
- const navLinks = document.querySelectorAll('.nav-link');
-
-  navLinks.forEach((link) => { 
-    if(link.getAttribute("href") === window.location.pathname) {
-      link.setAttribute("aria-current", "page");
-    }
-  });
-</script>
 
 
