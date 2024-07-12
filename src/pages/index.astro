@@ -9,29 +9,41 @@ import Hero from '@components/Hero.astro';
 import heroImage from '@images/fungi.jpg';
 const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
-<!-- 		style={` background: 
-			linear-gradient( to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)), 
-			url('${optimizedBackgroundImage.src}')`} -->
 <Layout title="Welcome to Astro." description="The official site of Astro.">
 	<Hero 
-		gradient="linear-gradient(to right, #ff7e5f, #feb47b)"
-		classes="hero-section" 
+		gradients={[
+			"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+    	"linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
+		]}
+		imagePaths={[ "/src/img/fungi.jpg" ]}
+		aspectRatio="var(--ratio-ultrawide)"
+	>	
+		<!-- content -->
+			<h1>This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+	</Hero>
 
+	<Hero 
+	colors={[
+    "var(--teal-4)",
+  ]}
+		aspectRatio="var(--ratio-widescreen)"
 	>
-	<div class="content stack">
-    <p>This is a label</p> 
-    <h1 style="--space:.25em">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vero aliquam, natus quae architecto hic quod!</p>
+		<h1>This is a solid color background</h1>
+	</Hero>
+
+	<Hero 
+		gradients={[
+			"linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3))",
+			"linear-gradient(to bottom, var(--orange-3), var(--red-5))"
+		]}
+	
+	>
+	<div class="stack" color="white">
+		<h1>This is a multi gradient background</h1>
   </div>
-</Hero>
+	</Hero>
 
-<Hero color="#00ff00" classes="hero-section">
-  <h1>This is a solid color background</h1>
-</Hero>
 
-<Hero imagePath="/src/img/fungi.jpg" >
-  <h1>This is an image background</h1>
-</Hero>
 
 
 	<main>
@@ -163,8 +175,9 @@ document.firstElementChild.style.setProperty('--hue', e.target.value)
     --primary-highlight: oklch(97% .2 var(--hue));
     --header-bg: oklch(35% .01 200);
     --text: white;
+		--ratio-ultrawide: 18/5;
   }
-  
+
   li {
     --bg: oklch(
       /* decrease lightness as list grows */
@@ -270,7 +283,9 @@ document.firstElementChild.style.setProperty('--hue', e.target.value)
   }
 }
 /**/
-
+.props {
+	--include: var(--ratio-widescreen, var(--teal-4));
+}
 	div.test {
 		size: 10rem;
 		padding: 1rem;
