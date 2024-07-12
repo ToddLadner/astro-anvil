@@ -18,14 +18,21 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 		imagePaths={[ "/src/img/fungi.jpg" ]}
 		aspectRatio="var(--ratio-ultrawide)"
 	>	
-		<!-- content -->
+			<!-- content -->
 			<h1>This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
 	</Hero>
 
 	<Hero 
-	colors={[
-    "var(--teal-4)",
-  ]}
+		gradient="linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))"
+		imagePath="/src/img/fungi.jpg"
+		aspectRatio="var(--ratio-ultrawide)"
+	>	
+		<!-- content -->
+		<h1>This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+</Hero>
+
+	<Hero 
+		color="var(--red-5)"
 		aspectRatio="var(--ratio-widescreen)"
 	>
 		<h1>This is a solid color background</h1>
@@ -164,6 +171,9 @@ hue.oninput = e =>
 document.firstElementChild.style.setProperty('--hue', e.target.value)
 </script>
 <style>
+	.props {
+	--include: var(--ratio-widescreen, var(--teal-4));
+}
 /* .hero-section {
 	--hero-background: var(--teal-4);
 	--aspect-ratio: var(--ratio-widescreen);
@@ -283,9 +293,7 @@ document.firstElementChild.style.setProperty('--hue', e.target.value)
   }
 }
 /**/
-.props {
-	--include: var(--ratio-widescreen, var(--teal-4));
-}
+
 	div.test {
 		size: 10rem;
 		padding: 1rem;
