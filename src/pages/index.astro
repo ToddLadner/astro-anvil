@@ -10,25 +10,39 @@ import heroImage from '@images/fungi.jpg';
 const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-	<Background 
+	<Background
 		tag='article'
+		
 		gradients={[
 			"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
     	"linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
 		]}
-		imagePaths={[ "/src/img/fungi.jpg", "/src/img/space-whale.jpg" ]}
+
+		imagePaths={[ 
+			"/src/img/fungi.jpg", 
+			"/src/img/space-whale.jpg" 
+		]}
+
+		backgroundProperties={[
+			{ repeat: 'no-repeat', position: 'top left', size: '300px' },
+			{ repeat: 'no-repeat', position: 'center', size: 'cover' },
+		]}
+	
+		backgroundColor="#f0f0f0"
 		aspectRatio="var(--ratio-ultrawide)"
 		backgroundRepeat="no-repeat"
   	backgroundPosition="center center"
   	backgroundSize="cover"
 	>	
-			<!-- content -->
-			<h1>This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+		<!-- content -->
+		<h1 >This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
 	</Background>
 
 	<Background 
+		tag="section"
 		gradient="linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))"
 		imagePath="/src/img/fungi.jpg"
+		backgroundColor='var(--blue-5)'
 		aspectRatio="var(--ratio-ultrawide)"
 	>	
 		<!-- content -->
