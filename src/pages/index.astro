@@ -3,7 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import Button from '@components/Button.astro';
-import Hero from '@components/Hero.astro';
+import Hero from '@components/Background.astro';
 
 // Optimized background hero image
 import heroImage from '@images/fungi.jpg';
@@ -32,7 +32,7 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 </Hero>
 
 	<Hero 
-		color="var(--red-5)"
+		backgroundColor="var(--red-5)"
 		aspectRatio="var(--ratio-widescreen)"
 	>
 		<h1>This is a solid color background</h1>
@@ -43,7 +43,6 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 			"linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3))",
 			"linear-gradient(to bottom, var(--orange-3), var(--red-5))"
 		]}
-	
 	>
 	<div class="stack" color="white">
 		<h1>This is a multi gradient background</h1>

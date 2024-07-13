@@ -39,6 +39,6 @@ Informatonal Colors
 Shapes
 */
 
-.square { --border-radius: 0 }
-:is(.pill, .circle) { --border-radius: 1e3px }
+.square { border-radius: var(--radius-0) }
+:is(.pill, .circle) { border-radius: var(--radius-ellipse) }
 .circle { aspect-ratio: var(--ratio-square) }

@@ -4,11 +4,11 @@ import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<"section"> {
-  gradient?;
+  gradient?: string;
   gradients?: string[];
-  imagePath?;
+  imagePath?: string;
   imagePaths?: string[];
-  color?: string;
+  backgroundColor?: string;
   classes?: string;
   aspectRatio?: string;
 }
@@ -18,7 +18,7 @@ const {
   gradients = [], 
   imagePath,
   imagePaths = [],
-  color,
+  backgroundColor,
   aspectRatio = '16 / 9',
   classes,
   ...rest 
@@ -29,7 +29,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('@images/*.{jpeg,jpg
 let backgrounds = [...gradients];
 
 if (gradient) backgrounds.push(gradient);
-if (color) backgrounds.push(color);
+if (backgroundColor) backgrounds.push(backgroundColor);
 
 if (imagePath) {
   if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "@images/*.{jpeg,jpg,png,gif,webp,avif}"`);
@@ -49,6 +49,7 @@ for (const imagePath of imagePaths) {
 
 const background = backgrounds.join(', ');
 ---
+
 <style define:vars={{ background, aspectRatio }}>
   .background {
     background: var(--background);
