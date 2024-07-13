@@ -186,3 +186,9 @@ Faster taps
     touch-action: manipulation;
   }
 }
+
+
+hr {
+  --width: 100%;
+  width: var(--width);
+}

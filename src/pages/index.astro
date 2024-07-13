@@ -11,6 +11,7 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
 <Layout title="Welcome to Astro." description="The official site of Astro.">
 	<Hero 
+		tag='article'
 		gradients={[
 			"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
     	"linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
@@ -166,8 +167,14 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 	</main>
 </Layout>
 <script>
-hue.oninput = e =>
-document.firstElementChild.style.setProperty('--hue', e.target.value)
+const hueInput = document.getElementById('hue') as HTMLInputElement | null;
+const rootElement = document.documentElement;
+
+if (hueInput && rootElement) {
+  hueInput.oninput = (e) => {
+    rootElement.style.setProperty('--hue', hueInput.value);
+  };
+}
 </script>
 <style>
 	.props {

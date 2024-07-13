@@ -43,7 +43,10 @@ scroll-x-overflow
 
 .scroll-x-overflow > * + * { margin-inline-start: var(--space-lg); }
 
-.overflow-x-hint { -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000); }
+.overflow-x-hint { 
+  -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000); 
+  mask-image: linear-gradient(to right, #0000, #000, #000, #0000); 
+}
 
 /* 
 // MARK: Position

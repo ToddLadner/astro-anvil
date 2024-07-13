@@ -32,6 +32,7 @@ Layouts
 }
 
 /* Pile */
+/* https://css-tricks.com/almanac/properties/p/place-content/#aa-values */
 .pile-grid {
   place-content: var(--place-content, center);
   > * { grid-area: 1/1; }
