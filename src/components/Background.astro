@@ -55,6 +55,18 @@ for (const imagePath of imagePaths) {
   backgrounds.push(imageUrl);
 }
 
+for (const imagePath of imagePaths) {
+  if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/img/*.{jpeg,jpg,png,gif}"`);
+  const imageModule = await images[imagePath]();
+  const optimizedImage = await getImage({ src: imageModule.default });
+  
+  // Construct imageUrl with specific background properties
+  const imageUrl = `url(${optimizedImage.src}) ${backgroundRepeat} ${backgroundPosition} / ${backgroundSize}`;
+  
+  // Push imageUrl into backgrounds array
+  backgrounds.push(imageUrl);
+}
+
 const background = backgrounds.join(', ');
 
 const Tag = tag;
