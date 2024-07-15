@@ -106,7 +106,7 @@ const Tag = tag;
 <Tag 
   class:list={['background', 'grid','pile-grid', classes]} 
   style={`
-    background: ${background}; 
+    ${backgrounds.length > 0 ? `background: ${background};` : ''} 
     background-color: ${backgroundColor}; 
     aspect-ratio: ${aspectRatio};
   `} 
