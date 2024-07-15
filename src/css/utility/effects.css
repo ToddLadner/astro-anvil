@@ -1,5 +1,8 @@
 /*  TOC
 ─────────────────────────────────
+Prev Next Hover Effect
+Spring Effect
+Color Contrast
 ─────────────────────────────── */
 
 /* 
@@ -44,7 +47,7 @@ Spring Effect
     transition: 
       transform var(--spring-duration) var(--spring-easing),
       box-shadow var(--spring-duration) var(--spring-easing),
-      /* this ensures the Open Props expando :focus outline effect */
+      /* this ensures the expando :focus outline effect */
       outline-offset 145ms var(--ease-4);
   }
   
@@ -63,4 +66,26 @@ Spring Effect
     transform: scale(.9);
     box-shadow: var(--shadow-1);
   }
+}
+
+/*
+// MARK: Color Contrast
+Color Contrast
+*/
+
+.fx-contrast { 
+  background: inherit;
+  background-clip: text;
+  color: transparent;
+  filter: 
+    invert(1) 
+    grayscale(1) 
+    brightness(calc(var(--cutoff, 120) / 100))
+    contrast(9000)
+  ;
+  /* maybe these help with crunchy edges at the transition? I'm not convinced… */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  mix-blend-mode: luminosity;
 }

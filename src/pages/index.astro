@@ -12,30 +12,23 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 <Layout title="Welcome to Astro." description="The official site of Astro.">
 	<Background
 		tag='article'
-		
 		gradients={[
 			"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
     	"linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
 		]}
-
 		imagePaths={[ 
 			"/src/img/fungi.jpg", 
 			"/src/img/space-whale.jpg" 
 		]}
-
 		backgroundProperties={[
 			{ repeat: 'no-repeat', position: 'top left', size: '300px' },
 			{ repeat: 'no-repeat', position: 'center', size: 'cover' },
 		]}
-	
 		backgroundColor="#f0f0f0"
 		aspectRatio="var(--ratio-ultrawide)"
-		backgroundRepeat="no-repeat"
-  	backgroundPosition="center center"
-  	backgroundSize="cover"
-	>	
+	>
 		<!-- content -->
-		<h1 >This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+		<h1 class="fx-contrast">This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
 	</Background>
 
 	<Background 
@@ -44,31 +37,46 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 		imagePath="/src/img/fungi.jpg"
 		backgroundColor='var(--blue-5)'
 		aspectRatio="var(--ratio-ultrawide)"
+		backgroundRepeat="no-repeat"
+  	backgroundPosition="center center"
+  	backgroundSize="cover"
 	>	
 		<!-- content -->
-		<h1>This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+		<h1 class="fx-contrast">This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
 	</Background>
 
 	<Background 
-		backgroundColor="var(--red-5)"
+		backgroundColor="var(--red-4)"
 		aspectRatio="var(--ratio-widescreen)"
 	>
-		<h1>This is a solid color background</h1>
+		<h1 
+			class="fx-contrast" 
+		>
+			This is a solid color background
+		</h1>
 	</Background>
 
 	<Background 
-		gradients={[
-			"linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3))",
-			"linear-gradient(to bottom, var(--orange-3), var(--red-5))"
-		]}
+		backgroundColor="var(--red-2)"
+		aspectRatio="var(--ratio-widescreen)"
 	>
-	<div class="stack" color="white">
-		<h1>This is a multi gradient background</h1>
-  </div>
+		<h1 
+			class="fx-contrast" 
+		>
+			This is a solid color background
+		</h1>
 	</Background>
 
-
-
+	<Background
+		tag='article'
+		gradient="linear-gradient(to top, var(--orange-5), var(--red-2))",
+		aspectRatio="var(--ratio-ultrawide)"
+	>
+		<!-- content -->
+		<div class="measure-lg fx-contrast" style="--cutoff: 200;">
+			<h1>This is an single gradient with an aspect ratio of ultrawide showing (--cutoff)</h1>
+		</div>
+	</Background>
 
 	<main>
 		<div class="scoreboard">
@@ -194,9 +202,9 @@ if (hueInput && rootElement) {
 }
 </script>
 <style>
-	.props {
-	--include: var(--ratio-widescreen, var(--teal-4));
-}
+	.props { --include: var(--ratio-widescreen, var(--teal-4), var(--red-4), var(--red-5), var(--red-6), var(--red-12), var(--red-2), var(--red-9), var(--red-7));}
+
+	.measure-lg { max-width: 80ch }
 /* .hero-section {
 	--hero-background: var(--teal-4);
 	--aspect-ratio: var(--ratio-widescreen);
