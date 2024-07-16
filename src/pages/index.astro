@@ -10,6 +10,12 @@ import heroImage from '@images/fungi.jpg';
 const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
 <Layout title="Welcome to Astro." description="The official site of Astro.">
+	<section>
+	<div class="one">one</div>
+<div class="two">two</div>
+<div class="anchored">I am anchored to two elements</div>
+</section>
+
 	<Background
 		tag='article'
 		gradients={[
@@ -28,7 +34,8 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 		aspectRatio="var(--ratio-ultrawide)"
 	>
 		<!-- content -->
-		<h1 class="fx-contrast">This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+		<h1 class="fx-contrast anchor-heading">This is an multi gradient over an image with an aspect ratio of ultrawide</h1>
+			<div class="positioned-tip">hello</div>
 	</Background>
 
 	<Background 
@@ -204,7 +211,48 @@ if (hueInput && rootElement) {
 <style>
 	.props { --include: var(--ratio-widescreen, var(--teal-4), var(--red-4), var(--red-5), var(--red-6), var(--red-12), var(--red-2), var(--red-9), var(--red-7));}
 
-	.measure-lg { max-width: 80ch }
+.anchor-heading {
+	anchor-name: --anchor-head;
+}
+.positioned-tip {
+    position-anchor: --anchor-head;
+		top: anchor(bottom);
+		position: absolute;
+		left: anchor(left);
+		top: anchor(bottom);
+
+		size: 5rem;
+		color: white;
+		background: var(--teal-4);
+}
+.one,
+.two {
+  position: absolute;
+  padding: 1rem;
+  border: 2px solid;
+  background: gold;
+}
+
+.one {
+  anchor-name: --one;
+}
+
+.two {
+  anchor-name: --two;
+  bottom: 0;
+  right: 0;
+}
+
+.anchored {
+
+  top: anchor(--one bottom);
+  left: anchor(--one right);
+  right: anchor(--two left);
+  bottom: anchor(--two top);
+  display: grid;
+  place-items: center;
+	height: 10rem
+}
 /* .hero-section {
 	--hero-background: var(--teal-4);
 	--aspect-ratio: var(--ratio-widescreen);
