@@ -4,6 +4,7 @@
 @import "fonts.css";
 @import "reset.css"; /* reset */
 @import "theme.css";
+/* @import "props.css"; */
 @import "utility.css";
 @import "buttons.css"; /* base */
 @import "buttons.custom.css";
