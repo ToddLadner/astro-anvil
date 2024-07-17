@@ -10,57 +10,58 @@ import Hero from '@components/Hero.astro';
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
   <main>  
-  <Background
-		tag='article'
-		gradients={[
-			"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
-    	"linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
-		]}
-		imagePaths={[ 
-			"/src/img/fungi.jpg", 
-      "/src/img/fungi.jpg",
-      "/src/img/fungi.jpg",
-      "/src/img/space-whale.jpg" 
-		]}
-		backgroundProperties={[
-			{ repeat: 'no-repeat', position: 'top left', size: '300px' },
-      { repeat: 'no-repeat', position: 'center right', size: '300px' },
-      { repeat: 'no-repeat', position: 'bottom left', size: '300px' },
-			{ repeat: 'no-repeat', position: 'center', size: 'cover' },
-		]}
-		backgroundColor="#ffffff"
-		aspectRatio="var(--ratio-square)"
-	>
-	</Background>
-
-  <Background
-    tag="article"
-    gradientsFirst={false}
-    imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
-    gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
-    backgroundProperties={[
-       { repeat: "no-repeat", position: "top center", size: "100%" }
-    ]}
-    backgroundColor="lightgray"
-    classes="grid pile-grid max-inline-content"
-  >
-    <Hero 
-      title="Backgrounds"
-      tag="h1"
-      subtitle="Be a part of something great"
-      content={[
-        "This layout displays the content centered.",
-        "Another paragraph in the centered layout."
+    <Background
+      tag='article'
+      gradients={[
+        "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+        "linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
       ]}
-      image="/src/img/fungi.jpg"
-      classes="flex"
-      style="gap: 3ch"
+      imagePaths={[ 
+        "/src/img/blob-1.svg", 
+        "/src/img/blob-2.svg",
+        "/src/img/blob-3.svg",
+        "/src/img/space-whale.jpg" 
+      ]}
+      backgroundProperties={[
+        { repeat: 'no-repeat', position: 'top 10px left -500px', size: '1000px' },
+        { repeat: 'no-repeat', position: 'center right', size: '300px' },
+        { repeat: 'no-repeat', position: 'bottom left', size: '300px' },
+        { repeat: 'no-repeat', position: 'center', size: 'cover' },
+      ]}
+      backgroundColor="#ffffff"
+      aspectRatio="var(--ratio-square)"
     >
-    <div class="flex" style="gap: 1ch">
-      <button>Get Started</button> <button>Get Started</button>
-    </div>
-      
-    </Hero>
-  </Background>
-</main>
+    </Background>
+
+    <Background
+      tag="article"
+      gradientsFirst={false}
+      imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
+      gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
+      backgroundProperties={[
+        { repeat: "no-repeat", position: "top center", size: "100%" }
+      ]}
+      backgroundColor="lightgray"
+      classes="grid align-center justify-center max-inline-content"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+      <Hero 
+        title="Backgrounds"
+        tag="h1"
+        subtitle="Be a part of something great"
+        content={[
+          "This layout displays the content centered.",
+          "Another paragraph in the centered layout."
+        ]}
+        video="/src/img/fungi.jpg"
+        classes="flex"
+        style="gap: 3ch"
+        layout="ltr"
+      >
+      <div class="flex" style="gap: 1ch">
+        <button>Get Started</button> <button>Get Started</button>
+      </div>
+      </Hero>
+    </Background>
+  </main>
 </Layout>
