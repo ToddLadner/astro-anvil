@@ -1,13 +1,31 @@
 ---
+import { Image } from 'astro:assets';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props {
+interface Props extends HTMLAttributes<"div"> {
   title: string;
+  tag?: "h1" | "h2" | "h3";
+  subtitle?: string;
+  content: string[];
   image?: string;
   video?: string;
   dir?: 'ltr' | 'rtl';
+  classes?: string;
 }
 
-const { title, image, video, dir = 'ltr' } = Astro.props;
+const { 
+  title, 
+  tag = 'h1',
+  subtitle,
+  content,
+  image, 
+  video, 
+  dir = 'ltr',
+  classes,
+  ...rest  
+} = Astro.props;
+
+const Tag = tag;
 ---
 
 <style>
@@ -16,8 +34,7 @@ const { title, image, video, dir = 'ltr' } = Astro.props;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem;
-    background-color: #f5f5f5;
+   
   }
 
   .hero[dir="ltr"],
@@ -58,6 +75,12 @@ const { title, image, video, dir = 'ltr' } = Astro.props;
     text-align: left;
   }
 
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+
   .hero-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -66,9 +89,17 @@ const { title, image, video, dir = 'ltr' } = Astro.props;
   .hero-content {
     font-size: 1.25rem;
   }
+
+  .hero-content p {
+    margin: 0.5rem 0;
+  }
+
+  .hero-slot {
+    margin-top: 1rem;
+  }
 </style>
 
-<section class="hero" dir={dir}>
+<div class:list={['hero', 'max-sontent-width', classes]} dir={dir} {...rest}>
   {image && !video && (
     <div class="hero-media">
       <img src={image} alt={title} />
@@ -84,10 +115,17 @@ const { title, image, video, dir = 'ltr' } = Astro.props;
     </div>
   )}
 
-  <div class="hero-content-wrapper">
-    <h1 class="hero-title">{title}</h1>
-    <div class="hero-content">
+  <div class="hero-content-wrapper stack">
+    {subtitle && <div class="hero-subtitle">{subtitle}</div>}
+    <Tag class="hero-title">{title}</Tag>
+    
+      {content.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    
+      <!-- -->
       <slot />
+      <!-- -->
     </div>
   </div>
-</section>
+</div>
