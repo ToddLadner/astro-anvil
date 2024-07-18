@@ -89,6 +89,19 @@ const Tag = tag;
 </style>
 
 <div class:list={['hero', layout, classes]}  {...rest}>
+  <div class="hero-content-wrapper">
+    {subtitle && <div class="hero-subtitle">{subtitle}</div>}
+    <Tag class="hero-title">{title}</Tag>
+    <div class="hero-content">
+      {content.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+    <div class="hero-slot">
+      <slot></slot>
+    </div>
+  </div>
+
   {(layout === 'ltr' || layout === 'rtl') && image && !video && (
     <div class="hero-media">
       <img src={image} alt={title} />
@@ -103,19 +116,6 @@ const Tag = tag;
       </video>
     </div>
   )}
-
-  <div class="hero-content-wrapper">
-    {subtitle && <div class="hero-subtitle">{subtitle}</div>}
-    <Tag class="hero-title">{title}</Tag>
-    <div class="hero-content">
-      {content.map((paragraph) => (
-        <p>{paragraph}</p>
-      ))}
-    </div>
-    <div class="hero-slot">
-      <slot></slot>
-    </div>
-  </div>
 
   {layout === 'centered' && (image || video) && (
     <div class="hero-media">

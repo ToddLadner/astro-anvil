@@ -4,10 +4,6 @@ import Background from '@components/Background.astro';
 import Hero from '@components/Hero.astro';
 ---
 
-<style>
-  .props { --include: var(--ratio-widescreen, var(--teal-4), var(--red-4), var(--red-5), var(--red-6), var(--red-12), var(--red-2), var(--red-9), var(--red-7));}
-</style>
-
 <Layout title="Welcome to Astro." description="The official site of Astro.">
   <main>  
     <Background
@@ -58,10 +54,32 @@ import Hero from '@components/Hero.astro';
         style="gap: 3ch"
         layout="ltr"
       >
-      <div class="flex" style="gap: 1ch">
-        <button>Get Started</button> <button>Get Started</button>
-      </div>
+        <!-- slotted content -->
+        <div class="flex" style="gap: 1ch">
+          <button class="confetti">Likes</button> <button>Get Started</button>
+        </div>
+        <!-- /slotted content -->
       </Hero>
     </Background>
   </main>
 </Layout>
+
+<script>
+  import jsConfetti from 'js-confetti';
+  const confetti = new jsConfetti();
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const funBtn = document.querySelector('.confetti');
+    // Guard Clause
+    if (!funBtn) return;
+    
+    let likes = 0;
+
+    funBtn.addEventListener('click', () => {
+      likes++;
+      funBtn.textContent = `Likes (${likes})`;
+      funBtn.setAttribute('aria-label', `Likes: ${likes}`);
+      confetti.addConfetti();
+    });
+  });
+</script>

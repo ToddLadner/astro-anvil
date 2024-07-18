@@ -1,7 +1,4 @@
 ---
-// https://codepen.io/miunau/pen/oNVaJoN?editors=1100
-// https://codepen.io/miriamsuzanne/pen/yLwRpGQ?editors=1100
-
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
@@ -17,9 +14,6 @@ interface Props extends HTMLAttributes<"div"> {
   gradients?: string[];
   imagePaths?: string[];
   backgroundProperties?: BackgroundProperty[];
-  backgroundRepeat?: string;
-  backgroundPosition?: string;
-  backgroundSize?: string;
   backgroundColor?: string;
   aspectRatio?: string;
   gradientsFirst?: boolean;
@@ -31,9 +25,6 @@ const {
   gradients = [],
   imagePaths = [],
   backgroundProperties = [],
-  backgroundRepeat = 'no-repeat',
-  backgroundPosition = 'center center',
-  backgroundSize = 'cover',
   backgroundColor = 'transparent',
   aspectRatio = '16 / 9',
   gradientsFirst = true,
@@ -41,45 +32,34 @@ const {
   ...rest
 } = Astro.props;
 
+const defaultBackgroundProperty: BackgroundProperty = {
+  repeat: 'no-repeat',
+  position: 'center center',
+  size: 'cover'
+};
+
 const images = import.meta.glob<{ default: ImageMetadata }>('@images/*.{jpeg,jpg,png,gif,webp,avif,svg}');
 
-let imageBackgrounds: string[] = [];
+async function getImageBackgrounds(imagePaths: string[], backgroundProperties: BackgroundProperty[]): Promise<string[]> {
+  return Promise.all(imagePaths.map(async (imagePath, index) => {
+    if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "@images/*.{jpeg,jpg,png,gif,webp,avif,svg}"`);
+    const imageModule = await images[imagePath]();
+    const optimizedImage = await getImage({ src: imageModule.default });
 
-async function processImagePath(imagePath: string, index: number) {
-  if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "@images/*.{jpeg,jpg,png,gif,webp,avif,svg}"`);
-  const imageModule = await images[imagePath]();
-  const optimizedImage = await getImage({ src: imageModule.default });
-
-  // Get the specific background properties if available
-  const { repeat = backgroundRepeat, position = backgroundPosition, size = backgroundSize } = backgroundProperties[index] || {};
-
-  // Construct imageUrl with specific background properties
-  const imageUrl = `url(${optimizedImage.src}) ${repeat} ${position} / ${size}`;
-
-  // Push imageUrl into imageBackgrounds array
-  imageBackgrounds.push(imageUrl);
+    const { repeat, position, size } = { ...defaultBackgroundProperty, ...backgroundProperties[index] };
+    return `url(${optimizedImage.src}) ${repeat} ${position} / ${size}`;
+  }));
 }
 
-const imagePathPromises = imagePaths.map((imagePath, index) => processImagePath(imagePath, index));
-
-await Promise.all(imagePathPromises);
-
-let backgrounds: string[];
-if (gradientsFirst) {
-  backgrounds = [...gradients, ...imageBackgrounds];
-} else {
-  backgrounds = [...imageBackgrounds, ...gradients];
-}
-
+const imageBackgrounds = await getImageBackgrounds(imagePaths, backgroundProperties);
+const backgrounds = gradientsFirst ? [...gradients, ...imageBackgrounds] : [...imageBackgrounds, ...gradients];
 const background = backgrounds.join(', ');
 
 const Tag = tag;
 ---
 
 <style>
-  .background {
-    width: 100%;
-  }
+  .background { width: 100%; }
 </style>
 
 <Tag 
