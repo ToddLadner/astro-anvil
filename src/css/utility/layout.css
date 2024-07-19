@@ -78,18 +78,18 @@ Visually Hidden
 }
 
 /**/
-.with-sidebar {
+.inline-stacked {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-lg);
+  gap: var(--gap, var(--space-lg));
 }
 
-.with-sidebar > :last-child {
-  flex-grow: 1;
-}
-
-.with-sidebar > :first-child {
+.inline-stacked > :first-child {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 40ch;
+}
+
+.inline-stacked > :last-child {
+  flex-grow: 1;
 }
