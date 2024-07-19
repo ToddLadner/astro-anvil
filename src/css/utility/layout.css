@@ -76,3 +76,20 @@ Visually Hidden
   white-space: nowrap;
   border-width: 0;
 }
+
+/**/
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.with-sidebar > :last-child {
+  flex-grow: 1;
+}
+
+.with-sidebar > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 40ch;
+}

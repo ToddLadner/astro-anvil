@@ -34,7 +34,8 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       tag='article'
     
       gradients={[
-        "linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))"
+        "linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))",
+        "linear-gradient(to top, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))"
       ]}
       imagePaths={[ 
         "/src/img/blob-1.svg", 
@@ -70,8 +71,8 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         title="Explore the World with Us"
         subtitle="Join our adventure and make a difference"
         content={[
-          "We offer the best experiences in travel and adventure.",
-          "Our team is dedicated to providing top-notch services.",
+          "We offer the best experiences in travel and adventure. Our team is dedicated to providing top-notch services. Discover new places and make lasting memories with us.",
+  
           "Discover new places and make lasting memories with us."
         ]}
         imagePath="/src/img/fungi.jpg"  
@@ -79,38 +80,13 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         layout="ltr"
         mediaWidth={400}
         mediaHeight={300}
-        classes="my-custom-class"
+        classes="with-sidebar"
         style="gap: 3rem;"
       >
         <!-- slotted content -->
         <button class="confetti">Confetti</button>
       </Hero>
     </Background>
-    
-    <Background
-      tag='article'
-      gradients={[
-        "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
-        "linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))"
-      ]}
-      imagePaths={[ 
-        "/src/img/blob-1.svg", 
-        "/src/img/blob-2.svg",
-        "/src/img/blob-3.svg",
-        "/src/img/space-whale.jpg" 
-      ]}
-      backgroundProperties={[
-        { repeat: 'no-repeat', position: 'top -20vw left -50vw', size: '80vw' },
-        { repeat: 'no-repeat', position: 'center right', size: '100px' },
-        { repeat: 'no-repeat', position: 'bottom left', size: '100px' },
-        { repeat: 'no-repeat', position: 'center', size: 'cover' },
-      ]}
-      backgroundColor="#ffffff"
-      aspectRatio="var(--ratio-square)"
-    >
-    </Background>
-
-    
   </main>
 </Layout>
 
