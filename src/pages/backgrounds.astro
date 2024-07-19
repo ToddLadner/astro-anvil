@@ -16,6 +16,9 @@ const srcSet = widths.map(width => `${imageKitBaseURL}${imagePath}?tr=w-${width}
 const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallback image
 ---
 
+<style>
+  .pad-block-3xl { padding-block: var(--space-3xl); }
+</style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
 
@@ -25,7 +28,6 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
     widths={[240, 540, 720, heroImage.width]}
     sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
   />
-  
   
   <main>
     <Background
@@ -60,25 +62,29 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         { repeat: "no-repeat", position: "top center", size: "100%" }
       ]}
       backgroundColor="lightgray"
-      classes="grid align-center justify-center max-inline-content"
+      classes="grid align-center justify-center max-inline-content pad-block-3xl"
       aspectRatio="var(--ratio-ultrawide)"
     >
-    <Hero 
-      title="Explore the World with Us"
-      subtitle="Join our adventure and make a difference"
-      content={[
-        "We offer the best experiences in travel and adventure.",
-        "Our team is dedicated to providing top-notch services.",
-        "Discover new places and make lasting memories with us."
-      ]}
-      imagePath="fungi.jpg"  
-      altText="A beautiful landscape"
-      layout="ltr"
-      classes="my-custom-class"
-    >
-      <button class="confetti">Confetti</button>
-    </Hero>
-  
+      <!-- Hero -->
+      <Hero 
+        title="Explore the World with Us"
+        subtitle="Join our adventure and make a difference"
+        content={[
+          "We offer the best experiences in travel and adventure.",
+          "Our team is dedicated to providing top-notch services.",
+          "Discover new places and make lasting memories with us."
+        ]}
+        imagePath="/src/img/fungi.jpg"  
+        altText="A beautiful landscape"
+        layout="ltr"
+        mediaWidth={400}
+        mediaHeight={300}
+        classes="my-custom-class"
+        style="gap: 3rem;"
+      >
+        <!-- slotted content -->
+        <button class="confetti">Confetti</button>
+      </Hero>
     </Background>
     
     <Background

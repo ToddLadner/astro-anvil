@@ -2,24 +2,32 @@
 import type { HTMLAttributes } from 'astro/types';
 import { Image } from 'astro:assets';
 
-// Define component props interface
+
 interface Props extends HTMLAttributes<"div"> {
   title: string;
   subtitle?: string;
   content: string[];
   imagePath?: string;
+  videoPath?: string;
   altText?: string;
+  mediaWidth?: number;
+  mediaHeight?: number;
+  borderRadius?: string;
   layout?: 'ltr' | 'rtl' | 'centered';
   classes?: string;
 }
 
-// Extract props
+
 const { 
   title, 
   subtitle,
   content,
   imagePath, 
-  altText = 'Hero image',
+  videoPath,
+  altText = 'Hero media',
+  mediaWidth = 800,
+  mediaHeight = 600,
+  borderRadius = 'var(--radius-md)',
   layout = 'ltr',
   classes,
   ...rest  
@@ -29,7 +37,10 @@ const {
 const images = import.meta.glob('@images/*.{jpeg,jpg,png,gif}', { eager: true }) as Record<string, { default: string }>;
 
 // Resolve the image path
-const resolvedImagePath = imagePath && images[`/src/img/${imagePath}`]?.default;
+const resolvedImagePath = imagePath && images[`${imagePath}`]?.default;
+
+// Video source (assuming video is in public folder or similar)
+const videoSource = videoPath ? videoPath : '';
 
 const Tag = 'h1'; // Default tag
 ---
@@ -108,20 +119,36 @@ const Tag = 'h1'; // Default tag
     <div class="hero-media">
       <Image 
         src={resolvedImagePath} 
-        width={800} 
-        height={600} 
+        width={mediaWidth} 
+        height={mediaHeight} 
         alt={altText}
+        style={`border-radius: ${borderRadius};`}
       />
     </div>
   )}
 
-  {layout === 'centered' && resolvedImagePath && (
+  {videoSource && (
+    <div class="hero-media">
+      <video 
+        controls 
+        width={mediaWidth} 
+        height={mediaHeight}
+        style={`border-radius: ${borderRadius};`}
+      >
+        <source src={videoSource} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  )}
+
+  {layout === 'centered' && resolvedImagePath && !videoSource && (
     <div class="hero-media">
       <Image 
         src={resolvedImagePath} 
-        width={800} 
-        height={600} 
+        width={mediaWidth} 
+        height={mediaHeight} 
         alt={altText}
+        style={`border-radius: ${borderRadius};`}
       />
     </div>
   )}
