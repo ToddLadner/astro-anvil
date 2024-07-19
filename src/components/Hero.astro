@@ -1,49 +1,51 @@
 ---
-import { Image } from 'astro:assets';
 import type { HTMLAttributes } from 'astro/types';
+import { Image } from 'astro:assets';
 
+// Define component props interface
 interface Props extends HTMLAttributes<"div"> {
   title: string;
-  tag?: "h1" | "h2" | "h3";
   subtitle?: string;
   content: string[];
-  image?: string;
-  video?: string;
+  imagePath?: string; // Image filename without path
+  altText?: string;
   layout?: 'ltr' | 'rtl' | 'centered';
   classes?: string;
 }
 
+// Extract props
 const { 
   title, 
-  tag = 'h1',
   subtitle,
   content,
-  image, 
-  video, 
+  imagePath, 
+  altText = 'Hero image',
   layout = 'ltr',
   classes,
   ...rest  
-} = Astro.props;
+} = Astro.props as Props;
 
-const Tag = tag;
+// Dynamically import all images from the /src/assets directory
+const images = import.meta.glob('@images/*.{jpeg,jpg,png,gif}', { eager: true }) as Record<string, { default: string }>;
+
+// Resolve the image path
+const resolvedImagePath = imagePath && images[`/src/img/${imagePath}`]?.default;
+
+const Tag = 'h1'; // Default tag
 ---
 
 <style>
- .hero {
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 2rem;
+    padding: 2rem;
     justify-content: center;
   }
 
   .hero.ltr, .hero.rtl {
     flex-direction: row;
     align-items: center;
-  }
-
-  :is(.hero.ltr, .hero.rtl) .hero-media {
-    width: fit-content;
   }
 
   .hero.rtl {
@@ -65,7 +67,7 @@ const Tag = tag;
   }
 
   .hero-subtitle {
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin-bottom: 0.5rem;
     color: #555;
   }
@@ -88,13 +90,13 @@ const Tag = tag;
   }
 </style>
 
-<div class:list={['hero', layout, classes]}  {...rest}>
+<div class:list={['hero', layout, classes]} {...rest}>
   <div class="hero-content-wrapper">
     {subtitle && <div class="hero-subtitle">{subtitle}</div>}
     <Tag class="hero-title">{title}</Tag>
     <div class="hero-content">
-      {content.map((paragraph) => (
-        <p>{paragraph}</p>
+      {content.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
       ))}
     </div>
     <div class="hero-slot">
@@ -102,30 +104,25 @@ const Tag = tag;
     </div>
   </div>
 
-  {(layout === 'ltr' || layout === 'rtl') && image && !video && (
+  {(layout === 'ltr' || layout === 'rtl') && resolvedImagePath && (
     <div class="hero-media">
-      <img src={image} alt={title} />
+      <Image 
+        src={resolvedImagePath} 
+        width={800} 
+        height={600} 
+        alt={altText}
+      />
     </div>
   )}
 
-  {(layout === 'ltr' || layout === 'rtl') && video && (
+  {layout === 'centered' && resolvedImagePath && (
     <div class="hero-media">
-      <video controls>
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  )}
-
-  {layout === 'centered' && (image || video) && (
-    <div class="hero-media">
-      {image && !video && <img src={image} alt={title} />}
-      {video && (
-        <video controls>
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
+      <Image 
+        src={resolvedImagePath} 
+        width={800} 
+        height={600} 
+        alt={altText}
+      />
     </div>
   )}
 </div>

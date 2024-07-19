@@ -1,11 +1,86 @@
 ---
 import Layout from '@layouts/Layout.astro';
+
+//Components
+import { Image, Picture } from 'astro:assets';
 import Background from '@components/Background.astro';
 import Hero from '@components/Hero.astro';
+
+import heroImage from '@images/moon-7.jpg';
+
+const imageKitBaseURL = "https://ik.imagekit.io/rb7q3yxmzqn";
+const imagePath = "moons/moon-1_u-HpwpOBH.JPG?";  // Replace with your image path
+
+const widths = [240, 540, 720, 1200];
+const srcSet = widths.map(width => `${imageKitBaseURL}${imagePath}?tr=w-${width} ${width}w`).join(", ");
+const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallback image
 ---
 
+
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-  <main>  
+
+  <Image
+    src={heroImage}
+    alt="descriptive text"
+    widths={[240, 540, 720, heroImage.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
+  />
+  
+  
+  <main>
+    <Background
+      tag='article'
+    
+      gradients={[
+        "linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))"
+      ]}
+      imagePaths={[ 
+        "/src/img/blob-1.svg", 
+        "/src/img/blob-2.svg",
+        "/src/img/blob-3.svg",
+        "/src/img/hexellence.png" 
+      ]}
+      backgroundProperties={[
+        { position: 'top -10vw left -50vw', size: '80vw' },
+        { position: 'center right -10vw', size: '40vw' },
+        { position: 'bottom left -10vw', size: '40vw' },
+        { repeat: 'repeat', size: 'auto' }
+      ]}
+      backgroundColor="#ffffff"
+      aspectRatio="var(--ratio-square)"
+    >
+    </Background>
+    
+    <Background
+      tag="article"
+      gradientsFirst={false}
+      imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
+      gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
+      backgroundProperties={[
+        { repeat: "no-repeat", position: "top center", size: "100%" }
+      ]}
+      backgroundColor="lightgray"
+      classes="grid align-center justify-center max-inline-content"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+    <Hero 
+      title="Explore the World with Us"
+      subtitle="Join our adventure and make a difference"
+      content={[
+        "We offer the best experiences in travel and adventure.",
+        "Our team is dedicated to providing top-notch services.",
+        "Discover new places and make lasting memories with us."
+      ]}
+      imagePath="fungi.jpg"  
+      altText="A beautiful landscape"
+      layout="ltr"
+      classes="my-custom-class"
+    >
+      <button>Learn More</button>
+    </Hero>
+  
+    </Background>
+    
     <Background
       tag='article'
       gradients={[
@@ -19,9 +94,9 @@ import Hero from '@components/Hero.astro';
         "/src/img/space-whale.jpg" 
       ]}
       backgroundProperties={[
-        { repeat: 'no-repeat', position: 'top -200px left -500px', size: '1000px' },
-        { repeat: 'no-repeat', position: 'center right', size: '700px' },
-        { repeat: 'no-repeat', position: 'bottom left', size: '300px' },
+        { repeat: 'no-repeat', position: 'top -20vw left -50vw', size: '80vw' },
+        { repeat: 'no-repeat', position: 'center right', size: '100px' },
+        { repeat: 'no-repeat', position: 'bottom left', size: '100px' },
         { repeat: 'no-repeat', position: 'center', size: 'cover' },
       ]}
       backgroundColor="#ffffff"
@@ -29,38 +104,7 @@ import Hero from '@components/Hero.astro';
     >
     </Background>
 
-    <Background
-      tag="article"
-      gradientsFirst={false}
-      imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
-      gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
-      backgroundProperties={[
-        { repeat: "no-repeat", position: "top center", size: "100%" }
-      ]}
-      backgroundColor="lightgray"
-      classes="grid align-center justify-center max-inline-content"
-      aspectRatio="var(--ratio-ultrawide)"
-    >
-      <Hero 
-        title="Backgrounds"
-        tag="h1"
-        subtitle="Be a part of something great"
-        content={[
-          "This layout displays the content centered.",
-          "Another paragraph in the centered layout."
-        ]}
-        video="/src/img/fungi.jpg"
-        classes="flex"
-        style="gap: 3ch"
-        layout="ltr"
-      >
-        <!-- slotted content -->
-        <div class="flex" style="gap: 1ch">
-          <button class="confetti">Likes</button> <button>Get Started</button>
-        </div>
-        <!-- /slotted content -->
-      </Hero>
-    </Background>
+    
   </main>
 </Layout>
 
