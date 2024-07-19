@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<"div"> {
   title: string;
   subtitle?: string;
   content: string[];
-  imagePath?: string; // Image filename without path
+  imagePath?: string;
   altText?: string;
   layout?: 'ltr' | 'rtl' | 'centered';
   classes?: string;
@@ -95,8 +95,8 @@ const Tag = 'h1'; // Default tag
     {subtitle && <div class="hero-subtitle">{subtitle}</div>}
     <Tag class="hero-title">{title}</Tag>
     <div class="hero-content">
-      {content.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
+      {content.map((paragraph) => (
+        <p>{paragraph}</p>
       ))}
     </div>
     <div class="hero-slot">

@@ -76,7 +76,7 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       layout="ltr"
       classes="my-custom-class"
     >
-      <button>Learn More</button>
+      <button class="confetti">Confetti</button>
     </Hero>
   
     </Background>
@@ -121,8 +121,8 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
 
     funBtn.addEventListener('click', () => {
       likes++;
-      funBtn.textContent = `Likes (${likes})`;
-      funBtn.setAttribute('aria-label', `Likes: ${likes}`);
+      funBtn.textContent = `Confetti (${likes})`;
+      funBtn.setAttribute('aria-label', `Confetti: ${likes}`);
       confetti.addConfetti();
     });
   });
