@@ -49,9 +49,9 @@ const Tag = 'h1'; // Default tag
 ---
 
 <style>
-  .hero {
-    display: flex;
-    flex-wrap: wrap;
+  .hero { 
+    display: flex; 
+    flex-wrap: wrap; 
   }
 
   .media { flex-grow: 1 }
@@ -59,7 +59,8 @@ const Tag = 'h1'; // Default tag
   .content {
     flex-basis: 0;
     flex-grow: 999;
-    min-inline-size: 35ch;
+    min-inline-size: 45ch;
+    max-width: var(--measure-lg);
   }
 
   :is(img, video) { inline-size: 100%; }
@@ -68,17 +69,9 @@ const Tag = 'h1'; // Default tag
 
   :is(.media-right, .media-bottom) .media { order: 2 }
 
-  :is(.media-top, .media-bottom) :is(.media, video) { 
-    inline-size: 100%;
-  }
+  :is(.media-top, .media-bottom) :is(.media, video) { inline-size: 100% }
 
-
-
-  :is(.media-top, .media-bottom) video { 
-    aspect-ratio: var(--ratio-widescreen); 
-  }
-
-
+  :is(.media-top, .media-bottom) video { aspect-ratio: var(--ratio-widescreen) }
 
   :is(.media-top, .media-bottom) .content {
     flex-direction: column;
@@ -86,24 +79,18 @@ const Tag = 'h1'; // Default tag
     text-align: center;
   }
 
-
-
+  .title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1rem;
+  }
   .subtitle {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
+    font-size:var(--font-size-sm);
     color: #555;
   }
 
-  .title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .description {
-    font-size: 1.25rem;
-  }
 
   .description p {
+    font-size: 1.25rem;
     margin: 0.5rem 0;
   }
 
@@ -155,17 +142,20 @@ const Tag = 'h1'; // Default tag
     </div>
   )}
 
-  <!-- Content -->
+  <!-- content -->
   <div class="content">
     {subtitle && <div class="subtitle">{subtitle}</div>}
     <Tag class="title">{title}</Tag>
-    <div class="description">
-      {content ? content.map((paragraph) => (
-        <p>{paragraph}</p>
-      )) : null}
-    </div>
+    {content && 
+      <div class="description">
+        {content.map((item) => (
+          <p set:html={item}></p>
+        ))}
+      </div>
+    }
     <div class="hero-slot">
       <slot></slot>
     </div>
   </div>
+  <!-- /content -->
 </div>
