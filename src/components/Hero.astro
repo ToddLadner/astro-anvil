@@ -1,35 +1,36 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 import { Image } from 'astro:assets';
-import type { StringLiteralType } from 'typescript';
-
 
 interface Props extends HTMLAttributes<"div"> {
   title: string;
+  tag?: "h1" | "h2" | "h3";
   subtitle?: string;
   content?: string[];
-  imagePath?: string;
-  videoPath?: string;
+  mediaPath?: string;
   altText?: string;
+  videoPath?: string;
   contentWidth?: string;
   mediaWidth?: number;
   mediaHeight?: number;
+  aspectRatio?: string;
   borderRadius?: string;
-  layout?: 'media-left' | 'media-right' | 'media-top' | 'media-bottom' | 'layout-centered';
+  layout?: 'media-left' | 'media-right' | 'media-top' | 'media-bottom';
   classes?: string;
 }
 
-
 const { 
   title, 
+  tag = 'h1',
   subtitle,
   content,
-  imagePath, 
+  mediaPath, 
+  altText = 'media-object media',
   videoPath,
-  altText = 'Hero media',
   contentWidth= 'var(--measure-lg)',
   mediaWidth = 800,
   mediaHeight = 600,
+  aspectRatio = '16 / 9',
   borderRadius = 'var(--radius-md)',
   layout = 'media-left',
   classes,
@@ -39,17 +40,17 @@ const {
 // Dynamically import all images from the /src/assets directory
 const images = import.meta.glob('@images/*.{jpeg,jpg,png,gif}', { eager: true }) as Record<string, { default: string }>;
 
-// Resolve the image path
-const resolvedImagePath = imagePath && images[`${imagePath}`]?.default;
+// Resolve the image path if it's an image
+const resolvedImagePath = mediaPath && /\.(jpeg|jpg|png|gif)$/.test(mediaPath) && images[`${mediaPath}`]?.default;
 
-// Video source (assuming video is in public folder or similar)
-const videoSource = videoPath ? videoPath : '';
+// Determine if the media is a video
+const isVideo = mediaPath && /\.(mp4|webm|ogg)$/.test(mediaPath);
 
-const Tag = 'h1'; // Default tag
+const Tag = tag; // Default tag
 ---
 
 <style>
-  .hero { 
+  .media-object { 
     display: flex; 
     flex-wrap: wrap; 
   }
@@ -63,9 +64,12 @@ const Tag = 'h1'; // Default tag
     max-width: var(--measure-lg);
   }
 
-  :is(img, video) { inline-size: 100%; }
+  :is(img, video) { 
+    inline-size: 100%; 
+    object-fit: cover; 
+  }
 
-  :is(.media-left, .media-right) { align-items: center }
+  :is(.media-left, .media-right) { align-items: flex-start }
 
   :is(.media-right, .media-bottom) .media { order: 2 }
 
@@ -80,82 +84,70 @@ const Tag = 'h1'; // Default tag
   }
 
   .title {
-    font-size: var(--font-size-2xl);
-    margin-bottom: 1rem;
+
   }
   .subtitle {
     font-size:var(--font-size-sm);
     color: #555;
-  }
 
-
-  .description p {
-    font-size: 1.25rem;
-    margin: 0.5rem 0;
-  }
-
-  .hero-slot {
-    margin-top: 1rem;
+    + * {--space: .125em;}
   }
 </style>
 
-<div class:list={['hero', layout, classes]} {...rest}>
+<div class:list={['media-object', layout, classes]} {...rest}>
   
-  <!-- Image -->
-  {(layout === 'media-left' || layout === 'media-right') && resolvedImagePath && (
+  <!-- Image or Video -->
+  {(layout === 'media-left' || layout === 'media-right' || layout === 'media-top' || layout === 'media-bottom') && mediaPath && (
     <div class="media">
-      <Image 
-        src={resolvedImagePath} 
-        width={mediaWidth} 
-        height={mediaHeight} 
-        alt={altText}
-        style={`border-radius: ${borderRadius};`}
-      />
-    </div>
-  )}
-  
-  <!-- Video -->
-  {videoSource && (
-    <div class="media">
-      <video 
-        controls 
-        width={mediaWidth} 
-        height={mediaHeight}
-        style={`border-radius: ${borderRadius};`}
-      >
-        <source src={videoSource} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {isVideo ? (
+        <video 
+          controls 
+          width={mediaWidth} 
+          height={mediaHeight}
+          style={`border-radius: ${borderRadius}; aspect-ratio: ${aspectRatio};`}
+        >
+          <source src={mediaPath} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        resolvedImagePath && (
+          <Image 
+            src={resolvedImagePath} 
+            width={mediaWidth} 
+            height={mediaHeight} 
+            alt={altText}
+            style={`border-radius: ${borderRadius}; aspect-ratio: ${aspectRatio};`}
+          />
+        )
+      )}
     </div>
   )}
     
   <!-- Layout layout-Centered -->
-  {(layout === 'media-top' || layout === 'media-bottom') && resolvedImagePath && !videoSource && (
-    <div class="media">
+  {(layout === 'media-top' || layout === 'media-bottom') && mediaPath && !isVideo && resolvedImagePath && (
+    <div class:list={['media', 'aspect-ratio']} >
       <Image 
         src={resolvedImagePath} 
         width={mediaWidth} 
         height={mediaHeight} 
         alt={altText}
-        style={`border-radius: ${borderRadius};`}
+        style={`border-radius: ${borderRadius}; aspect-ratio: ${aspectRatio};`}
       />
     </div>
   )}
-
+  
   <!-- content -->
-  <div class="content">
+  <div class="content stack" style={`max-inline-size: ${contentWidth};`}>
     {subtitle && <div class="subtitle">{subtitle}</div>}
     <Tag class="title">{title}</Tag>
-    {content && 
-      <div class="description">
-        {content.map((item) => (
-          <p set:html={item}></p>
-        ))}
-      </div>
-    }
-    <div class="hero-slot">
-      <slot></slot>
-    </div>
+    
+    <!-- description -->
+    {content && content.map((item) => (
+      <p set:html={item}></p>
+    ))}
+
+    <!-- slotted -->
+    <slot></slot>
+    <!-- /slotted -->
   </div>
-  <!-- /content -->
 </div>

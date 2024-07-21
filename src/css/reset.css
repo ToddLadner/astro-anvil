@@ -106,6 +106,7 @@ Faster taps
 
   /* Font-style: italic; */
   :is(i, em, .italic) { font-variation-settings: "ital" 1 }
+  :is(strong, b, .bold) { font-variation-settings: "wght" var(--weight, 700) }
 
   /* Remove default margin in favour of better control in authored CSS */
   :is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) { margin: 0 }
