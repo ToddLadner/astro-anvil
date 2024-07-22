@@ -18,10 +18,11 @@ interface Props extends HTMLAttributes<"div"> {
   aspectRatio?: string;
   gradientsFirst?: boolean;
   classes?: string;
+  gap?: string;
 }
 
 const {
-  tag = 'div', // default to div if no tag is provided
+  tag = 'div',
   gradients = [],
   imagePaths = [],
   backgroundProperties = [],
@@ -29,6 +30,7 @@ const {
   aspectRatio = '16 / 9',
   gradientsFirst = true,
   classes,
+  gap = '0',
   ...rest
 } = Astro.props;
 
@@ -64,6 +66,7 @@ const Tag = tag;
     background-color: var(--background-color, transparent);
     aspect-ratio: var(--aspect-ratio, 16 / 9);
     background: var(--background);
+    gap: var(--gap, 0);
   }
 </style>
 
@@ -73,6 +76,7 @@ const Tag = tag;
     --background: ${backgrounds.length > 0 ? background : 'none'};
     --background-color: ${backgroundColor};
     --aspect-ratio: ${aspectRatio};
+    --gap: ${gap};
   `} 
   {...rest}
 >
