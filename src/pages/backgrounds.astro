@@ -63,7 +63,7 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         { repeat: "no-repeat", position: "top center", size: "100%" }
       ]}
       backgroundColor="lightgray"
-      classes="grid align-center justify-center max-inline-content pad-block-3xl"
+      classes="grid align-center stack justify-center max-inline-content pad-block-3xl"
       aspectRatio="var(--ratio-ultrawide)"
     >
       <!-- Hero -->
@@ -82,12 +82,11 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
           <span class="sr-only">about the way to talk to screen readers</span>
           </a>.`
         ]}
-        mediaPath="/src/img/fungi.jpg"  
+        mediaPath="/src/img/green-marble.jpg"  
         altText="A beautiful landscape"
         layout="media-left"
         mediaWidth={500}
         mediaHeight={300}
-        aspectRatio="var(--ratio-landscape)"
         classes="my-custom-class"
         style="gap: 3rem;"
       >
@@ -95,35 +94,35 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         <button class="confetti">Confetti</button>
         <!-- /slotted content -->
       </Hero>
-            <!-- Hero -->
-            <Hero 
-            title="Explore the World with Us"
-            tag="h1"
-            subtitle="Join our adventure and make a difference"
-            content={[
-              `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
-              We are committed to providing the best experiences in travel and adventure. 
-              Our team is dedicated to providing <b>top-notch services</b>.`,
-              
-              `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
-              <a href="/more-info">
-              Learn more
-              <span class="sr-only">about the way to talk to screen readers</span>
-              </a>.`
-            ]}
-            mediaPath="/src/img/fungi.mp4"  
-            altText="A beautiful landscape"
-            layout="media-left"
-            mediaWidth={500}
-            mediaHeight={300}
-            aspectRatio="var(--ratio-landscape)"
-            classes="my-custom-class"
-            style="gap: 3rem;"
-          >
-            <!-- slotted content -->
-            <button class="confetti">Confetti</button>
-            <!-- /slotted content -->
-          </Hero>
+      
+      <!-- Hero -->
+      <Hero 
+        title="Explore the World with Us"
+        tag="h1"
+        subtitle="Join our adventure and make a difference"
+        content={[
+          `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
+          We are committed to providing the best experiences in travel and adventure. 
+          Our team is dedicated to providing <b>top-notch services</b>.`,
+          
+          `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
+          <a href="/more-info">
+          Learn more
+          <span class="sr-only">about the way to talk to screen readers</span>
+          </a>.`
+        ]}
+        mediaPath="/src/img/earth.mp4"  
+        altText="A beautiful landscape"
+        layout="media-left"
+        mediaWidth={500}
+        mediaHeight={300}
+        classes="my-custom-class"
+        style="gap: 3rem;"
+      >
+        <!-- slotted content -->
+        <button class="confetti">Confetti</button>
+        <!-- /slotted content -->
+      </Hero>
     </Background>
   </main>
 </Layout>
