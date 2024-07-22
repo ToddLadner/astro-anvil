@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import { Image, Picture } from 'astro:assets';
 import Background from '@components/Background.astro';
 import Hero from '@components/Hero.astro';
-
+import MediaObject from '@components/Media-Object.astro';
 import heroImage from '@images/moon-7.jpg';
 
 const imageKitBaseURL = "https://ik.imagekit.io/rb7q3yxmzqn";
@@ -31,8 +31,7 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
   
   <main>
     <Background
-      tag='article'
-    
+      tag='section'
       gradients={[
         "linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))",
         "linear-gradient(to top, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))"
@@ -57,8 +56,8 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
     <Background
       tag="article"
       gradientsFirst={false}
-      imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
       gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
+      imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
       backgroundProperties={[
         { repeat: "no-repeat", position: "top center", size: "100%" }
       ]}
@@ -67,7 +66,7 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       aspectRatio="var(--ratio-ultrawide)"
     >
       <!-- Hero -->
-      <Hero 
+      <MediaObject  
         title="Explore the World with Us"
         tag="h1"
         subtitle="Join our adventure and make a difference"
@@ -96,7 +95,7 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       </Hero>
       
       <!-- Hero -->
-      <Hero 
+      <MediaObject  
         title="Explore the World with Us"
         tag="h1"
         subtitle="Join our adventure and make a difference"
@@ -123,6 +122,35 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
         <button class="confetti">Confetti</button>
         <!-- /slotted content -->
       </Hero>
+
+      <!-- Media Object -->
+      <MediaObject 
+        title="Explore the World with Us"
+        tag="h1"
+        subtitle="Join our adventure and make a difference"
+        content={[
+          `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
+          We are committed to providing the best experiences in travel and adventure. 
+          Our team is dedicated to providing <b>top-notch services</b>.`,
+          
+          `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
+          <a href="/more-info">
+          Learn more
+          <span class="sr-only">about the way to talk to screen readers</span>
+          </a>.`
+        ]}
+        mediaPath="/src/img/green-marble.jpg"  
+        altText="A beautiful landscape"
+        layout="media-left"
+        mediaWidth={500}
+        mediaHeight={300}
+        classes="my-custom-class"
+        style="gap: 3rem;"
+      >
+        <!-- slotted content -->
+        <button class="confetti">Confetti</button>
+        <!-- /slotted content -->
+      </MediaObject>
     </Background>
   </main>
 </Layout>
@@ -132,10 +160,11 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
   const confetti = new jsConfetti();
 
   document.addEventListener('DOMContentLoaded', () => {
-    const funBtn = document.querySelector('.confetti');
-    // Guard Clause
-    if (!funBtn) return;
-    
+  const funBtns = document.querySelectorAll('.confetti');
+  
+  if (!funBtns.length) return;
+  
+  funBtns.forEach(funBtn => {
     let likes = 0;
 
     funBtn.addEventListener('click', () => {
@@ -145,4 +174,6 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       confetti.addConfetti();
     });
   });
+});
+
 </script>
