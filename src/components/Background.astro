@@ -59,15 +59,20 @@ const Tag = tag;
 ---
 
 <style>
-  .background { width: 100%; }
+  .background {
+    width: 100%;
+    background-color: var(--background-color, transparent);
+    aspect-ratio: var(--aspect-ratio, 16 / 9);
+    background: var(--background);
+  }
 </style>
 
 <Tag 
   class:list={['background', classes]} 
   style={`
-    ${backgrounds.length > 0 ? `background: ${background};` : ''} 
-    background-color: ${backgroundColor}; 
-    aspect-ratio: ${aspectRatio};
+    --background: ${backgrounds.length > 0 ? background : 'none'};
+    --background-color: ${backgroundColor};
+    --aspect-ratio: ${aspectRatio};
   `} 
   {...rest}
 >
