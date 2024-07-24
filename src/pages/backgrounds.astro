@@ -6,6 +6,7 @@ import { Image, Picture } from 'astro:assets';
 import Background from '@components/Background.astro';
 import Hero from '@components/Hero.astro';
 import MediaObject from '@components/Media-Object.astro';
+import MediaWrap from '@components/MediaObject.astro';
 import heroImage from '@images/moon-7.jpg';
 
 const imageKitBaseURL = "https://ik.imagekit.io/rb7q3yxmzqn";
@@ -66,6 +67,18 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       aspectRatio="var(--ratio-ultrawide)"
       space="var(--space-3xl)"
     >
+    <MediaWrap>
+      <small>subhead</small>
+      <h3>testing</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</p>
+      <Image
+        slot="media"
+        src={heroImage}
+        alt="descriptive text"
+        widths={[240, 540, 720, heroImage.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
+      />
+    </MediaWrap>
       <!-- media-object -->
       <MediaObject  
       title="Explore the World with Us"

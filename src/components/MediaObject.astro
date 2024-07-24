@@ -1,0 +1,53 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"div">{
+  tag?: "article" | "div" | "section";
+  side?: "left" | "right";
+  sideWidth?: string;
+  contentMin?: string;
+  gap?: string;
+  noStretch?: boolean;
+  classes?: string;
+}
+
+const { 
+  tag = 'div',
+  side = 'left',
+  sideWidth = 'var(--space-3xs)',
+  contentMin = '50%',
+  gap = 'var(--space-3xs)',
+  noStretch = false,
+  classes,
+  ...rest
+} = Astro.props;
+
+const Tag = tag;
+---
+
+<style>
+  .media-object { 
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+
+  .media { 
+    flex-grow: 1; 
+    flex-basis: 20rem;  
+  }
+
+  .content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%; /* ← works best as a percentage */
+  }
+</style>
+
+<Tag class:list={['media-object', noStretch && 'noStretch', classes]}>
+  <div class:list={['media']}>
+    <slot name="media" />
+  </div>
+  <div class:list={['content']}>
+    <slot/>
+  </div>
+</Tag>

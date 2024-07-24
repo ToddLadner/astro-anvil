@@ -145,7 +145,7 @@ Faster taps
   // MARK: Links
   Links */
 
-  a {
+  /* a {
     margin-block: calc(var(--space-3xs) * -1);
     margin-inline: calc(var(--space-3xs) * -1);
     padding-block: var(--space-3xs);
@@ -162,7 +162,7 @@ Faster taps
       --color-hue: var(--hue-purple);
       text-decoration-color: var(--color-2);
     }
-  }
+  } */
 
   /* 
   // MARK: Lists
