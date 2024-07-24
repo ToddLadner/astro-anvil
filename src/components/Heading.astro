@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"h1"> {
+  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  color?: 'base' | 'brand';
+  contrast?: boolean;
+  classes?: string;
+}
+
+const { 
+  tag = 'h1',
+  size = 'md',
+  color = 'base',
+  contrast = false,
+  classes,
+  ...rest
+} = Astro.props;
+
+const Tag = tag;
+---
+
+<style>
+  h1 { font-size: var(--font-size-2xl) }
+  h2 { font-size: var(--font-size-xl) }
+  h3 { font-size: var(--font-size-lg) }
+  h4 { font-size: var(--font-size-md) }
+  h5 { font-size: var(--font-size-sm) }
+  h6 { font-size: var(--font-size-xs) }
+
+  :is(h1, h2, h3, h4, h5, h6) { text-wrap: balance; }
+
+  :is(h1, h2, h3, h4) {
+    line-height: var(--lineheight-xs);
+    margin-block: 0;
+  }
+</style>
+
+<Tag class:list={[size, color, contrast && 'contrast', classes]} {...rest}>
+  <slot />
+</Tag>

@@ -123,18 +123,7 @@ const Tag = tag; // Default tag
     </div>
   )}
     
-  <!-- Layout layout-Centered -->
-  {(layout === 'media-top' || layout === 'media-bottom') && mediaPath && !isVideo && resolvedImagePath && (
-    <div class:list={['media', 'aspect-ratio']} >
-      <Image 
-        src={resolvedImagePath} 
-        width={mediaWidth} 
-        height={mediaHeight} 
-        alt={altText}
-        style={`border-radius: ${borderRadius}; aspect-ratio: ${aspectRatio};`}
-      />
-    </div>
-  )}
+  
   
   <!-- content -->
   <div class="content stack" style={`max-inline-size: ${contentWidth};`}>

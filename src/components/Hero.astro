@@ -39,10 +39,8 @@ const {
 
 // Dynamically import all images from the /src/assets directory
 const images = import.meta.glob('@images/*.{jpeg,jpg,png,gif}', { eager: true }) as Record<string, { default: string }>;
-
 // Resolve the image path if it's an image
 const resolvedImagePath = mediaPath && /\.(jpeg|jpg|png|gif)$/.test(mediaPath) && images[`${mediaPath}`]?.default;
-
 // Determine if the media is a video
 const isVideo = mediaPath && /\.(mp4|webm|ogg)$/.test(mediaPath);
 
@@ -51,20 +49,19 @@ const Tag = tag; // Default tag
 
 <style>
   .media-object { 
-    display: flex;
+    display: flex; 
     flex-wrap: wrap; 
   }
 
   .media { 
     flex-grow: 1; 
     flex-basis: 20rem;  
-    min-inline-size: 20rem;
   }
 
   .content {
     flex-basis: 0;
     flex-grow: 999;
-    min-inline-size: 50%
+    min-inline-size: 50%; /* ← works best as a percentage */
   }
   
   video { block-size: auto }
@@ -72,32 +69,36 @@ const Tag = tag; // Default tag
   :is(img, video) { 
     inline-size: 100%;
     display: flex;
-    
   }
 
-  :is(.media-left, .media-right) { align-items: flex-start }
-
+  :is(.media-left, .media-right) { align-items: flex-start }  
+  /* ↓ media to the right or bottom of content */
   :is(.media-right, .media-bottom) .media { order: 2 }
-
-  :is(.media-top, .media-bottom) :is(.media, video) { inline-size: 100% }
-
+  /* ↓ media 100% width if above or below content */
+  :is(.media-top, .media-bottom) .media { 
+    width: 100%;
+    display: block;
+  }
+  /* ↓ aspect ratio for videos */
   :is(.media-top, .media-bottom) video { aspect-ratio: var(--ratio-widescreen) }
-
+  /* ↓ stack component */
   :is(.media-top, .media-bottom) .content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
+  .stack { --space: 1em; }
+  .title { --space: .25em; }
+  
   .subtitle {
     font-size:var(--font-size-sm);
     color: #555;
-
-    + * {--space: .125em;}
   }
 </style>
 
-<div class:list={['media-object', layout, classes]} {...rest}>
+<article class:list={['media-object', layout, classes]} {...rest}>
   
   <!-- Image or Video -->
   {(layout === 'media-left' || layout === 'media-right' || layout === 'media-top' || layout === 'media-bottom') && mediaPath && (
@@ -126,19 +127,6 @@ const Tag = tag; // Default tag
     </div>
   )}
     
-  <!-- Layout layout-Centered -->
-  {(layout === 'media-top' || layout === 'media-bottom') && mediaPath && !isVideo && resolvedImagePath && (
-    <div class:list={['media', 'aspect-ratio']} >
-      <Image 
-        src={resolvedImagePath} 
-        width={mediaWidth} 
-        height={mediaHeight} 
-        alt={altText}
-        style={`border-radius: ${borderRadius}; aspect-ratio: ${aspectRatio};`}
-      />
-    </div>
-  )}
-  
   <!-- content -->
   <div class="content stack" style={`max-inline-size: ${contentWidth};`}>
     {subtitle && <div class="subtitle">{subtitle}</div>}
@@ -148,9 +136,8 @@ const Tag = tag; // Default tag
     {content && content.map((item) => (
       <p set:html={item}></p>
     ))}
-
+    
     <!-- slotted -->
-    <slot></slot>
-    <!-- /slotted -->
+    <slot/>
   </div>
-</div>
+</article>
