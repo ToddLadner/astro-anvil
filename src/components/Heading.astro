@@ -5,6 +5,7 @@ interface Props extends HTMLAttributes<"h1"> {
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: 'base' | 'brand';
+  text?: string;
   contrast?: boolean;
   classes?: string;
 }
@@ -13,6 +14,7 @@ const {
   tag = 'h1',
   size = 'md',
   color = 'base',
+  text,
   contrast = false,
   classes,
   ...rest
@@ -38,5 +40,6 @@ const Tag = tag;
 </style>
 
 <Tag class:list={[size, color, contrast && 'contrast', classes]} {...rest}>
-  <slot />
+  <slot /> 
+  {text}
 </Tag>

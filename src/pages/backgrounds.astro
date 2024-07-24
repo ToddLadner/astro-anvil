@@ -2,20 +2,14 @@
 import Layout from '@layouts/Layout.astro';
 
 //Components
-import { Image, Picture } from 'astro:assets';
-import Heading from '@components/Heading.astro';
+import { Image } from 'astro:assets';
 import Background from '@components/Background.astro';
-import Hero from '@components/Hero.astro';
-import MediaObject from '@components/Media-Object.astro';
-import MediaWrap from '@components/MediaObject.astro';
+import Heading from '@components/Heading.astro';
+import Text from '@components/Text.astro';
+import Button from '@components/Button.astro';
+import MediaObject from '@components/MediaObject.astro';
+
 import heroImage from '@images/moon-7.jpg';
-
-const imageKitBaseURL = "https://ik.imagekit.io/rb7q3yxmzqn";
-const imagePath = "moons/moon-1_u-HpwpOBH.JPG?";  // Replace with your image path
-
-const widths = [240, 540, 720, 1200];
-const srcSet = widths.map(width => `${imageKitBaseURL}${imagePath}?tr=w-${width} ${width}w`).join(", ");
-const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallback image
 ---
 
 <style>
@@ -75,11 +69,23 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
       space="var(--space-3xl)"
     >
     
-      <MediaWrap>
+      <MediaObject
+        tag="article"
+        mediaSide='media-left'
+        mediaWidth='30rem'
+        contentMin='45ch'
+        gap="var(--space-sm-xl)"
+        noStretch
+        classes="custom-class"
+      >
         <!-- slotted content -->
         <small class="subtitle">subhead</small>
-        <Heading tag="h2" class="title">Moons ya know! Tides & shit.</Heading>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</p>
+        <Heading tag="h1" class="title" text='Moons ya know! Tides & shit.'/>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Button theme="primary" classes="confetti" text='Confetti'/>
         
         <!-- slotted media -->
         <Image
@@ -89,123 +95,34 @@ const defaultSrc = `${imageKitBaseURL}${imagePath}?tr=w-1200`;  // Default fallb
           widths={[240, 540, 720, heroImage.width]}
           sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
         />
-      </MediaWrap>
-      
-      <!-- media-object -->
-      <MediaObject  
-      title="Explore the World with Us"
-      tag="h1"
-      subtitle="Join our adventure and make a difference"
-      content={[
-        `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
-        We are committed to providing the best experiences in travel and adventure. 
-        Our team is dedicated to providing <b>top-notch services</b>.`,
-        
-        `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
-        <a href="/more-info">
-        Learn more
-        <span class="sr-only">about the way to talk to screen readers</span>
-        </a>.`
-      ]}
-      mediaPath="/src/img/green-marble.jpg"  
-      altText="A beautiful landscape"
-      layout="media-top"
-      mediaWidth={500}
-      mediaHeight={300}
-      classes="my-custom-class"
-      style="gap: var(--space-md-lg);"
-    >
-      <!-- slotted content -->
-      <button class="confetti">Confetti</button>
-      <!-- /slotted content -->
-      </MediaObject>
-      
-      <!-- Hero -->
-      <MediaObject  
-        title="Explore the World with Us"
-        tag="h1"
-        subtitle="Join our adventure and make a difference"
-        content={[
-          `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
-          We are committed to providing the best experiences in travel and adventure. 
-          Our team is dedicated to providing <b>top-notch services</b>.`,
-          
-          `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
-          <a href="/more-info">
-          Learn more
-          <span class="sr-only">about the way to talk to screen readers</span>
-          </a>.`
-        ]}
-        mediaPath="/src/img/green-marble.jpg"  
-        altText="A beautiful landscape"
-        layout="media-left"
-        mediaWidth={500}
-        mediaHeight={300}
-        classes="my-custom-class"
-        style="gap: var(--space-md-lg);"
-      >
-        <!-- slotted content -->
-        <button class="confetti">Confetti</button>
-        <!-- /slotted content -->
-      </MediaObject>
-      
-      <!-- Hero -->
-      <MediaObject  
-        title="Explore the World with Us"
-        tag="h1"
-        subtitle="Join our adventure and make a difference"
-        content={[
-          `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
-          We are committed to providing the best experiences in travel and adventure. 
-          Our team is dedicated to providing <b>top-notch services</b>.`,
-          
-          `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
-          <a href="/more-info">
-          Learn more
-          <span class="sr-only">about the way to talk to screen readers</span>
-          </a>.`
-        ]}
-        mediaPath="/src/img/earth.mp4"  
-        altText="A beautiful landscape"
-        layout="media-left"
-        mediaWidth={500}
-        mediaHeight={300}
-        classes="my-custom-class"
-        style="gap: var(--space-md-lg)"
-      >
-        <!-- slotted content -->
-        <button class="confetti">Confetti</button>
-        <!-- /slotted content -->
       </MediaObject>
 
-      <!-- Media Object -->
-      <MediaObject 
-        title="Explore the World with Us"
-        tag="h1"
-        subtitle="Join our adventure and make a difference"
-        content={[
-          `We offer the <b>perfect adventure</b> for every <em>travel enthusiast</em>. 
-          We are committed to providing the best experiences in travel and adventure. 
-          Our team is dedicated to providing <b>top-notch services</b>.`,
-          
-          `Discover new <strong>adventures in places</strong> and make lasting memories with us. 
-          <a href="/more-info">
-          Learn more
-          <span class="sr-only">about the way to talk to screen readers</span>
-          </a>.`
-        ]}
-        mediaPath="/src/img/green-marble.jpg"  
-        altText="A beautiful landscape"
-        layout="media-left"
-        mediaWidth={500}
-        mediaHeight={300}
-        classes="my-custom-class"
-        style="gap: var(--space-md-lg);"
+      <MediaObject
+        tag="article"
+        mediaSide='media-right'
+        mediaWidth='30rem'
+        contentMin='45ch'
+        gap="var(--space-sm-xl)"
+        noStretch
+        classes="custom-class"
       >
         <!-- slotted content -->
-        <button class="confetti">Confetti</button>
-        <!-- /slotted content -->
+        <small class="subtitle">subhead</small>
+        <Heading tag="h1" class="title" text='Moons ya know! Tides & shit.'/>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Button theme="primary" classes="confetti" text='Confetti'/>
+        
+        <!-- slotted media -->
+        <video slot="media" controls>
+          <source src='./src/img/earth.mp4' type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </MediaObject>
+      <!-- media-object -->
+      
     </Background>
   </main>
 </Layout>

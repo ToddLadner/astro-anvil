@@ -110,7 +110,8 @@ Z INDEX
 
   /* 03 Custom pairs */
   --space-sm-lg: clamp(1rem, 0.4783rem + 2.6087vi, 2.5rem);
-
+  --space-sm-xl: clamp(1rem, 0.0435rem + 4.7826vw, 3.75rem);
+  --space-sm-2xl: clamp(1rem, -0.3913rem + 6.9565vw, 5rem);
   /* 
   // MARK: Borders
   Borders

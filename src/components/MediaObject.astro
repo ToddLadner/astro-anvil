@@ -1,22 +1,22 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"div">{
+interface Props extends HTMLAttributes<"article">{
   tag?: "article" | "div" | "section";
-  side?: "left" | "right";
-  sideWidth?: string;
-  contentMin?: string;
+  mediaSide?: "media-left" | "media-right";
+  mediaWidth?: string;
   gap?: string;
+  contentMin?: string;
   noStretch?: boolean;
   classes?: string;
 }
 
 const { 
-  tag = 'div',
-  side = 'left',
-  sideWidth = 'var(--space-3xs)',
-  contentMin = '50%',
-  gap = 'var(--space-3xs)',
+  tag = 'article',
+  mediaSide = 'media-left',
+  mediaWidth = '30rem',
+  gap = 'var(--space-md)',
+  contentMin = '50%', /* ← works best as a percentage or ch */
   noStretch = false,
   classes,
   ...rest
@@ -29,30 +29,36 @@ const Tag = tag;
   .media-object { 
     display: flex; 
     flex-wrap: wrap; 
-    gap: var(--space-lg)
+    gap: var(--gap);
   }
 
   .media { 
     flex-grow: 1; 
-    flex-basis: 30rem;  
+    flex-basis: var(--media-width);  
+    min-width: 320px;
   }
 
   .content {
     flex-basis: 0;
     flex-grow: 999;
-    min-inline-size: 40%; /* ← works best as a percentage */
+    min-inline-size: var(--content-min);
+    order:2;
+
+    &.media-right { order: unset; }
   }
 
   .stack { --space: 1em; }
-  
-
 </style>
 
-<Tag class:list={['media-object', noStretch && 'noStretch', classes]}>
-  <div class:list={['media']}>
-    <slot name="media" />
-  </div>
-  <div class:list={['content', 'stack']}>
+<Tag class:list={['media-object', noStretch && 'noStretch', classes]} style={`--gap: ${gap};`}>
+  <!-- slotted content [1]-->
+  <div class:list={['content', 'stack', mediaSide]} style={`--content-min: ${contentMin}`}>
     <slot/>
   </div>
+  <!-- slotted content -->
+  <div class:list={['media']} style={`--media-width: ${mediaWidth}`}>
+    <slot name="media" />
+  </div>
 </Tag>
+
+ <!-- [1] Opiniated: I feel like the Heading should always come first to best describe the media -->
