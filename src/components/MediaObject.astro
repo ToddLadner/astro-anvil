@@ -29,25 +29,30 @@ const Tag = tag;
   .media-object { 
     display: flex; 
     flex-wrap: wrap; 
+    gap: var(--space-lg)
   }
 
   .media { 
     flex-grow: 1; 
-    flex-basis: 20rem;  
+    flex-basis: 30rem;  
   }
 
   .content {
     flex-basis: 0;
     flex-grow: 999;
-    min-inline-size: 50%; /* ← works best as a percentage */
+    min-inline-size: 40%; /* ← works best as a percentage */
   }
+
+  .stack { --space: 1em; }
+  
+
 </style>
 
 <Tag class:list={['media-object', noStretch && 'noStretch', classes]}>
   <div class:list={['media']}>
     <slot name="media" />
   </div>
-  <div class:list={['content']}>
+  <div class:list={['content', 'stack']}>
     <slot/>
   </div>
 </Tag>

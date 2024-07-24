@@ -80,14 +80,13 @@ Faster taps
   */
 
   /* Sets font-size, line-height, and adaptive base color */
-  /* 
-  in Heading component
+
   h1 { font-size: var(--font-size-2xl) }
   h2 { font-size: var(--font-size-xl) }
   h3 { font-size: var(--font-size-lg) }
   h4 { font-size: var(--font-size-md) }
   h5 { font-size: var(--font-size-sm) }
-  h6 { font-size: var(--font-size-xs) } */
+  h6 { font-size: var(--font-size-xs) }
 
   :is(h1, h2, h3, h4, h5, h6, dt, label) { color: var(--text-1); }
 
