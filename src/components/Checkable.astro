@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"input"> {
+  id?: string;
+  type?: "checkbox" | "radio";
+  value?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  name?: string;
+  classes?: string;
+}
+
+const { 
+  id,
+  type = "checkbox",
+  value,
+  size = "md",
+  name,
+  classes, 
+  ...rest 
+  } = Astro.props;
+---
+
+<style>
+:where(input[type="radio"], input[type="checkbox"]) {
+  margin: unset;
+  min-width: var(--space-sm);
+  aspect-ratio: 1;
+  transform: translateY(1px);
+  border-radius: 100%;
+}
+</style>
+
+<input {type} class:list={[size, classes]} {...rest}>

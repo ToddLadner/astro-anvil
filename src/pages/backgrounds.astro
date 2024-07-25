@@ -7,6 +7,8 @@ import Background from '@components/Background.astro';
 import Heading from '@components/Heading.astro';
 import Text from '@components/Text.astro';
 import Button from '@components/Button.astro';
+import Select from '@components/Select.astro';
+import Checkable from '@components/Checkable.astro';
 import MediaObject from '@components/MediaObject.astro';
 
 import heroImage from '@images/moon-7.jpg';
@@ -20,10 +22,12 @@ import heroImage from '@images/moon-7.jpg';
     color: #555;
   }
   .title { --space: .125em; }
+  button { --space: 1.5em; }
 </style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-
+  <!-- <Checkable type="checkbox" name="radio" id="radio-1" name="radio-1" value="radio-1">
+  <Checkable type="radio" name="radio" id="radio-1" name="radio-1" value="radio-1"> -->
   <Image
     src={heroImage}
     alt="descriptive text"
@@ -73,21 +77,34 @@ import heroImage from '@images/moon-7.jpg';
         tag="article"
         mediaSide='media-left'
         mediaWidth='30rem'
+        gap="var(--space-sm-lg)"
         contentMin='45ch'
-        gap="var(--space-sm-xl)"
         noStretch
         classes="custom-class"
       >
-        <!-- slotted content -->
+        <!-- slotted | content -->
         <small class="subtitle">subhead</small>
-        <Heading tag="h1" class="title" text='Moons ya know! Tides & shit.'/>
+        <Heading tag='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Button theme="primary" classes="confetti" text='Confetti'/>
+        <Select
+          options={[
+            {
+              text: 'Option 1',
+              value: 'value 1',
+            },
+            {
+              text: 'Option 2',
+              value: 'value 2',
+            },
+          ]}
+        />
         
-        <!-- slotted media -->
+
+        <!-- slotted | media -->
         <Image
           slot="media"
           src={heroImage}
@@ -102,7 +119,7 @@ import heroImage from '@images/moon-7.jpg';
         mediaSide='media-right'
         mediaWidth='30rem'
         contentMin='45ch'
-        gap="var(--space-sm-xl)"
+        gap="var(--space-sm-lg)"
         noStretch
         classes="custom-class"
       >

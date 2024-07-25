@@ -20,10 +20,13 @@ Adaptive Glass
   @media (--OSdark) { --glass-lightness: 0%; }
 }
 
+
+
 /* 
-// MARK: Informatonal
-Informatonal Colors
+// MARK: Theme Colors
+Theme Colors
 */
+.brand { color: var(--brand-5); }
 
 .success { color: light-dark(var(--green-5), var(--green-3)) }
 .info { color: light-dark(var(--blue-5), var(--blue-3)) }
@@ -34,6 +37,17 @@ Informatonal Colors
 .info-bg { background-color: light-dark(var(--blue-5), var(--blue-3)) }
 .warning-bg { background-color: light-dark(var(--orange-5), var(--orange-3)) }
 .danger-bg { background-color: light-dark(var(--red-5), var(--red-3)) }
+
+/*
+// MARK: Font Sizes
+Font Sizes
+*/ 
+
+.xl { font-size: var(--font-size-xl); }
+.lg { font-size: var(--font-size-lg); }  
+.md { font-size: var(--font-size-md); } 
+.sm { font-size: var(--font-size-sm); }  
+.xs { font-size: var(--font-size-xs); }
 
 /*
 // MARK: Shapes

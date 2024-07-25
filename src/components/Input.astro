@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"input"> {
+  type?: "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "month" | "number" | "password" | "range" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  shape?: "square" | "circle" | "pill";
+  text?: string;
+  icon?: string;
+  classes?: string;
+}
+
+const { 
+  type = "text", 
+  size,
+  shape,
+  text, 
+  icon,
+  classes, 
+  ...rest 
+  } = Astro.props;
+---
+
+<input {type} class:list={[size, shape, classes]} {...rest}>
+    { icon && <Icon name={icon} /> }
+    <slot/>
+    {text}
+</input>

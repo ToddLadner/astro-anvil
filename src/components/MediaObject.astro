@@ -15,7 +15,7 @@ const {
   tag = 'article',
   mediaSide = 'media-left',
   mediaWidth = '30rem',
-  gap = 'var(--space-md)',
+  gap = 'var(--space-sm-lg)',
   contentMin = '50%', /* ← works best as a percentage or ch */
   noStretch = false,
   classes,
@@ -50,7 +50,7 @@ const Tag = tag;
   .stack { --space: 1em; }
 </style>
 
-<Tag class:list={['media-object', noStretch && 'noStretch', classes]} style={`--gap: ${gap};`}>
+<Tag class:list={['media-object', noStretch && 'no-stretch', classes]} style={`--gap: ${gap};`}>
   <!-- slotted content [1]-->
   <div class:list={['content', 'stack', mediaSide]} style={`--content-min: ${contentMin}`}>
     <slot/>
@@ -61,4 +61,4 @@ const Tag = tag;
   </div>
 </Tag>
 
- <!-- [1] Opiniated: I feel like the Heading should always come first to best describe the media -->
+ <!-- [1] Opiniated: I feel like the Heading should always come first to best describe the content -->
