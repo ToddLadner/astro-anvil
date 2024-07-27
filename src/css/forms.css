@@ -12,22 +12,7 @@
 validation
 ─────────────────────────────── */
 
-/* 01 layout */
 
-
-.form-group > * {  margin-block-start: 0 }
-.form-group > * + * { margin-block-start: var(--space-3xs) }
-
-/* 02 label */
-/* label { font-size: var(--font-size-md); } */
-
-/* Upgrade label layout when it's wrapping a checkbox */
-/* label:has( > :where(input[type="radio"], input[type="checkbox"])) {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 1ch;
-  margin-top: .5ch;
-} */
 
 /* 03 Input:not(button), Textarea, Select */
 :where(textarea,select,input:not([type=button],[type=submit],[type=reset],[type="file"],[type="radio"],[type="checkbox"])) {
@@ -63,9 +48,6 @@ validation
 } 
 */
 
-:where(fieldset, .fieldset) {
-
-}
 
 /* 04 Textarea */
 textarea { 
@@ -74,34 +56,14 @@ textarea {
 }
 
 
-/* 05 Radio & Checkbox */
-/* :where(input[type="radio"], input[type="checkbox"]) {
-  margin: unset;
-  min-width: var(--space-sm);
-  aspect-ratio: 1;
-  transform: translateY(1px);
-  border-radius: 100%;
-} */
 
-/* 06 Select */
-/* select {
-  appearance: none;
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="oklch(0.63 0.2 175)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
-	background-repeat: no-repeat;
-	background-position: right 1em top 50%;
-	background-size: .65em;
-
-  @media (prefers-color-scheme: dark) {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="oklch(0.63 0.2 175)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
-  }
-} */
 
 /* 07 Fieldset & Legend */
 fieldset {
   border-radius: var(--radius-md);
   border: 2px solid var(--surface-2);
   padding-inline: 1.75ch;
-  padding-block: .75ch;
+  padding-block:0 1.75ch;
   display: grid;
   
   @media (prefers-color-scheme: dark){
@@ -109,7 +71,15 @@ fieldset {
   }
 }
 
-legend { padding-inline: 1ch }
+legend { 
+  padding-inline: 0 1em;
+  padding-block: 0 1em;
+  margin:0 0 0 -1em;
+
+
+
+  font-size: var(--font-size-md); 
+}
 
 
 /* 08 Placeholder */

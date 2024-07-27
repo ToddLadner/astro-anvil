@@ -22,18 +22,18 @@ const Tag = tag;
 ---
 
 <style is:global>
-  .stack > * { margin-block: 0 }
-  .stack > * + * { margin-block: 0 }
+.stack > * { margin-block: 0 }
+.stack > * + * { margin-block-start: var(--space, 1em); }
 
-  .stack[data-space="3xs"] > * + * { margin-block-start: var(--space-3xs) }
-  .stack[data-space="2xs"] > * + * { margin-block-start: var(--space-2xs) }
-  .stack[data-space="xs"] > * + * { margin-block-start: var(--space-xs) }
-  .stack[data-space="sm"] > * + * { margin-block-start: var(--space-sm) }
-  .stack[data-space="md"] > * + * { margin-block-start: var(--space-md) }
-  .stack[data-space="lg"] > * + * { margin-block-start: var(--space-lg) }
-  .stack[data-space="xl"] > * + * { margin-block-start: var(--space-xl) }
-  .stack[data-space="2xl"] > * + * { margin-block-start: var(--space-2xl) }
-  .stack[data-space="3xl"] > * + * { margin-block-start: var(--space-3xl) }
+.stack[data-space="3xs"] > * + * { --space: var(--space-3xs) }
+.stack[data-space="2xs"] > * + * { --space: var(--space-2xs) }
+.stack[data-space="xs"] > * + * { --space: var(--space-xs) }
+.stack[data-space="sm"] > * + * { --space: var(--space-sm) }
+.stack[data-space="md"] > * + * { --space: var(--space-md) }
+.stack[data-space="lg"] > * + * { --space: var(--space-lg) }
+.stack[data-space="xl"] > * + * { --space: var(--space-xl) }
+.stack[data-space="2xl"] > * + * { --space: var(--space-2xl) }
+.stack[data-space="3xl"] > * + * { --space: var(--space-3xl) }
 
   .stack > *:nth-child(var(--split-after)) {
     margin-block-end: auto;
