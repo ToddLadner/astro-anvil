@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"form"> {
+  icon?: string;
+  classes?: string;
+}
+
+const { 
+  icon,
+  classes, 
+  ...rest 
+  } = Astro.props;
+---
+
+<style>
+.form { 
+  max-inline-size: var(--measure-md);
+  margin-inline: auto; 
+}
+
+</style>
+
+<form class:list={['form', 'stack-xl']}>
+  <slot />
+</form>

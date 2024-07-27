@@ -1,6 +1,9 @@
 ---
 // Import necessary types
 import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
+import type { RedirectRouteData } from 'astro';
+import Stack from '@components/Stack.astro';
 
 // Define the props interface
 interface Option {
@@ -10,12 +13,24 @@ interface Option {
 
 interface Props extends HTMLAttributes<"select"> {
   options: (string | Option)[];
+  size?: "sm" | "md" | "lg" ;
+  length?: "fit-content" |"sm" | "md" | "lg" | "100%";
+  uid?: string;
+  label?: string;
+  icon?: string;
+  marker?: RedirectRouteData;
 }
 
 const { 
   options, 
+  length="100%",
+  uid,
+  label, 
+  icon,
+  marker,
   ...rest 
 } = Astro.props;
+
 ---
 
 <style>
@@ -30,13 +45,21 @@ const {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="oklch(0.63 0.2 175)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
   }
 }
+.label { font-size: var(--font-size-md); }
+.fieldset.stack { --space: .5em; }
 </style>
 
-<select {...rest}>
-  {options.map(option => {
-    if (typeof option === 'string') {
-      return <option value={option}>{option}</option>;
-    }
-    return <option value={option.value}>{option.text}</option>;
-  })}
-</select>
+<Stack tag="div" space="2xs" classes="fieldset">
+  <label for={uid} class="label">
+    { icon && <Icon name={icon} /> }
+    {label}
+  </label>
+  <select {...rest}>
+    {options.map(option => {
+      if (typeof option === 'string') {
+        return <option value={option}>{option}</option>;
+      }
+      return <option value={option.value}>{option.text}</option>;
+    })}
+  </select>
+</Stack>

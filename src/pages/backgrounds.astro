@@ -8,6 +8,7 @@ import Heading from '@components/Heading.astro';
 import Text from '@components/Text.astro';
 import Button from '@components/Button.astro';
 import Select from '@components/Select.astro';
+import Input from '@components/Input.astro';
 import Checkable from '@components/Checkable.astro';
 import MediaObject from '@components/MediaObject.astro';
 
@@ -90,7 +91,7 @@ import heroImage from '@images/moon-7.jpg';
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Button theme="primary" classes="confetti" text='Confetti'/>
-        <Select
+        <Select label='Select'
           options={[
             {
               text: 'Option 1',
@@ -102,7 +103,10 @@ import heroImage from '@images/moon-7.jpg';
             },
           ]}
         />
-        
+        <Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" label="CB 1"/>
+        <Checkable type="radio" uid="radio-1" name="radio" label="RD 1" />
+        <Checkable type="radio" uid="radio-2" name="radio" label="RD 2" />
+        <Input type="text" label="Input" uid="input-1" />
 
         <!-- slotted | media -->
         <Image
@@ -141,6 +145,7 @@ import heroImage from '@images/moon-7.jpg';
       <!-- media-object -->
       
     </Background>
+
   </main>
 </Layout>
 

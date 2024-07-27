@@ -13,7 +13,7 @@ validation
 ─────────────────────────────── */
 
 /* 01 layout */
-form.stack { --space: var(--space-sm) }
+
 
 .form-group > * {  margin-block-start: 0 }
 .form-group > * + * { margin-block-start: var(--space-3xs) }
@@ -62,6 +62,10 @@ form.stack { --space: var(--space-sm) }
   }
 } 
 */
+
+:where(fieldset, .fieldset) {
+
+}
 
 /* 04 Textarea */
 textarea { 

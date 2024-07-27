@@ -1,12 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
+import Stack from '@components/Stack.astro';
 
 interface Props extends HTMLAttributes<"input"> {
   type?: "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "month" | "number" | "password" | "range" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   shape?: "square" | "circle" | "pill";
-  text?: string;
+  length?: "fit-content" |"sm" | "md" | "lg";
+  uid?: string;
+  label?: string;
   icon?: string;
   classes?: string;
 }
@@ -15,15 +18,23 @@ const {
   type = "text", 
   size,
   shape,
-  text, 
+  length,
+  uid,
+  label, 
   icon,
   classes, 
   ...rest 
   } = Astro.props;
 ---
 
-<input {type} class:list={[size, shape, classes]} {...rest}>
+<style>
+  label { font-size: var(--font-size-md); }
+</style>
+
+<Stack tag="div" space="3xl">
+  <label for={uid}>
     { icon && <Icon name={icon} /> }
-    <slot/>
-    {text}
-</input>
+    {label}
+  </label>
+  <input {type} id={uid} class:list={[size, shape, classes]} data-length={length} {...rest}>
+</Stack>

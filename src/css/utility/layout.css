@@ -20,8 +20,24 @@ Centered Content
 Stack
 */
 
+/* .stack > * { margin-block: 0 }
+.stack > * + * { margin-block-start: var(--space, 1em); } */
 .stack > * { margin-block: 0 }
 .stack > * + * { margin-block-start: var(--space, 1em); }
+
+.stack[data-space="3xs"] > * + * { --space: var(--space-3xs) }
+.stack[data-space="2xs"] > * + * { --space: var(--space-2xs) }
+.stack[data-space="xs"] > * + * { --space: var(--space-xs) }
+.stack[data-space="sm"] > * + * { --space: var(--space-sm) }
+.stack[data-space="md"] > * + * { --space: var(--space-md) }
+.stack[data-space="lg"] > * + * { --space: var(--space-lg) }
+.stack[data-space="xl"] > * + * { --space: var(--space-xl) }
+.stack[data-space="2xl"] > * + * { --space: var(--space-2xl) }
+.stack[data-space="3xl"] > * + * { --space: var(--space-3xl) }
+
+/* .stack > *:nth-child() {
+  margin-block-end: auto;
+} */
 
 /*
 // MARK: Overflow

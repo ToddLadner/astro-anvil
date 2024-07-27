@@ -1,0 +1,74 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+import Stack from '@components/Stack.astro';
+import Select from '@components/Select.astro';
+import Input from '@components/Input.astro';
+import Button from '@components/Button.astro';
+import Checkable from '@components/Checkable.astro';
+import Text from '@components/Text.astro';
+import Background from '@components/Background.astro';
+
+// Optimized background hero image
+import heroImage from '@images/fungi.jpg';
+const optimizedBackgroundImage = await getImage({ src: heroImage })
+---
+
+<style>
+
+.test * { padding: 1rem; max-width: 5rem;  border: 1px solid white;}
+.test > * { background-color: aqua; }
+.test > * + * { background-color: red; }
+
+
+</style>
+
+<Layout title="Welcome to Astro." description="The official site of Astro.">	
+	<main class="max-inline-content">
+		<div class="test stack" data-space="3xl" > 
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+
+			<div class="stack" data-space="3xs" > 
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+			</div>
+
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		
+
+		<!-- <Stack tag="form" space="lg" style="max-width: 500px; margin-inline: auto">
+			<Input type="text" label="Input" uid="input-1" />
+			<Input type="text" label="Input" uid="input-1" />
+			<Select label='Select'
+				options={[
+					{
+						text: 'Option 1',
+						value: 'value 1',
+					},
+					{
+						text: 'Option 2',
+						value: 'value 2',
+					},
+				]}
+			/>
+			<figcaption>
+				<legend>Legend</legend>
+				<Checkable type="radio" uid="radio-1" name="radio" label="RD 1" />
+				<Checkable type="radio" uid="radio-2" name="radio" label="RD 2" />
+			</figcaption>
+			
+			<Input type="text" label="Input" uid="input-1" />
+			<Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+      <Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" label="CB 1"/>
+			<Button theme="primary" text='Submit'/>
+		</Stack> -->
+	</main>
+</Layout>
+
+
