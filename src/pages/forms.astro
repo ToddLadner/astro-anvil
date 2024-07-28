@@ -1,23 +1,17 @@
 ---
-import { Image, getImage } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
-import Stack from '@components/Stack.astro';
-import Select from '@components/Select.astro';
-import Input from '@components/Input.astro';
+import Stack from '@components/structure/Stack.astro';
 import Button from '@components/Button.astro';
-import Checkable from '@components/Checkable.astro';
-import Text from '@components/Text.astro';
-import Fieldset from '@components/Fieldset.astro';
-import Background from '@components/Background.astro';
-
-// Optimized background hero image
-import heroImage from '@images/fungi.jpg';
-const optimizedBackgroundImage = await getImage({ src: heroImage })
+import Text from '@components/typography/Text.astro';
+// form components
+import Select from '@components/form/Select.astro';
+import Input from '@components/form/Input.astro';
+import Fieldset from '@components/form/Fieldset.astro';
+import Checkable from '@components/form/Checkable.astro';
 ---
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">	
 	<main class="max-inline-content">
-
 		<Stack 
 			tag="form" 
 			space="sm" 
