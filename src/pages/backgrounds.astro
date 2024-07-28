@@ -19,25 +19,15 @@ import Stack from '@components/Stack.astro';
 
 <style>
   .pad-block-3xl { padding-block: var(--space-3xl); }
-
-  .subtitle {
-    font-size:var(--font-size-sm);
-    color: #555;
-  }
-  .title { --space: .125em; }
-  button { --space: 1.5em; }
 </style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-  <!-- <Checkable type="checkbox" name="radio" id="radio-1" name="radio-1" value="radio-1">
-  <Checkable type="radio" name="radio" id="radio-1" name="radio-1" value="radio-1"> -->
   <Image
     src={heroImage}
     alt="descriptive text"
     widths={[240, 540, 720, heroImage.width]}
     sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
   />
-  
   <main>
     <Background
       tag='section'
@@ -75,6 +65,7 @@ import Stack from '@components/Stack.astro';
       data-space="3xl"
       aspectRatio="var(--ratio-ultrawide)"
     >
+       
       <MediaObject
         tag="article"
         mediaSide='media-left'
@@ -87,16 +78,17 @@ import Stack from '@components/Stack.astro';
         <!-- slotted | content -->
         <small class="subtitle">subhead</small>
         <Heading tag='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
+        
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
-        <Button theme="primary" classes="confetti" text='Confetti'/>
         
+        <Button theme="primary" classes="confetti" text='Confetti' classes="mt-3"/>
 
         <!-- slotted | media -->
         <Image
-          slot="media"
+          slot="media" 
           src={heroImage}
           alt="descriptive text"
           widths={[240, 540, 720, heroImage.width]}
@@ -115,7 +107,8 @@ import Stack from '@components/Stack.astro';
       >
         <!-- slotted content -->
         <small class="subtitle">subhead</small>
-        <Heading tag="h1" class="title" text='Moons ya know! Tides & shit.'/>
+        <Heading tag="h2" class="title" text='Moons ya know! Tides & shit.'/>
+        
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
@@ -129,7 +122,6 @@ import Stack from '@components/Stack.astro';
         </video>
       </MediaObject>
     </Background>
-
   </main>
 </Layout>
 

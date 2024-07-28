@@ -43,8 +43,8 @@ const Tag = tag;
     flex-basis: 0;
     flex-grow: 999;
     min-inline-size: var(--content-min);
-    order:2;
-
+    order: 2;
+    /* ↓ [1] */
     &.media-right { order: unset; }
   }
 
@@ -52,7 +52,7 @@ const Tag = tag;
 </style>
 
 <Tag class:list={['media-object', noStretch && 'no-stretch', classes]} style={`--gap: ${gap};`}>
-  <!-- slotted content [1]-->
+  <!-- ↓ slotted content [1] -->
   <Stack class:list={['content', 'stack', mediaSide]} space='xs' style={`--content-min: ${contentMin}`}>
     <slot/>
   </Stack>
@@ -62,4 +62,4 @@ const Tag = tag;
   </figure>
 </Tag>
 
- <!-- [1] Opiniated: I feel like the Heading should always come first to best describe the content -->
+ <!-- [1] Opiniated: I feel like the <Heading> should always come first to best describe the content -->

@@ -39,6 +39,7 @@ validation
 /* 04 Textarea */
 textarea { 
   resize: vertical;
+  /* ↓ future CSS */
   field-sizing: content;
 }
 
