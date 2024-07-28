@@ -7,6 +7,7 @@ import Input from '@components/Input.astro';
 import Button from '@components/Button.astro';
 import Checkable from '@components/Checkable.astro';
 import Text from '@components/Text.astro';
+import Fieldset from '@components/Fieldset.astro';
 import Background from '@components/Background.astro';
 
 // Optimized background hero image
@@ -14,22 +15,16 @@ import heroImage from '@images/fungi.jpg';
 const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
 
-<style>
-
-fieldset {
-	
-}
-
-
-</style>
-
 <Layout title="Welcome to Astro." description="The official site of Astro.">	
 	<main class="max-inline-content">
 
-
-		<Stack tag="form" space="sm" style="max-width: 500px; margin-inline: auto">
-			<Input type="text" label="Input" uid="input-1" />
-			<Input type="text" label="Input" uid="input-1" />
+		<Stack 
+			tag="form" 
+			space="sm" 
+			style="max-inline-size: var(--measure-md); margin-inline: auto"
+		>
+			<Input type="text" label="Name" uid="input-1" />
+			<Input type="text" label="Email" uid="input-1" />
 			<Select label='Select'
 				options={[
 					{
@@ -40,18 +35,24 @@ fieldset {
 						text: 'Option 2',
 						value: 'value 2',
 					},
-				]}
+				]} 
 			/>
-
-			<Stack tag="fieldset" space="xs" classes="flex flex-column">
-				<legend>Legend</legend>
+			
+			<Fieldset label="Legend Separator" separator>
+				<Stack space="sm">
+					<Input type="text" label="Name" uid="input-1" />
+					<Input type="text" label="Email" uid="input-1" />
+				</Stack>
+			</Fieldset>
+			
+			<Fieldset label="Legend" classes="grid" style="gap:.5rem">
 				<Checkable type="radio" uid="radio-1" name="radio" label="RD 1" />
 				<Checkable type="radio" uid="radio-2" name="radio" label="RD 2" />
-			</Stack>
+			</Fieldset>
 			
 			<Input type="text" label="Input" uid="input-1" />
 			<Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" label="CB 1"/>
-			<Text style="--space:0">Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+			<Text style="--space: 0"> Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
 			<Button theme="primary" text='Submit'/>
 		</Stack>
 	</main>

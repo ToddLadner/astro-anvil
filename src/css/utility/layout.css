@@ -12,15 +12,7 @@ Visually hidden
 // MARK: Centered Content
 Centered Content
 */
-
 .max-inline-content { padding-inline: max(var(--space-sm-lg), calc(50vw - var(--content-size, 90em) / 2)) }
-
-/* 
-// MARK: Stack
-Stack
-*/
-
-
 
 /*
 // MARK: Overflow

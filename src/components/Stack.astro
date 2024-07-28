@@ -12,7 +12,6 @@ interface Props extends HTMLAttributes<"div"> {
 const { 
   tag = 'div',
   space,
-  recursive = false,
   splitAfter,
   classes,
   ...rest
@@ -22,26 +21,27 @@ const Tag = tag;
 ---
 
 <style is:global>
-.stack > * { margin-block: 0 }
-.stack > * + * { margin-block-start: var(--space, 1em); }
+  /* stack */
+  .stack > * { margin-block: 0 }
+  .stack > * + * { margin-block-start: var(--space, 1em); }
 
-.stack[data-space="3xs"] > * + * { --space: var(--space-3xs) }
-.stack[data-space="2xs"] > * + * { --space: var(--space-2xs) }
-.stack[data-space="xs"] > * + * { --space: var(--space-xs) }
-.stack[data-space="sm"] > * + * { --space: var(--space-sm) }
-.stack[data-space="md"] > * + * { --space: var(--space-md) }
-.stack[data-space="lg"] > * + * { --space: var(--space-lg) }
-.stack[data-space="xl"] > * + * { --space: var(--space-xl) }
-.stack[data-space="2xl"] > * + * { --space: var(--space-2xl) }
-.stack[data-space="3xl"] > * + * { --space: var(--space-3xl) }
+  /* modifiers */
+  .stack[data-space="3xs"] > * + * { --space: var(--space-3xs) }
+  .stack[data-space="2xs"] > * + * { --space: var(--space-2xs) }
+  .stack[data-space="xs"] > * + * { --space: var(--space-xs) }
+  .stack[data-space="sm"] > * + * { --space: var(--space-sm) }
+  .stack[data-space="md"] > * + * { --space: var(--space-md) }
+  .stack[data-space="lg"] > * + * { --space: var(--space-lg) }
+  .stack[data-space="xl"] > * + * { --space: var(--space-xl) }
+  .stack[data-space="2xl"] > * + * { --space: var(--space-2xl) }
+  .stack[data-space="3xl"] > * + * { --space: var(--space-3xl) }
 
-  .stack > *:nth-child(var(--split-after)) {
-    margin-block-end: auto;
-  }
+  /* split the stack */
+  .stack > *:nth-child(var(--split-after)) { margin-block-end: auto;}
 </style>
 
 <Tag 
-  class:list={['stack', recursive && 'recursive', classes]} 
+  class:list={['stack', classes]} 
   data-space={space} 
   style={splitAfter ? `--split-after: ${splitAfter}` : ''}
   {...rest}

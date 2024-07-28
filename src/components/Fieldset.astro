@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+import Stack from '@components/Stack.astro';
+
+interface Props extends HTMLAttributes<"input"> {
+  separator?: boolean;
+  label?: string;
+  icon?: string;
+  classes?: string;
+}
+
+const { 
+  separator,
+  label, 
+  icon,
+  classes, 
+  ...rest 
+  } = Astro.props;
+---
+
+<style>
+  fieldset {
+    border: 0;
+    padding-inline: 0;
+
+    &.separator {
+      border-top: 1px solid hsl(204 10% 70%);
+      /* border-bottom: 1px solid hsl(204 10% 70%);
+      padding-block-end: var(--space-sm); */
+    }
+
+    @media (--OSdark){
+      border: 2px solid hsl(204 10% 10%);
+    }
+  }
+
+  legend { 
+    padding-inline: 0;
+    font-size: var(--font-size-md);
+  }
+  .separator legend { 
+    margin-inline: auto;
+    padding-inline: 1.5ch;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--letterspacing-md);
+  }
+</style>
+
+<Stack tag="fieldset" space="3xs" class:list={[classes, separator && 'separator']} {...rest}>
+  <legend>
+    { icon && <Icon name={icon} /> }
+    {label}
+    { icon && <Icon name={icon} /> }
+  </legend>
+  <slot />
+</stack>

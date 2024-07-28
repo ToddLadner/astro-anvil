@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 
 //Components
 import { Image } from 'astro:assets';
+import Stach from '@components/Stack.astro';
 import Background from '@components/Background.astro';
 import Heading from '@components/Heading.astro';
 import Text from '@components/Text.astro';
@@ -13,6 +14,7 @@ import Checkable from '@components/Checkable.astro';
 import MediaObject from '@components/MediaObject.astro';
 
 import heroImage from '@images/moon-7.jpg';
+import Stack from '@components/Stack.astro';
 ---
 
 <style>
@@ -61,7 +63,7 @@ import heroImage from '@images/moon-7.jpg';
     </Background>
     
     <Background
-      tag="article"
+      tag="section"
       gradientsFirst={false}
       gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
       imagePaths={[ "/src/img/curve-divider-stroke.svg" ]}
@@ -70,10 +72,9 @@ import heroImage from '@images/moon-7.jpg';
       ]}
       backgroundColor="lightgray"
       classes="stack max-inline-content pad-block-3xl"
+      data-space="3xl"
       aspectRatio="var(--ratio-ultrawide)"
-      space="var(--space-3xl)"
     >
-    
       <MediaObject
         tag="article"
         mediaSide='media-left'
@@ -91,22 +92,7 @@ import heroImage from '@images/moon-7.jpg';
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Button theme="primary" classes="confetti" text='Confetti'/>
-        <Select label='Select'
-          options={[
-            {
-              text: 'Option 1',
-              value: 'value 1',
-            },
-            {
-              text: 'Option 2',
-              value: 'value 2',
-            },
-          ]}
-        />
-        <Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" label="CB 1"/>
-        <Checkable type="radio" uid="radio-1" name="radio" label="RD 1" />
-        <Checkable type="radio" uid="radio-2" name="radio" label="RD 2" />
-        <Input type="text" label="Input" uid="input-1" />
+        
 
         <!-- slotted | media -->
         <Image
@@ -142,8 +128,6 @@ import heroImage from '@images/moon-7.jpg';
           Your browser does not support the video tag.
         </video>
       </MediaObject>
-      <!-- media-object -->
-      
     </Background>
 
   </main>

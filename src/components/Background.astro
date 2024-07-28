@@ -18,7 +18,6 @@ interface Props extends HTMLAttributes<"div"> {
   aspectRatio?: string;
   gradientsFirst?: boolean;
   classes?: string;
-  space?: string; // Add the space prop here
 }
 
 const {
@@ -30,7 +29,7 @@ const {
   aspectRatio = '16 / 9',
   gradientsFirst = true,
   classes,
-  space = '0', // Set default space value here
+
   ...rest
 } = Astro.props;
 
@@ -75,7 +74,6 @@ const Tag = tag;
     --background: ${backgrounds.length > 0 ? background : 'none'};
     --background-color: ${backgroundColor};
     --aspect-ratio: ${aspectRatio};
-    --space: ${space};
   `} 
   {...rest}
 >

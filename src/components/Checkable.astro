@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<"input"> {
@@ -21,8 +20,9 @@ const {
 ---
 
 <style>
-    /* Upgrade label layout when it's wrapping a checkbox */
-    label:has( > :where(input[type="radio"], input[type="checkbox"])) {
+  /* Upgrade label layout when it's wrapping a checkbox */
+  label:has( > :where(input[type="radio"], input[type="checkbox"])) {
+    width: fit-content;
     display: inline-flex;
     align-items: center;
     gap: 1ch;

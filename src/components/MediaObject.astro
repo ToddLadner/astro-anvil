@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import Stack from '@components/Stack.astro';
 
 interface Props extends HTMLAttributes<"article">{
   tag?: "article" | "div" | "section";
@@ -47,18 +48,18 @@ const Tag = tag;
     &.media-right { order: unset; }
   }
 
-  .stack { --space: 1em; }
+
 </style>
 
 <Tag class:list={['media-object', noStretch && 'no-stretch', classes]} style={`--gap: ${gap};`}>
   <!-- slotted content [1]-->
-  <div class:list={['content', 'stack', mediaSide]} style={`--content-min: ${contentMin}`}>
+  <Stack class:list={['content', 'stack', mediaSide]} space='xs' style={`--content-min: ${contentMin}`}>
     <slot/>
-  </div>
+  </Stack>
   <!-- slotted content -->
-  <div class:list={['media']} style={`--media-width: ${mediaWidth}`}>
+  <figure class:list={['media']} style={`--media-width: ${mediaWidth}`}>
     <slot name="media" />
-  </div>
+  </figure>
 </Tag>
 
  <!-- [1] Opiniated: I feel like the Heading should always come first to best describe the content -->
