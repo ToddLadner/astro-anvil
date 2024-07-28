@@ -1,17 +1,20 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Stack from '@components/structure/Stack.astro';
-import Button from '@components/Button.astro';
+import Button from '@components/base/Button.astro';
 import Text from '@components/typography/Text.astro';
 // form components
 import Select from '@components/form/Select.astro';
 import Input from '@components/form/Input.astro';
 import Fieldset from '@components/form/Fieldset.astro';
 import Checkable from '@components/form/Checkable.astro';
+
+import Avatar from '@components/Avatar.astro';
 ---
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">	
 	<main class="max-inline-content">
+		<Avatar src="./src/img/killer-mike.jpg" alt="User Avatar" size="150px" />
 		<Stack 
 			tag="form" 
 			space="sm" 
