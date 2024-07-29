@@ -10,11 +10,16 @@ import Fieldset from '@components/form/Fieldset.astro';
 import Checkable from '@components/form/Checkable.astro';
 
 import Avatar from '@components/Avatar.astro';
+import userAvatar from '@images/killer-mike.jpg';
 ---
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">	
 	<main class="max-inline-content">
-		<Avatar src="./src/img/killer-mike.jpg" alt="User Avatar" size="150px" />
+		<Avatar src={userAvatar} alt="User Avatar" size="xs" />
+		<Avatar src={userAvatar} alt="User Avatar" size="sm" />
+		<Avatar src={userAvatar} alt="User Avatar" size="md" />
+		<Avatar src={userAvatar} alt="User Avatar" size="lg" />
+		<Avatar src={userAvatar} alt="User Avatar" size="xl" />
 		<Stack 
 			tag="form" 
 			space="sm" 

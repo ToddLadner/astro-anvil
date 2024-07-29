@@ -1,48 +1,44 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { Image } from 'astro:assets';
-
 // Avatar.astro
+import type { HTMLAttributes } from 'astro/types';
+import { getImage } from 'astro:assets';
+
 interface Props extends HTMLAttributes<"div"> {
-  src: string;
+  src: string | ImageMetadata;
   alt?: string;
-  size?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  shape?: string;
 }
 
 const { 
-  src, 
-  alt = 'Avatar', 
-  size = '100px' 
-  } = Astro.props;
+  src,
+  alt = 'Avatar',
+  size = 'md',
+  shape,
+} = Astro.props;
+
+const image = await getImage({
+  src: src,
+  format: "webp",
+  width: size,
+  height: size,
+});
 ---
 <style>
   .avatar {
     position: relative;
     width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-ellipse);
     overflow: hidden;
   }
-
-  .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .avatar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-  }
+  .avatar.xs { width: var(--space-sm) }
+  .avatar.sm { width: var(--space-md) }
+  .avatar.md { width: var(--space-lg) }
+  .avatar.lg { width: var(--space-xl) }
+  .avatar.xl { width: var(--space-2xl) }
 </style>
 
-<div class:list={["avatar"]} style="--size: {size};">
-  <img src={src} alt={alt} />
+<div class:list={['avatar', size]}>
+  <img src={image.src} alt={alt} class:list={[ shape ]} width='200' height='200'   style="width: 100%; height: 100%; object-fit: cover;" />
 </div>
