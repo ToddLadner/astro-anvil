@@ -28,23 +28,69 @@ const image = await getImage({
   
   .avatar {
     position: relative;
+    display: flex;
     width: 150px;
     aspect-ratio: 1;
-    margin: 2rem auto;
+    margin-inline: auto;
 
   svg { size: 100%; }
-
   img { max-width: 100%; }
 }
 
 .badge { 
   background-color: var(--green-4);
   border-radius: var(--radius-ellipse);
-  size: 1.5rem;
+  size: 1.75rem;
   position: absolute;
-  inset-block-start: 73%;
-  inset-inline-start: 78%;
+  inset-block-end: .4625rem;
+  inset-inline-end: .4625rem;
 }
+
+.avatar-wrapper {
+  --size: 100px;
+  width: var(--size);
+  height: var(--size);
+}
+.seen-group {
+  display: flex;
+
+  > * + * {
+    margin-left: calc(var(--size) / 5.5 * -1);
+
+    circle[fill="black"] {
+      cx: calc(var(--size) / 4 * -1);
+      cy: calc(var(--size) / 2);
+      r: calc(var(--size) / 2);
+    }
+  }
+}
+
+.wrapper {
+  max-width: 344px;
+  margin: 2rem auto;
+}
+
+.card {
+  --primary-text: #050505;
+  --secondary-text: #65676b;
+  --bg-color: #fff;
+
+  position: relative;
+  background-color: var(--bg-color);
+  padding: 8px 12px 8px 8px;
+  border-radius: 7px;
+  box-shadow: 0 3px 15px 0 rgba(#000, 0.05);
+
+  &:hover{ background-color: light-dark(var(--gray-cool-2), var(--blue-5));}
+}
+
+.card__content {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 </style>
 
 
@@ -55,12 +101,62 @@ const image = await getImage({
       <circle fill="black" cx="86%" cy="86%" r="12%"></circle>
     </mask>
     <g mask="url(#circle)">
-      <image x="0" y="0" height="100%" preserveAspectRatio="xMidYMid slice" width="100%" xlink:href={image.src}></image>
+      <image 
+        x="0" y="0" 
+        height="100%" 
+        preserveAspectRatio="xMidYMid slice" 
+        width="100%" 
+        xlink:href={image.src}>
+      </image>
       <circle fill="none" cx="50%" cy="50%" r="50%" stroke="rgba(0,0,0,0.1)" stroke-width="5"></circle>
     </g>
   </svg>
   <div class="badge"></div>
 </div>
+
+<div class="wrapper">
+  <div class="card">
+    <div class="card__content">
+      <div class="seen-group">
+        <svg role="none" class="avatar-wrapper">
+          
+          <style>
+            .avatar-wrapper circle {
+              cx: calc(var(--size) / 2);
+              cy: calc(var(--size) / 2);
+              r: calc(var(--size) / 2);
+            }
+          </style>
+          
+          <mask id="test2">
+            <circle fill="white"></circle>
+          </mask>
+          <g mask="url(#test2)">
+            <image x="0" y="0" height="100%" preserveAspectRatio="xMidYMid slice" width="100%" xlink:href={image.src}></image>
+            <circle fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2"></circle>
+          </g>
+        </svg>
+        <svg role="none" class="avatar-wrapper">
+          <style>
+            .avatar-wrapper circle {
+              cx: calc(var(--size) / 2);
+              cy: calc(var(--size) / 2);
+              r: calc(var(--size) / 2);
+            }
+          </style>
+         
+          <mask id="test3">
+            <circle fill="white"></circle>
+            <circle fill="black" cx="-30"></circle>
+          </mask>
+          <g mask="url(#test3)">
+            <image x="0" y="0" height="100%" preserveAspectRatio="xMidYMid slice" width="100%" xlink:href={image.src}></image>
+            <circle fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2"></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
 
 <!-- <div class:list={['avatar', size]}>
   <img src={image.src} alt={alt} class:list={[ shape ]} width='200' height='200'   style="width: 100%; height: 100%; object-fit: cover;" />
