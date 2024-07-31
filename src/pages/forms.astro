@@ -15,11 +15,16 @@ import userAvatar from '@images/killer-mike.jpg';
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">	
 	<main class="max-inline-content">
-		<Avatar src={userAvatar} alt="User Avatar" size="xs" />
-		<Avatar src={userAvatar} alt="User Avatar" size="sm" />
-		<Avatar src={userAvatar} alt="User Avatar" size="md" />
-		<Avatar src={userAvatar} alt="User Avatar" size="lg" />
-		<Avatar src={userAvatar} alt="User Avatar" size="xl" />
+
+
+		<div class="card__avatar card__avatar--multiple">
+      <Avatar src={userAvatar} alt="User Avatar 1" size="xs" id="1" />
+      <Avatar src={userAvatar} alt="User Avatar 2" size="sm" id="2" />
+      <Avatar src={userAvatar} alt="User Avatar 3" size="md" id="3" />
+      <Avatar src={userAvatar} alt="User Avatar 4" size="lg" id="4" />
+      <Avatar src={userAvatar} alt="User Avatar 5" size="xl" id="5" />
+      <div class="badge"></div>
+    </div>
 		<Stack 
 			tag="form" 
 			space="sm" 

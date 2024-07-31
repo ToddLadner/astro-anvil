@@ -25,20 +25,43 @@ const image = await getImage({
 });
 ---
 <style>
+  
   .avatar {
     position: relative;
-    width: var(--size);
+    width: 150px;
     aspect-ratio: 1;
-    border-radius: var(--radius-ellipse);
-    overflow: hidden;
-  }
-  .avatar.xs { width: var(--space-sm) }
-  .avatar.sm { width: var(--space-md) }
-  .avatar.md { width: var(--space-lg) }
-  .avatar.lg { width: var(--space-xl) }
-  .avatar.xl { width: var(--space-2xl) }
+    margin: 2rem auto;
+
+  svg { size: 100%; }
+
+  img { max-width: 100%; }
+}
+
+.badge { 
+  background-color: var(--green-4);
+  border-radius: var(--radius-ellipse);
+  size: 1.5rem;
+  position: absolute;
+  inset-block-start: 73%;
+  inset-inline-start: 78%;
+}
 </style>
 
+
 <div class:list={['avatar', size]}>
-  <img src={image.src} alt={alt} class:list={[ shape ]} width='200' height='200'   style="width: 100%; height: 100%; object-fit: cover;" />
+  <svg role="none">
+    <mask id="circle">
+      <circle fill="white" cx="50%" cy="50%" r="50%"></circle>
+      <circle fill="black" cx="86%" cy="86%" r="12%"></circle>
+    </mask>
+    <g mask="url(#circle)">
+      <image x="0" y="0" height="100%" preserveAspectRatio="xMidYMid slice" width="100%" xlink:href={image.src}></image>
+      <circle fill="none" cx="50%" cy="50%" r="50%" stroke="rgba(0,0,0,0.1)" stroke-width="5"></circle>
+    </g>
+  </svg>
+  <div class="badge"></div>
 </div>
+
+<!-- <div class:list={['avatar', size]}>
+  <img src={image.src} alt={alt} class:list={[ shape ]} width='200' height='200'   style="width: 100%; height: 100%; object-fit: cover;" />
+</div> -->
