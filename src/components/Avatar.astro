@@ -1,5 +1,4 @@
 ---
-// Avatar.astro
 import type { HTMLAttributes } from 'astro/types';
 import { getImage } from 'astro:assets';
 
@@ -7,60 +6,39 @@ interface Props extends HTMLAttributes<"div"> {
   src: string | ImageMetadata;
   alt?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  shape?: string;
+  label?: string;
 }
 
-const { src, alt = 'Avatar', size = 'md', shape } = Astro.props;
-
-const sizeMap = {
-  xs: 50,
-  sm: 75,
-  md: 100,
-  lg: 150,
-  xl: 200,
-};
-
-const imageSize = sizeMap[size];
+const { 
+  src, 
+  label = 'Avatar Label', 
+  size = 'md' 
+} = Astro.props;
 
 const image = await getImage({
   src: src,
   format: "webp",
-  width: imageSize,
-  height: imageSize,
 });
 
 const uniqueId = `mask-${Math.random().toString(36).substr(2, 9)}`;
 ---
 <style>
   .avatar {
-    width: 12rem;
+    --size: 12rem;
+
+    width: var(--size);
     container: avatar / inline-size;
     position: relative;
     display: inline-flex;
     aspect-ratio: 1;
     margin-inline: auto;
-  }
 
-  .avatar svg {
-    width: 100%;
-    height: 100%;
+      &.xs { --size: 3rem; }
+      &.sm { --size: 6rem; }
+      &.md { --size: 9rem; }
+      &.lg { --size: 12rem; }
+      &.xl { --size: 15rem; }
   }
-
-  .avatar img {
-    max-width: 100%;
-  }
-
-  .avatar .border {
-    fill: none;
-    stroke: rgba(0, 0, 0, 0.1);
-    stroke-width: 2;
-  }
-
-  .avatar.xs { width: 3rem; }
-  .avatar.sm { width: 6rem; }
-  .avatar.md { width: 9rem; }
-  .avatar.lg { width: 12rem; }
-  .avatar.xl { width: 15rem; }
 
   .badge { 
     background-color: var(--green-4);
@@ -72,7 +50,7 @@ const uniqueId = `mask-${Math.random().toString(36).substr(2, 9)}`;
   }
 </style>
 
-<div class:list={['avatar', size]}>
+<div class:list={['avatar', size]} aria-label={label}>
   <svg role="none">
     <mask id={uniqueId}>
       <circle fill="white" cx="50%" cy="50%" r="50%"></circle>

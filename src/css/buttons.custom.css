@@ -63,12 +63,7 @@ button.circle {
   width: 2.75em; 
 }
 
-/* 06 Button sizes */
-.xl { --size: var(--font-size-xl) }
-.lg { --size: var(--font-size-lg) }
-.md { --size: var(--font-size-md) }
-.sm { --size: var(--font-size-sm) }
-.xs { --size: var(--font-size-xs) }
+
 
 
 

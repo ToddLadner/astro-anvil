@@ -73,6 +73,13 @@
     line-height: 1.2;
     border-radius: var(--border-radius);
     font-variation-settings: "wght" var(--base-weight, 0), "GRAD" var(--base-grade);
+
+    /* Button sizes */
+    &.xl { --size: var(--font-size-xl) }
+    &.lg { --size: var(--font-size-lg) }
+    &.md { --size: var(--font-size-md) }
+    &.sm { --size: var(--font-size-sm) }
+    &.xs { --size: var(--font-size-xs) }
   }
   /* Reset */
   :where(input[type="button"]),
