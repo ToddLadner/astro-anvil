@@ -24,20 +24,21 @@ const uniqueId = `mask-${Math.random().toString(36).substr(2, 9)}`;
 ---
 <style>
   .avatar {
-    --size: 12rem;
+    --size: var(--space-xl);
 
-    width: var(--size);
     container: avatar / inline-size;
+    width: var(--size);
     position: relative;
     display: inline-flex;
     aspect-ratio: 1;
     margin-inline: auto;
-
-      &.xs { --size: 3rem; }
-      &.sm { --size: 6rem; }
-      &.md { --size: 9rem; }
-      &.lg { --size: 12rem; }
-      &.xl { --size: 15rem; }
+    
+    /* Sizes */
+    &.xs { --size: var(--space-md); }
+    &.sm { --size: var(--space-lg); }
+    &.md { --size: var(--space-xl); }
+    &.lg { --size: var(--space-2xl); }
+    &.xl { --size: var(--space-3xl); }
   }
 
   .badge { 
