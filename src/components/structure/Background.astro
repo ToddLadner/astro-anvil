@@ -13,7 +13,10 @@ interface Props extends HTMLAttributes<"div"> {
   tag?: "div" | "section" | "article";
   gradients?: string[];
   imagePaths?: string[];
+  gradient?: string;
+  imagePath?: string;
   backgroundProperties?: BackgroundProperty[];
+  backgroundProperty?: BackgroundProperty;
   backgroundColor?: string;
   aspectRatio?: string;
   gradientsFirst?: boolean;
@@ -21,15 +24,17 @@ interface Props extends HTMLAttributes<"div"> {
 }
 
 const {
-  tag = 'div', // default to div if no tag is provided
+  tag = 'div',
   gradients = [],
+  gradient,
   imagePaths = [],
+  imagePath,
   backgroundProperties = [],
+  backgroundProperty,
   backgroundColor = 'transparent',
   aspectRatio = '16 / 9',
   gradientsFirst = true,
   classes,
-
   ...rest
 } = Astro.props;
 
@@ -40,6 +45,15 @@ const defaultBackgroundProperty: BackgroundProperty = {
 };
 
 const images = import.meta.glob<{ default: ImageMetadata }>('@images/*.{jpeg,jpg,png,gif,webp,avif,svg}');
+
+async function getImageBackground(imagePath: string, backgroundProperty: BackgroundProperty): Promise<string> {
+  if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "@images/*.{jpeg,jpg,png,gif,webp,avif,svg}"`);
+  const imageModule = await images[imagePath]();
+  const optimizedImage = await getImage({ src: imageModule.default });
+
+  const { repeat, position, size } = { ...defaultBackgroundProperty, ...backgroundProperty };
+  return `url(${optimizedImage.src}) ${repeat} ${position} / ${size}`;
+}
 
 async function getImageBackgrounds(imagePaths: string[], backgroundProperties: BackgroundProperty[]): Promise<string[]> {
   return Promise.all(imagePaths.map(async (imagePath, index) => {
@@ -52,8 +66,12 @@ async function getImageBackgrounds(imagePaths: string[], backgroundProperties: B
   }));
 }
 
-const imageBackgrounds = await getImageBackgrounds(imagePaths, backgroundProperties);
-const backgrounds = gradientsFirst ? [...gradients, ...imageBackgrounds] : [...imageBackgrounds, ...gradients];
+const imageBackgrounds = imagePath
+  ? [await getImageBackground(imagePath, backgroundProperty || defaultBackgroundProperty)]
+  : await getImageBackgrounds(imagePaths, backgroundProperties);
+
+const gradientsToUse = gradient ? [gradient] : gradients;
+const backgrounds = gradientsFirst ? [...gradientsToUse, ...imageBackgrounds] : [...imageBackgrounds, ...gradientsToUse];
 const background = backgrounds.join(', ');
 
 const Tag = tag;

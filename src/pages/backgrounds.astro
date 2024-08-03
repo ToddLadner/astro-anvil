@@ -9,6 +9,17 @@ import Text from '@components/typography/Text.astro';
 import Button from '@components/base/Button.astro';
 import MediaObject from '@components/structure/MediaObject.astro';
 import heroImage from '@images/moon-7.jpg';
+
+// background for callout section
+export const callout = {
+  imagePath: "/src/assets/images/curve-divider-stroke.svg",
+  gradient: "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)",
+  backgroundProperty: {
+    repeat: "no-repeat",
+    position: "top center",
+    size: "100%"
+  }
+};
 ---
 
 <style>
@@ -49,14 +60,85 @@ import heroImage from '@images/moon-7.jpg';
     <Background
       tag="section"
       gradientsFirst={false}
-      gradients={[ "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" ]}
-      imagePaths={[ "/src/assets/images/curve-divider-stroke.svg" ]}
-      backgroundProperties={[
-        { repeat: "no-repeat", position: "top center", size: "100%" }
-      ]}
+      gradient="linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" 
+      imagePath="/src/assets/images/curve-divider-stroke.svg" 
+      backgroundProperty={{ 
+        repeat: "no-repeat", 
+        position: "50% -1px", 
+        size: "101%" 
+      }}
       backgroundColor="lightgray"
       classes="stack max-inline-content pad-block-3xl"
       data-space="3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+       
+      <MediaObject
+        tag="article"
+        mediaSide='media-left'
+        mediaWidth='30rem'
+        gap="var(--space-sm-lg)"
+        contentMin='45ch'
+        noStretch
+        classes="custom-class"
+      >
+        <!-- slotted | content -->
+        <small class="subtitle">subhead</small>
+        <Heading tag='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
+        
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        
+        <Button theme="primary" classes="confetti" text='Confetti' classes="mt-3"/>
+
+        <!-- slotted | media -->
+        <Image
+          slot="media" 
+          src={heroImage}
+          alt="descriptive text"
+          widths={[240, 540, 720, heroImage.width]}
+          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
+        />
+      </MediaObject>
+
+      <MediaObject
+        tag="article"
+        mediaSide='media-right'
+        mediaWidth='30rem'
+        contentMin='45ch'
+        gap="var(--space-sm-lg)"
+        noStretch
+        classes="custom-class"
+      >
+        <!-- slotted content -->
+        <small class="subtitle">subhead</small>
+        <Heading tag="h2" class="title" text='Moons ya know! Tides & shit.'/>
+        
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Button theme="primary" classes="confetti" text='Confetti'/>
+        
+        <!-- slotted media -->
+        <video slot="media" controls>
+          <source src='./src/assets/images/earth.mp4' type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </MediaObject>
+    </Background>
+
+    <Background
+      tag="section"
+      gradientsFirst={false}
+      gradient={callout.gradient}
+      imagePath={callout.imagePath}
+      backgroundProperty={callout.backgroundProperty}
+      backgroundColor="lightgray"
+      classes="stack max-inline-content pad-block-3xl"
+      data-space="3xl" 
       aspectRatio="var(--ratio-ultrawide)"
     >
        
