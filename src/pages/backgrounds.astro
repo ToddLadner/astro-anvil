@@ -1,16 +1,15 @@
 ---
+// Components
 import Layout from '@layouts/Layout.astro';
-
-//Components
 import { Image } from 'astro:assets';
 import Background from '@components/structure/Background.astro';
 import Heading from '@components/typography/Heading.astro';
 import Text from '@components/typography/Text.astro';
 import Button from '@components/base/Button.astro';
 import MediaObject from '@components/structure/MediaObject.astro';
+// Images
 import heroImage from '@images/moon-7.jpg';
-
-// background for callout section
+// Background for callout section
 export const callout = {
   imagePath: "/src/assets/images/curve-divider-stroke.svg",
   gradient: "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)",
@@ -20,10 +19,26 @@ export const callout = {
     size: "100%"
   }
 };
+
+export const hero = {
+  gradient: "radial-gradient(at 0% 67%,#0c6a79 0,transparent 50%),radial-gradient(at 45% 20%,#0c6a79 0,transparent 50%),radial-gradient(at 0% 1%,#004747 0,transparent 50%),radial-gradient(at 86% 42%,#5e0833 0,transparent 50%),radial-gradient(at 100% 100%,#179290 0,transparent 50%),radial-gradient(at 99% 1%,#5e0834 0,transparent 50%),radial-gradient(at 0% 100%,#5c126d 0,transparent 50%)",
+  imagePath: "/src/assets/images/wave-divider-stroke.svg",
+  backgroundProperty: {
+    repeat: "no-repeat",
+    position: "center 101%",
+    size: "101%"
+  }
+};
+
+// repeat: "no-repeat", 
+//         position: "50% -1px", 
+//         size: "101%" 
 ---
 
 <style>
   .pad-block-3xl { padding-block: var(--space-3xl); }
+  /* ↓ Reset the max inline padding */
+  .max-inline-padding { --content-size: 80rem; }
 </style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
@@ -54,6 +69,7 @@ export const callout = {
       ]}
       backgroundColor="#ffffff"
       aspectRatio="var(--ratio-square)"
+      classes="img-overlay"
     >
     </Background>
     
@@ -70,6 +86,74 @@ export const callout = {
       backgroundColor="lightgray"
       classes="stack max-inline-padding pad-block-3xl"
       data-space="3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+       
+      <MediaObject
+        tag="article"
+        mediaSide='media-left'
+        mediaWidth='30rem'
+        gap="var(--space-sm-lg)"
+        contentMin='45ch'
+        noStretch
+        classes="custom-class"
+      >
+        <!-- slotted | content -->
+        <small class="subtitle">subhead</small>
+        <Heading tag='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
+        
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        
+        <Button theme="primary" classes="confetti" text='Confetti' classes="mt-3"/>
+
+        <!-- slotted | media -->
+        <Image
+          slot="media" 
+          src={heroImage}
+          alt="descriptive text"
+          widths={[240, 540, 720, heroImage.width]}
+          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
+        />
+      </MediaObject>
+
+      <MediaObject
+        tag="article"
+        mediaSide='media-right'
+        mediaWidth='30rem'
+        contentMin='45ch'
+        gap="var(--space-sm-lg)"
+        noStretch
+        classes="custom-class"
+      >
+        <!-- slotted content -->  
+        <small class='subtitle'>subhead</small>
+        <Heading tag='h2' classes='title' text='Moons ya know! Tides & shit.'/>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Button theme="primary" classes="confetti" text='Confetti'/>
+        
+        <!-- slotted media -->
+        <video slot="media" controls>
+          <source src='./src/assets/videos/earth.mp4' type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </MediaObject>
+    </Background>
+
+    <Background
+      as="section"
+      gradientsFirst={false}
+      gradient={callout.gradient}
+      imagePath={callout.imagePath}
+      backgroundProperty={callout.backgroundProperty}
+      backgroundColor="lightgray"
+      classes="stack max-inline-padding pad-block-3xl"
+      data-space="3xl" 
       aspectRatio="var(--ratio-ultrawide)"
     >
        
@@ -133,45 +217,14 @@ export const callout = {
     <Background
       as="section"
       gradientsFirst={false}
-      gradient={callout.gradient}
-      imagePath={callout.imagePath}
-      backgroundProperty={callout.backgroundProperty}
+      gradient={hero.gradient}
+      imagePath={hero.imagePath}
+      backgroundProperty={hero.backgroundProperty}
       backgroundColor="lightgray"
       classes="stack max-inline-padding pad-block-3xl"
       data-space="3xl" 
       aspectRatio="var(--ratio-ultrawide)"
     >
-       
-      <MediaObject
-        tag="article"
-        mediaSide='media-left'
-        mediaWidth='30rem'
-        gap="var(--space-sm-lg)"
-        contentMin='45ch'
-        noStretch
-        classes="custom-class"
-      >
-        <!-- slotted | content -->
-        <small class="subtitle">subhead</small>
-        <Heading tag='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
-        
-        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
-        <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
-        <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
-        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
-        
-        <Button theme="primary" classes="confetti" text='Confetti' classes="mt-3"/>
-
-        <!-- slotted | media -->
-        <Image
-          slot="media" 
-          src={heroImage}
-          alt="descriptive text"
-          widths={[240, 540, 720, heroImage.width]}
-          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
-        />
-      </MediaObject>
-
       <MediaObject
         tag="article"
         mediaSide='media-right'

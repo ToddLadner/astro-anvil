@@ -22,7 +22,12 @@ const {
 		<slot />
 		<TheFooter/>
 	</body>
+	<!-- [1] Portal any popovers/dialogs down here -->
 </html>
 <style is:global>
-	body { grid-template-rows: auto 1fr auto; }
+	body { 
+		grid-template-rows: auto 1fr auto;
+		/* ↓ [1] */
+		isolation: isolate;
+	}
 </style>
