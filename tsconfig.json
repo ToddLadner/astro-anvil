@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@images/*": ["src/img/*"],
+      "@images/*": ["src/assets/images/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
       "@scripts/*": ["src/js/*"],
