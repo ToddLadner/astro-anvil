@@ -10,7 +10,7 @@ interface BackgroundProperty {
 }
 
 interface Props extends HTMLAttributes<"div"> {
-  tag?: "div" | "section" | "article";
+  as?: "div" | "section" | "article";
   gradients?: string[];
   imagePaths?: string[];
   gradient?: string;
@@ -24,7 +24,7 @@ interface Props extends HTMLAttributes<"div"> {
 }
 
 const {
-  tag = 'div',
+  as = 'div',
   gradients = [],
   gradient,
   imagePaths = [],
@@ -67,7 +67,7 @@ const gradientsToUse = gradient ? [gradient] : gradients;
 const backgrounds = gradientsFirst ? [...gradientsToUse, ...imageBackgrounds] : [...imageBackgrounds, ...gradientsToUse];
 const background = backgrounds.join(', ');
 
-const Tag = tag;
+const Tag = as;
 ---
 
 <style>

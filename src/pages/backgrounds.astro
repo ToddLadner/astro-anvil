@@ -35,7 +35,7 @@ export const callout = {
   />
   <main>
     <Background
-      tag='section'
+      as='section'
       gradients={[
         "linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))",
         "linear-gradient(to top, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1))"
@@ -58,7 +58,7 @@ export const callout = {
     </Background>
     
     <Background
-      tag="section"
+      as="section"
       gradientsFirst={false}
       gradient="linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)" 
       imagePath="/src/assets/images/curve-divider-stroke.svg" 
@@ -68,7 +68,7 @@ export const callout = {
         size: "101%" 
       }}
       backgroundColor="lightgray"
-      classes="stack max-inline-content pad-block-3xl"
+      classes="stack max-inline-padding pad-block-3xl"
       data-space="3xl"
       aspectRatio="var(--ratio-ultrawide)"
     >
@@ -131,13 +131,13 @@ export const callout = {
     </Background>
 
     <Background
-      tag="section"
+      as="section"
       gradientsFirst={false}
       gradient={callout.gradient}
       imagePath={callout.imagePath}
       backgroundProperty={callout.backgroundProperty}
       backgroundColor="lightgray"
-      classes="stack max-inline-content pad-block-3xl"
+      classes="stack max-inline-padding pad-block-3xl"
       data-space="3xl" 
       aspectRatio="var(--ratio-ultrawide)"
     >
