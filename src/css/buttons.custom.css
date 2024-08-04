@@ -9,60 +9,65 @@
 06 Button shape
 07 fx-spring
 ─────────────────────────────── */
+@layer base {
+  /* 01 Primary */
+  .primary {
+    --background: linear-gradient(var(--brand-5), var(--brand-6));
+    --border: transparent;
+    --text: hsl(228 89% 100%);
+    --ink-shadow: 0 1px 0 hsl(228 57% 50%);
+    --highlight: hsl(175 94% 67% / 20%);
+    --icon-color: currentColor;
+    outline-color: var(--brand);
 
-/* 01 Primary */
-.primary {
-  --background: linear-gradient(var(--brand-5), var(--brand-6));
-  --border: transparent;
-  --text: hsl(228 89% 100%);
-  --ink-shadow: 0 1px 0 hsl(228 57% 50%);
-  --highlight: hsl(175 94% 67% / 20%);
-  --icon-color: currentColor;
-  outline-color: var(--brand);
+    &:hover {
+      --background: linear-gradient(var(--brand-6), var(--brand-7));
+    }
+  }
 
-  &:hover {
-    --background: linear-gradient(var(--brand-6), var(--brand-7));
+  /* 02 Secondary */
+  .secondary {
+    --background: transparent;
+    --text: var(--text-1);
+
+  }
+
+  /* 03 Plain */
+  .plain {
+    --background: transparent;
+    --border: none;
+    --highlight: 0;
+  }
+
+  /* 04 Hug */
+  .hug {
+    --padding-inline: 0;
+    --background: transparent;
+    --border: none;
+    --highlight: 0;
+  }
+
+  /* 05 Custom */
+  .custom {
+    --background: hsl(210 7% 56% / 20%);
+    --border: transparent;
+    --border-width: 0;
+    /* --text: hsl(228 89% 100%); */
+    --ink-shadow: 0 1px 0 hsl(228 10% 70%);
+  }
+  /* Button sizes */
+  .btn-xl { --size: var(--font-size-xl) }
+  .btn-lg { --size: var(--font-size-lg) }
+  .btn-md { --size: var(--font-size-md) }
+  .btn-sm { --size: var(--font-size-sm) }
+  .btn-xs { --size: var(--font-size-xs) }
+  /* 05 Button icon only */
+  button.circle {
+    --padding-inline: .125em; 
+    --padding-block: .125em;
+    width: 2.75em; 
   }
 }
-
-/* 02 Secondary */
-.secondary {
-  --background: transparent;
-  --text: var(--text-1);
-
-}
-
-/* 03 Plain */
-.plain {
-  --background: transparent;
-  --border: none;
-  --highlight: 0;
-}
-
-/* 04 Hug */
-.hug {
-  --padding-inline: 0;
-  --background: transparent;
-  --border: none;
-  --highlight: 0;
-}
-
-/* 05 Custom */
-.custom {
-  --background: hsl(210 7% 56% / 20%);
-  --border: transparent;
-  --border-width: 0;
-  /* --text: hsl(228 89% 100%); */
-  --ink-shadow: 0 1px 0 hsl(228 10% 70%);
-}
-
-/* 05 Button icon only */
-button.circle {
-  --padding-inline: .125em; 
-  --padding-block: .125em;
-  width: 2.75em; 
-}
-
 
 
 

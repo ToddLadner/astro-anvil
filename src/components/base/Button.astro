@@ -26,7 +26,15 @@ const {
   } = Astro.props;
 ---
 
-<button {type} class:list={[size, theme, shape, varient, classes]} {...rest}>
+<style>
+  .btn-xl { --size: var(--font-size-xl) }
+  .btn-lg { --size: var(--font-size-lg) }
+  .btn-md { --size: var(--font-size-md) }
+  .btn-sm { --size: var(--font-size-sm) }
+  .btn-xs { --size: var(--font-size-xs) }
+</style>
+
+<button {type} class:list={[size && `btn-${size}`, theme, shape, varient, classes]} {...rest}>
   { icon && <Icon name={icon} /> }
   <span class:list={[varient === 'icon' && 'sr-only']}>
     <slot/>

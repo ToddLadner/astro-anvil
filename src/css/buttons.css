@@ -74,12 +74,7 @@
     border-radius: var(--border-radius);
     font-variation-settings: "wght" var(--base-weight, 0), "GRAD" var(--base-grade);
 
-    /* Button sizes */
-    &.xl { --size: var(--font-size-xl) }
-    &.lg { --size: var(--font-size-lg) }
-    &.md { --size: var(--font-size-md) }
-    &.sm { --size: var(--font-size-sm) }
-    &.xs { --size: var(--font-size-xs) }
+
   }
   /* Reset */
   :where(input[type="button"]),
@@ -100,7 +95,7 @@
   :where(button,input[type="button"],input[type="submit"],input[type="reset"]),
   :where(input[type="file"])::file-selector-button {
     cursor: pointer;
-    font-size: var(--size, 1rem);
+    font-size: var(--size, var(--font-size-md));
     background: var(--background);
     color: var(--text);
     border: 2px solid var(--border);

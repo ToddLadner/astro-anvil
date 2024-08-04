@@ -78,34 +78,14 @@ Faster taps
   // MARK: Typography
   Typography
   */
+  :where(h1, h2, h3, h4, h5, h6, dt, label) { color: var(--text-1); }
 
-  /* Sets font-size, line-height, and adaptive base color */
-
-  /* h1 { font-size: var(--font-size-2xl) }
-  h2 { font-size: var(--font-size-xl) }
-  h3 { font-size: var(--font-size-lg) }
-  h4 { font-size: var(--font-size-md) }
-  h5 { font-size: var(--font-size-sm) }
-  h6 { font-size: var(--font-size-xs) } */
-
-  :is(h1, h2, h3, h4, h5, h6, dt, label) { color: var(--text-1); }
-
-  /* 
-   in Heading component
-  :is(h1, h2, h3, h4, h5, h6) { text-wrap: balance; }
-
-  :is(h1, h2, h3, h4) {
-    line-height: var(--lineheight-xs);
-    margin-block: 0;
-  } */
-
-  /* p {
-    text-wrap: pretty;
-    font-size: var(--font-size-md);
+  p {
     overflow-wrap: break-word;
+    text-wrap: pretty;
 
     &:last-child { margin-block-end: 0; }
-  } */
+  }
 
   /* Font-style: italic; */
   :is(i, em, .italic) { font-variation-settings: "ital" 1 }
@@ -114,8 +94,8 @@ Faster taps
   /* Remove default margin in favour of better control in authored CSS */
   :is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) { margin: 0 }
 
-  /* Set shorter line heights on headings and interactive elements */
-  :is(h1, h2, h3, h4, button, input, label) { line-height: var(--lineheight-2xs) }
+  /* Set shorter line heights interactive elements */
+  :is(button, input, label) { line-height: var(--lineheight-2xs) }
 
   /* Inherit fonts for inputs and buttons */
   :is(input, button, textarea, select) { font: inherit }
