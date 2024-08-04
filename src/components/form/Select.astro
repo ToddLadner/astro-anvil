@@ -13,21 +13,26 @@ interface Option {
 
 interface Props extends HTMLAttributes<"select"> {
   options: (string | Option)[];
-  size?: "sm" | "md" | "lg" ;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  shape?: "square" | "circle" | "pill";
   length?: "fit-content" |"sm" | "md" | "lg" | "100%";
   uid?: string;
   label?: string;
   icon?: string;
   marker?: RedirectRouteData;
+  classes?: string;
 }
 
 const { 
   options, 
+  size ='md',
+  shape,
   length="100%",
   uid,
   label, 
   icon,
   marker,
+  classes,
   ...rest 
 } = Astro.props;
 
@@ -45,11 +50,11 @@ const {
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="oklch(0.63 0.2 175)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
     }
   }
-  .label { font-size: var(--font-size-md); }
+
 </style>
 
-<Stack as="div" space="3xs" classes="fieldset">
-  <label for={uid} class="label">
+<Stack as="div" class:list={[size && `font-${size}`, 'fieldset', shape, classes]} space="3xs">
+  <label for={uid}>
     { icon && <Icon name={icon} /> }
     {label}
   </label>

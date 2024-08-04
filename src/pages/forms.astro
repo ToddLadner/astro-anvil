@@ -61,9 +61,60 @@ import altUserAvatar from '@images/elp.jpg';
 			space="sm" 
 			style="max-inline-size: var(--measure-md); margin-inline: auto"
 		>
-			<Input type="text" label="Name" uid="input-1" />
-			<Input type="text" label="Email" uid="input-1" />
-			<Select label='Select'
+		<Input type="text" label="Name size xs" uid="input-1" size="xs" />
+			<Input type="text" label="Name size sm" uid="input-1" size="sm" length='sm'/>
+			<Input type="text" label="Name size md" uid="input-1" size="md" />
+			<Input type="text" label="Email lg" uid="input-1" size="lg"/>
+			<Input type="text" label="Name size xl" uid="input-1" size="xl" />
+			<Select label='Select' size="xs"
+				options={[
+					{
+						text: 'Option 1',
+						value: 'value 1',
+					},
+					{
+						text: 'Option 2',
+						value: 'value 2',
+					},
+				]} 
+			/>
+			<Select label='Select' size="sm"
+				options={[
+					{
+						text: 'Option 1',
+						value: 'value 1',
+					},
+					{
+						text: 'Option 2',
+						value: 'value 2',
+					},
+				]} 
+			/>
+			<Select label='Select' size="md"
+				options={[
+					{
+						text: 'Option 1',
+						value: 'value 1',
+					},
+					{
+						text: 'Option 2',
+						value: 'value 2',
+					},
+				]} 
+			/>
+			<Select label='Select' size="lg"
+				options={[
+					{
+						text: 'Option 1',
+						value: 'value 1',
+					},
+					{
+						text: 'Option 2',
+						value: 'value 2',
+					},
+				]} 
+			/>
+			<Select label='Select' size="xl"
 				options={[
 					{
 						text: 'Option 1',

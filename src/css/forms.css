@@ -18,13 +18,13 @@ validation
   --padding-inline: 1.75ch;
   --padding-block: .75ch;
 
-  width: 100%;
+  width: var(--input-length, 100%);
   background-color: var(--surface-2);
   border-radius: var(--radius-md);
   border: none;
   padding-block: var(--padding-block);
   padding-inline: var(--padding-inline);
-  font-size: var(--font-size-md);
+  font-size: 1em;
 }
 
 @media (prefers-color-scheme: dark){
@@ -33,7 +33,9 @@ validation
   }
 }
 
-
+.input-sm { --input-length: var(--measure-sm); }
+.input-sm { --input-length: var(--measure-sm); }
+.input-sm { --input-length: var(--measure-sm); }
 
 
 /* 04 Textarea */

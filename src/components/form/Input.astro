@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<"input"> {
   type?: "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "month" | "number" | "password" | "range" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   shape?: "square" | "circle" | "pill";
-  length?: "fit-content" |"sm" | "md" | "lg";
+  length?: "fit" |"sm" | "md" | "lg";
   uid?: string;
   label?: string;
   icon?: string;
@@ -16,7 +16,7 @@ interface Props extends HTMLAttributes<"input"> {
 
 const { 
   type = "text", 
-  size,
+  size ='md',
   shape,
   length,
   uid,
@@ -27,14 +27,17 @@ const {
   } = Astro.props;
 ---
 
-<style>
-  label { font-size: var(--font-size-md); }
-</style>
-
-<Stack as="div" space="3xs">
+<Stack 
+  as="div" 
+  class:list={[size && `font-${size}`, 'flex', 'flex-column', shape, classes]} 
+  space="3xs" 
+  {...rest}
+>
   <label for={uid}>
     { icon && <Icon name={icon} /> }
     {label}
   </label>
-  <input {type} id={uid} class:list={[size, shape, classes]} data-length={length} {...rest}>
+    <span>warning</span>
+    <input {type} id={uid} class:list={[length && `input-${length}`, shape]}>
+    <span>Helper text</span>
 </Stack>
