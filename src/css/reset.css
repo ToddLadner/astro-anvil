@@ -27,17 +27,18 @@ Faster taps
   
   /* HTML */
   html {
+    /* ↓ Theme */
     color: var(--text-2);
     background-color: var(--surface-1);
-    
+    /* ↓ Brand accents */
     scrollbar-color: var(--brand) transparent;
     accent-color: var(--brand);
     caret-color: var(--brand);
-    caret-shape: block; /* values: auto, block, underscore, triangle, inherit */
-    
+     /* ↓ values: auto, block, underscore, triangle, inherit */
+    caret-shape: block;
+    /* ↓ Smooth scroll */
     scroll-behavior: smooth;
-    
-    /* Prevent font size inflation */
+    /* ↓ Prevent font size inflation */
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;

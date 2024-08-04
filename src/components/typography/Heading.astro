@@ -41,12 +41,15 @@ const Tag = as;
   :is(h1, h2, h3, h4, h5, h6) { text-wrap: balance; }
 
   :is(h1, h2, h3, h4) {
+    font-variation-settings: "wght" var(--weight, 700);
     line-height: var(--lineheight-xs);
-    max-inline-size: var(--measure-md);
     margin-block: 0;
+    max-inline-size: var(--measure-md);
   }
+
 </style>
 
 <Tag class:list={[size && `heading-${size}`, color, contrast && 'contrast', classes]} {...rest}>
-  <slot />{text}
+  <slot />
+  {text}
 </Tag>

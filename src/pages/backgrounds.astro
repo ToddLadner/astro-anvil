@@ -33,18 +33,18 @@ export const hero = {
 
 <style>
   .pad-block-3xl { padding-block: var(--space-3xl); }
-  /* ↓ Reset the max inline padding */
+  /* ↓ Reset the max inline padding → css/utility/layout */
   .max-inline-padding { --content-size: 80rem; }
 </style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-  <Image
-    src={heroImage}
-    alt="descriptive text"
-    widths={[240, 540, 720, heroImage.width]}
-    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
-  />
   <main>
+    <Image
+      src={heroImage}
+      alt="descriptive text"
+      widths={[240, 540, 720, heroImage.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${heroImage.width}px`}
+    />
     <Background
       as='section'
       gradients={[
@@ -98,7 +98,7 @@ export const hero = {
         <small class="subtitle">subhead</small>
         <Heading as='h1' size='xl' classes='title' color='brand' contrast text='Moons ya know! Tides & shit.'/>
         
-        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
+        <Text>Lorem <strong>ipsum dolor sit amet consectetur</strong> adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
