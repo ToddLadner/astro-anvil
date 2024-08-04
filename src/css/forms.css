@@ -13,7 +13,7 @@ validation
 ─────────────────────────────── */
 
 
-/* 03 Input:not(button), Textarea, Select */
+/* 03 Input:not(button, checkable), Textarea, Select */
 :where(textarea,select,input:not([type=button],[type=submit],[type=reset],[type="file"],[type="radio"],[type="checkbox"])) {
   --padding-inline: 1.75ch;
   --padding-block: .75ch;

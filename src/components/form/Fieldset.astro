@@ -48,7 +48,7 @@ const {
   }
 </style>
 
-<Stack tag="fieldset" space="3xs" class:list={[classes, separator && 'separator']} {...rest}>
+<Stack as="fieldset" space="3xs" class:list={[classes, separator && 'separator']} {...rest}>
   <legend>
     { icon && <Icon name={icon} /> }
     {label}

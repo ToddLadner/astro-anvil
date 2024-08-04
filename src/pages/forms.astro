@@ -57,7 +57,7 @@ import altUserAvatar from '@images/elp.jpg';
       <div class="badge"></div>
     </div>
 		<Stack 
-			tag="form" 
+			as="form" 
 			space="sm" 
 			style="max-inline-size: var(--measure-md); margin-inline: auto"
 		>
@@ -84,12 +84,19 @@ import altUserAvatar from '@images/elp.jpg';
 			</Fieldset>
 			
 			<Fieldset label="Legend" classes="grid" style="gap:.5rem">
-				<Checkable type="radio" uid="radio-1" name="radio" label="RD 1" />
-				<Checkable type="radio" uid="radio-2" name="radio" label="RD 2" />
+				<Checkable type="radio" uid="radio-1" name="radio" size="xs" label="RD 1 xs" />
+				<Checkable type="radio" uid="radio-2" name="radio" size="sm" label="RD 2 sm" />
+				<Checkable type="radio" uid="radio-3" name="radio" size="md" label="RD 3 md" />
+				<Checkable type="radio" uid="radio-4" name="radio" size="lg" label="RD 4 lg" />
+				<Checkable type="radio" uid="radio-5" name="radio" size="xl" label="RD 5 xl" />
 			</Fieldset>
 			
 			<Input type="text" label="Input" uid="input-1" />
-			<Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" label="CB 1"/>
+			<Checkable type="checkbox" uid="checkbox-1" name="checkbox-1" value="checkbox-1" size="xs" label="CB 1"/>
+			<Checkable type="checkbox" uid="checkbox-2" name="checkbox-1" value="checkbox-1" size="sm" label="CB 1"/>
+			<Checkable type="checkbox" uid="checkbox-3" name="checkbox-1" value="checkbox-1" size="md" label="CB 1"/>
+			<Checkable type="checkbox" uid="checkbox-4" name="checkbox-1" value="checkbox-1" size="lg" label="CB 1"/>
+			<Checkable type="checkbox" uid="checkbox-5" name="checkbox-1" value="checkbox-1" size="xl" label="CB 1"/>
 			<Text style="--space: 0"> Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere sint accusamus dolor? Nostrum perspiciatis ab excepturi facere magni perferendis distinctio doloribus. Sunt pariatur autem fuga aspernatur ipsum nihil sed.</Text>
 			<Button theme="primary" text='Submit'/>
 		</Stack>
