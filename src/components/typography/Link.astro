@@ -41,15 +41,8 @@ const {
       text-decoration-color: var(--color-2);
     }
   }
-
-  .link-2xl { font-size: var(--font-size-2xl) }
-  .link-xl { font-size: var(--font-size-xl) }
-  .link-lg { font-size: var(--font-size-lg) }
-  .link-md { font-size: var(--font-size-md) }
-  .link-sm { font-size: var(--font-size-sm) }
-  .link-xs { font-size: var(--font-size-xs) }
 </style>
 
-<a class:list={[size && `link-${size}`, underline, color, contrast && 'contrast', classes]} {...rest}>
+<a class:list={[size && `font-${size}`, underline, color, contrast && 'contrast', classes]} {...rest}>
   <slot />
 </a>
