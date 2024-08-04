@@ -1,4 +1,11 @@
 /* Type Styles */
+.font-2xl { --font-size: var(--font-size-2xl) }
+.font-xl { --font-size: var(--font-size-xl) }
+.font-lg { --font-size: var(--font-size-lg) }
+.font-md { --font-size: var(--font-size-md) }
+.font-sm { --font-size: var(--font-size-sm) }
+.font-xs { --font-size: var(--font-size-xs) }
+
 :is(h1, h2, h3, h4) + .subhead { --space: var(--space-3xs); }
 
 /* This should turn Roboto Flex into a monospaced font */

@@ -27,7 +27,6 @@
   :where(button,input[type="button"],input[type="submit"],input[type="reset"],input[type="file"]),
   :where(input[type="file"])::file-selector-button {
     /* Custom Properties */
-    --size: var(--font-size-md);
     --base-weight: 500;
 
     --accent: light-dark(hsl(210 100% 40%), hsl(210 50% 70%));
@@ -95,7 +94,7 @@
   :where(button,input[type="button"],input[type="submit"],input[type="reset"]),
   :where(input[type="file"])::file-selector-button {
     cursor: pointer;
-    font-size: var(--size, var(--font-size-md));
+    font-size: var(--font-size, var(--font-size-md));
     background: var(--background);
     color: var(--text);
     border: 2px solid var(--border);

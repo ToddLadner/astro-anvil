@@ -55,12 +55,7 @@
     /* --text: hsl(228 89% 100%); */
     --ink-shadow: 0 1px 0 hsl(228 10% 70%);
   }
-  /* Button sizes */
-  .btn-xl { --size: var(--font-size-xl) }
-  .btn-lg { --size: var(--font-size-lg) }
-  .btn-md { --size: var(--font-size-md) }
-  .btn-sm { --size: var(--font-size-sm) }
-  .btn-xs { --size: var(--font-size-xs) }
+
   /* 05 Button icon only */
   button.circle {
     --padding-inline: .125em; 
