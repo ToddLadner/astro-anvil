@@ -15,7 +15,7 @@ interface Props extends HTMLAttributes<"select"> {
   options: (string | Option)[];
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   shape?: "square" | "circle" | "pill";
-  length?: "fit-content" |"sm" | "md" | "lg" | "100%";
+  length?: 'auto' | 'xs' | 'sm' | 'md';
   uid?: string;
   label?: string;
   icon?: string;
@@ -27,7 +27,7 @@ const {
   options, 
   size ='md',
   shape,
-  length="100%",
+  length,
   uid,
   label, 
   icon,
@@ -58,7 +58,7 @@ const {
     { icon && <Icon name={icon} /> }
     {label}
   </label>
-  <select {...rest}>
+  <select class:list={[length && `input-${length}`]} {...rest}>
     {options.map(option => {
       if (typeof option === 'string') {
         return <option value={option}>{option}</option>;

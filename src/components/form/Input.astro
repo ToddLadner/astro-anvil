@@ -4,10 +4,10 @@ import type { HTMLAttributes } from 'astro/types';
 import Stack from '@components/structure/Stack.astro';
 
 interface Props extends HTMLAttributes<"input"> {
-  type?: "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "month" | "number" | "password" | "range" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  shape?: "square" | "circle" | "pill";
-  length?: "fit" |"sm" | "md" | "lg";
+  type?: 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'month' | 'number' | 'password' | 'range' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  shape?: 'square' | 'circle' | 'pill';
+  length?: 'auto' | 'xs' | 'sm' | 'md';
   uid?: string;
   label?: string;
   icon?: string;
@@ -15,7 +15,7 @@ interface Props extends HTMLAttributes<"input"> {
 }
 
 const { 
-  type = "text", 
+  type = 'text', 
   size ='md',
   shape,
   length,
@@ -29,7 +29,7 @@ const {
 
 <Stack 
   as="div" 
-  class:list={[size && `font-${size}`, 'flex', 'flex-column', shape, classes]} 
+  class:list={[size && `font-${size}`, 'grid', shape, classes]} 
   space="3xs" 
   {...rest}
 >

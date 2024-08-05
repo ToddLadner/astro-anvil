@@ -12,7 +12,6 @@
 validation
 ─────────────────────────────── */
 
-
 /* 03 Input:not(button, checkable), Textarea, Select */
 :where(textarea,select,input:not([type=button],[type=submit],[type=reset],[type="file"],[type="radio"],[type="checkbox"])) {
   --padding-inline: 1.75ch;
@@ -21,7 +20,7 @@ validation
   width: var(--input-length, 100%);
   background-color: var(--surface-2);
   border-radius: var(--radius-md);
-  border: none;
+  border-color: transparent;
   padding-block: var(--padding-block);
   padding-inline: var(--padding-inline);
   font-size: 1em;
@@ -33,10 +32,10 @@ validation
   }
 }
 
-.input-sm { --input-length: var(--measure-sm); }
-.input-sm { --input-length: var(--measure-sm); }
-.input-sm { --input-length: var(--measure-sm); }
-
+.input-auto { --input-length: auto; }
+.input-xs { --input-length: 10ch; }
+.input-sm { --input-length: 20ch; }
+.input-md { --input-length: 40ch; }
 
 /* 04 Textarea */
 textarea { 
