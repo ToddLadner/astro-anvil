@@ -17,6 +17,7 @@ validation
   --padding-inline: 1.75ch;
   --padding-block: .75ch;
 
+  min-width: fit-content;
   width: var(--input-length, 100%);
   background-color: var(--surface-2);
   border-radius: var(--radius-md);
@@ -25,6 +26,8 @@ validation
   padding-inline: var(--padding-inline);
   font-size: 1em;
 }
+
+select { padding-inline-end: 3rem;}
 
 @media (prefers-color-scheme: dark){
   :where(textarea,select,input:not([type=button],[type=submit],[type=reset])) {
