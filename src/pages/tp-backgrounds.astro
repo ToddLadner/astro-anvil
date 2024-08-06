@@ -1,0 +1,132 @@
+---
+// Components
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Background from '@components/structure/Background.astro';
+import Heading from '@components/typography/Heading.astro';
+import Text from '@components/typography/Text.astro';
+import Button from '@components/base/Button.astro';
+import MediaObject from '@components/structure/MediaObject.astro';
+// Images
+import heroImage from '@images/moon-7.jpg';
+// Background for callout section
+export const callout = {
+  imagePath: "/src/assets/images/curve-divider-stroke.svg",
+  gradient: "linear-gradient(103deg,#98d9d6 8%,#55c6b0 99%)",
+  backgroundProperty: {
+    repeat: "no-repeat",
+    position: "top center",
+    size: "100%"
+  }
+};
+
+export const hero = {
+  gradient: "radial-gradient(at 0% 67%,#0c6a79 0,transparent 50%),radial-gradient(at 45% 20%,#0c6a79 0,transparent 50%),radial-gradient(at 0% 1%,#004747 0,transparent 50%),radial-gradient(at 86% 42%,#5e0833 0,transparent 50%),radial-gradient(at 100% 100%,#179290 0,transparent 50%),radial-gradient(at 99% 1%,#5e0834 0,transparent 50%),radial-gradient(at 0% 100%,#5c126d 0,transparent 50%)",
+  imagePath: "/src/assets/images/wave-divider-stroke.svg",
+  backgroundProperty: {
+    repeat: "no-repeat",
+    position: "center 101%",
+    size: "101%"
+  }
+};
+---
+
+<style>
+  .pad-block-3xl { padding-block: var(--space-3xl); }
+  /* ↓ Reset the max inline padding → css/utility/layout */
+  .max-inline-padding { --content-size: 80rem; }
+</style>
+
+<Layout title="Welcome to Astro." description="The official site of Astro.">
+  <main>
+
+    <Background
+      as='section'
+      imagePaths={[ 
+        "/src/assets/images/blue-bg-texture-right.svg", 
+        "/src/assets/images/blue-bg-texture-left-transparent.svg",
+        "/src/assets/images/blue-bg-texture-right.svg",
+      ]}
+      backgroundProperties={[
+        { position: '100% 0', size: 'auto' },
+        { position: '-50px center', size: 'auto' },
+        { position: 'calc(100% + 100px) calc(100% + 100px)', size: 'auto' },
+      ]}
+      backgroundColor="white"
+      aspectRatio="var(--ratio-square)"
+      classes="custom-class"
+    >
+    </Background>
+   
+    <Background
+      as="section"
+      gradientsFirst={false}
+      gradient="linear-gradient(153deg, #8ed6e890, #8ed6e823)" 
+      imagePath="/src/assets/images/curve-divider-stroke.svg" 
+      backgroundProperty={{ 
+        repeat: "no-repeat", 
+        position: "50% -1px", 
+        size: "101%" 
+      }}
+      backgroundColor='white'
+      classes="stack max-inline-padding pad-block-3xl"
+      data-space="3xl"
+      aspectRatio="var(--ratio-ultrawide)">
+    </Background>
+
+
+    <Background
+      as="section"
+      gradientsFirst={false}
+      gradients={[
+        'radial-gradient(at 0% 67%,#0c6a79 0,transparent 50%)',
+        'radial-gradient(at 45% 20%,#0c6a79 0,transparent 50%)',
+        'radial-gradient(at 0% 1%,#004747 0,transparent 50%)',
+        'radial-gradient(at 86% 42%,#5e0833 0,transparent 50%)',
+        'radial-gradient(at 100% 100%,#179290 0,transparent 50%)',
+        'radial-gradient(at 99% 1%,#5e0834 0,transparent 50%)',
+        'radial-gradient(at 0% 100%,#5c126d 0,transparent 50%)'
+      ]}
+      imagePath='/src/assets/images/wave-divider-stroke.svg',
+      backgroundProperty={{ 
+        repeat: "no-repeat",
+        position: "center 101%",
+        size: "101%" }}
+      backgroundColor='white'
+      classes="max-inline-padding pad-block-3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+    </Background>
+    
+    <Background
+      as="section"
+      gradient="linear-gradient(166deg, #7c6fae 9%, #21125a 148%)" 
+      backgroundColor='white'
+      classes="max-inline-padding pad-block-3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+    </Background>
+  </main>
+</Layout>
+
+<script>
+  import jsConfetti from 'js-confetti';
+  const confetti = new jsConfetti();
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const funBtns = document.querySelectorAll('.confetti');
+  
+  if (!funBtns.length) return;
+  
+  funBtns.forEach(funBtn => {
+    let likes = 0;
+
+    funBtn.addEventListener('click', () => {
+      likes++;
+      funBtn.textContent = `Confetti (${likes})`;
+      funBtn.setAttribute('aria-label', `Confetti: ${likes}`);
+      confetti.addConfetti();
+    });
+  });
+});
+</script>

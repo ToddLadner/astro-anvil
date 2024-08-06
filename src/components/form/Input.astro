@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<"input"> {
   type?: 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'month' | 'number' | 'password' | 'range' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   shape?: 'square' | 'circle' | 'pill';
-  length?: 'auto' | 'xs' | 'sm' | 'md';
+  width?: 'auto' | 'xs' | 'sm' | 'md';
   uid?: string;
   label?: string;
   icon?: string;
@@ -18,7 +18,7 @@ const {
   type = 'text', 
   size ='md',
   shape,
-  length,
+  width,
   uid,
   label, 
   icon,
@@ -38,6 +38,6 @@ const {
     {label}
   </label>
     <span>warning</span>
-    <input {type} id={uid} class:list={[length && `input-${length}`, shape]}>
+    <input {type} id={uid} class:list={[width && `input-${width}`, shape]}>
     <span>Helper text</span>
 </Stack>

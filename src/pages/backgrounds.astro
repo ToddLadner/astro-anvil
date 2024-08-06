@@ -247,6 +247,37 @@ export const hero = {
         </video>
       </MediaObject>
     </Background>
+
+
+
+    <Background
+      as="section"
+      gradientsFirst={false}
+      gradients={[
+        'radial-gradient(at 0% 67%,#0c6a79 0,transparent 50%)',
+        'radial-gradient(at 45% 20%,#0c6a79 0,transparent 50%)',
+        'radial-gradient(at 0% 1%,#004747 0,transparent 50%)',
+        'radial-gradient(at 86% 42%,#5e0833 0,transparent 50%)',
+        'radial-gradient(at 100% 100%,#179290 0,transparent 50%)',
+        'radial-gradient(at 99% 1%,#5e0834 0,transparent 50%)',
+        'radial-gradient(at 0% 100%,#5c126d 0,transparent 50%)'
+      ]}
+      imagePath='/src/assets/images/wave-divider-stroke.svg',
+      backgroundProperty={{ 
+        repeat: "no-repeat",
+        position: "center 101%",
+        size: "101%" }}
+      classes="max-inline-padding pad-block-3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+    </Background>
+    <Background
+      as="section"
+      gradient="linear-gradient(166deg, #7c6fae 9%, #21125a 148%)" 
+      classes="max-inline-padding pad-block-3xl"
+      aspectRatio="var(--ratio-ultrawide)"
+    >
+    </Background>
   </main>
 </Layout>
 
