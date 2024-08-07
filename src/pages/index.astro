@@ -9,12 +9,47 @@ import Background from '@components/structure/Background.astro';
 import heroImage from '@images/fungi.jpg';
 const optimizedBackgroundImage = await getImage({ src: heroImage })
 ---
+
+<style>
+	.tooltip {
+		
+		position: relative;
+		width: 300px; margin-inline: auto;
+		> * {padding: 2rem}
+		> *:nth-child(1) { background-color:green; color: white }
+		> *:nth-child(2) { background-color: orange; color :white;margin-top: 15rem; } 
+	}
+
+	#my-anchor-positioning {
+  anchor-name: --my-anchor-positioning;
+}
+
+#my-target-positioning {
+  position: absolute;
+  top: anchor(--my-anchor-positioning bottom);
+  right: anchor(--my-anchor-positioning left);
+}
+
+#my-anchor-style-tag {
+  anchor-name: --my-anchor-style-tag;
+}
+
+#my-target-style-tag {
+  position: absolute;
+  bottom: anchor(--my-anchor-style-tag start);
+  right: anchor(--my-anchor-style-tag left);
+}
+</style>
+
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-	<section>
-	<div class="one">one</div>
-<div class="two">two</div>
-<div class="anchored">I am anchored to two elements</div>
+	<section class="tooltip">
+		<div id="my-anchor-positioning" >Target</div>
+		<div id="my-target-positioning">Anchor</div>
 </section>
+<div  class="tooltip">
+	<div id="my-target-style-tag" class="target">Target</div>
+	<div id="my-anchor-style-tag" class="anchor">Anchor</div>
+</div>
 
 	<Background
 		as='article'
@@ -167,48 +202,7 @@ if (hueInput && rootElement) {
 <style>
 	.props { --include: var(--ratio-widescreen, var(--teal-4), var(--red-4), var(--red-5), var(--red-6), var(--red-12), var(--red-2), var(--red-9), var(--red-7));}
 
-.anchor-heading {
-	anchor-name: --anchor-head;
-}
-.positioned-tip {
-    position-anchor: --anchor-head;
-		top: anchor(bottom);
-		position: absolute;
-		left: anchor(left);
-		top: anchor(bottom);
 
-		size: 5rem;
-		color: white;
-		background: var(--teal-4);
-}
-.one,
-.two {
-  position: absolute;
-  padding: 1rem;
-  border: 2px solid;
-  background: gold;
-}
-
-.one {
-  anchor-name: --one;
-}
-
-.two {
-  anchor-name: --two;
-  bottom: 0;
-  right: 0;
-}
-
-.anchored {
-
-  top: anchor(--one bottom);
-  left: anchor(--one right);
-  right: anchor(--two left);
-  bottom: anchor(--two top);
-  display: grid;
-  place-items: center;
-	height: 10rem
-}
 /* .hero-section {
 	--hero-background: var(--teal-4);
 	--aspect-ratio: var(--ratio-widescreen);

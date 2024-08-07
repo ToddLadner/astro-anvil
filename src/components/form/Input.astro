@@ -27,6 +27,12 @@ const {
   } = Astro.props;
 ---
 
+<style>
+  :is(.error, .helper) { font-size: .8625em; }
+  .error { color: var(--red-5); }
+  .helper { color: var(--gray-cool-5); }
+</style>
+
 <Stack 
   as="div" 
   class:list={[size && `font-${size}`, 'grid', shape, classes]} 
@@ -37,7 +43,7 @@ const {
     { icon && <Icon name={icon} /> }
     {label}
   </label>
-    <span>warning</span>
+    <span class="error">warning</span>
     <input {type} id={uid} class:list={[width && `input-${width}`, shape]}>
-    <span>Helper text</span>
+    <span class="helper">Helper text</span>
 </Stack>
