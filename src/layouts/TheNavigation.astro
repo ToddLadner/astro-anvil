@@ -53,6 +53,10 @@ const navLinks = [
   { 
     name: 'Forms', 
     path: '/forms'
+  },
+  { 
+    name: 'Tool tips', 
+    path: '/tool-tips'
   }
 ];
 ---
@@ -74,7 +78,7 @@ const navLinks = [
             class="nav-link flex items-center"
             aria-current={Astro.url.pathname === path ? 'page' : undefined} 
           >
-            { icon && <Icon name={icon} /> }
+            { icon && <Icon name={icon} aria-hidden='true'/> }
             <span class="label">{name}</span>
           </a>
         </li>
