@@ -19,7 +19,9 @@ const {
 	<Head {title} {description} />
 	<body class="grid">
 		<TheHeader/>
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<TheFooter/>
 	</body>
 	<!-- [1] Portal any popovers/dialogs down here -->
