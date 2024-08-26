@@ -32,39 +32,47 @@ Adaptive Glass
 }
 
 
-
 /* 
 // MARK: Theme Colors
 Theme Colors
 */
-.brand { color: var(--brand-5); }
-
-.success { color: light-dark(var(--green-5), var(--green-3)) }
-.info { color: light-dark(var(--blue-5), var(--blue-3)) }
-.warning { color: light-dark(var(--orange-5), var(--orange-3)) }
-.danger { color: light-dark(var(--red-5), var(--red-3)) }
-
-.success-bg { background-color: light-dark(var(--green-5), var(--green-3)) }
-.info-bg { background-color: light-dark(var(--blue-5), var(--blue-3)) }
-.warning-bg { background-color: light-dark(var(--orange-5), var(--orange-3)) }
-.danger-bg { background-color: light-dark(var(--red-5), var(--red-3)) }
-
-/*
-// MARK: Font Sizes
-Font Sizes
-*/ 
-
-.font-xl { font-size: var(--font-size-xl); }
-.font-lg { font-size: var(--font-size-lg); }  
-.font-md { font-size: var(--font-size-md); } 
-.font-sm { font-size: var(--font-size-sm); }  
-.font-xs { font-size: var(--font-size-xs); }
 
 /*
 // MARK: Shapes
 Shapes
 */
-
 .square { border-radius: var(--radius-0) }
 :is(.pill, .circle) { border-radius: var(--radius-ellipse) }
 .circle { aspect-ratio: var(--ratio-square) }
+
+/*
+// MARK: Gap
+Gap
+*/
+.col-gap-3xs { column-gap: var(--space-3xs) }
+.col-gap-2xs { column-gap: var(--space-2xs) } 
+.col-gap-xs { column-gap: var(--space-xs) } 
+.col-gap-sm { column-gap: var(--space-sm) }  
+.col-gap-md { column-gap: var(--space-md) }
+.col-gap-lg { column-gap: var(--space-lg) }
+.col-gap-xl { column-gap: var(--space-xl) }
+.col-gap-2xl { column-gap: var(--space-2xl) }
+.col-gap-3xl { column-gap: var(--space-3xl) }
+
+.gap-3xs { gap: var(--space-3xs) }
+.gap-2xs { gap: var(--space-2xs) } 
+.gap-xs { gap: var(--space-xs) } 
+.gap-sm { gap: var(--space-sm) }  
+.gap-md { gap: var(--space-md) }
+.gap-lg { gap: var(--space-lg) }
+.gap-xl { gap: var(--space-xl) }
+.gap-2xl { gap: var(--space-2xl) }
+.gap-3xl { gap: var(--space-3xl) }
+
+
+
+
+
+
+
+

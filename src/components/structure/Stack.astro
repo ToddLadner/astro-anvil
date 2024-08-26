@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<"div"> {
-  as?: "address" | "article" | "div" | "fieldset" | "figure" | "form" | "footer" | "header" | "ol" | "section" | "ul" ;
+  as?: "address" | "article" | "aside" | "div" | "fieldset" | "figure" | "form" | "footer" | "header" | "main" | "ol" | "section" | "ul" ;
   space?: '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   recursive?: boolean;
   splitAfter?: number;
@@ -43,7 +43,7 @@ const Tag = as;
 <Tag 
   class:list={['stack', classes]} 
   data-space={space} 
-  style={splitAfter ? `--split-after: ${splitAfter}` : ''}
+  {...(splitAfter && { style: `--split-after: ${splitAfter}` })} 
   {...rest}
 >
   <slot />

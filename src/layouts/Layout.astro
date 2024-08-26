@@ -1,36 +1,83 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import Head from '@layouts/Head.astro';
 import TheHeader from '@layouts/TheHeader.astro';
 import TheFooter from '@layouts/TheFooter.astro';
+import Stack from '@components/structure/Stack.astro';
 
-interface Props {
+interface Props extends HTMLAttributes<"html"> {
 	title: string;
 	description: string;
+	leftSidebar?: boolean;
+	rightSidebar?: boolean;
+	classes?: string;
+	gap?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 const { 
 	title = "My Astro Blog",
 	description = "My musings about the Astro framework", 
+	leftSidebar = false,
+	rightSidebar = false,
+	classes,
+	gap,
+	...rest 
 } = Astro.props;
 ---
+
+<style is:global>
+	:where( header, footer ) { grid-column: 1 / -1 }
+
+	
+	body { 
+		--asideMin: 10rem;
+		--asideMax: 20%;
+
+		isolation: isolate; /* ← [1] */
+		grid-template-rows: auto 1fr auto;
+
+		&:has(aside + main) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr; }
+		&:has(main + aside) { grid-template-columns: 1fr minmax(var(--asideMin), var(--asideMax)); }
+		&:has(aside + main + aside) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr minmax(var(--asideMin), var(--asideMax)); }
+
+		&:has(aside) {
+			:where( main, aside ) { 
+				padding-inline: var(--space-md);
+				padding-block: var(--space-md);
+			}
+		}
+	}
+	
+	main { overflow: scroll; }
+
+	.sidebar { padding: 1.5rem;background-color: antiquewhite; }
+
+	
+</style>
 
 <!doctype html>
 <html lang="en">
 	<Head {title} {description} />
-	<body class="grid">
+	<body class="grid" class:list={[gap && `col-gap-${gap}`]}>
 		<TheHeader/>
-		<main>
+		
+		{leftSidebar && (
+			<Stack as="aside" classes="sidebar left">
+				<slot name="left-sidebar" />
+			</Stack>
+		)}
+		
+		<Stack as="main">
 			<slot />
-		</main>
+		</Stack>
+		
+		{rightSidebar && (
+			<Stack as="aside" classes="sidebar right">
+				<slot name="right-sidebar" />
+			</Stack>
+		)}
+		
 		<TheFooter/>
 	</body>
 	<!-- [1] Portal any popovers/dialogs down here -->
 </html>
-<style is:global>
-	body { 
-		grid-template-rows: auto 1fr auto;
-		/* ↓ [1] */
-		isolation: isolate;
-	}
-	main {overflow: scroll;}
-</style>

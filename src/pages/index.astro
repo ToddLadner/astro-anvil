@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import Button from '@components/base/Button.astro';
 import Background from '@components/structure/Background.astro';
+import Tooltip from '@components/Tooltip.astro'
 
 // Optimized background hero image
 import heroImage from '@images/fungi.jpg';
@@ -39,17 +40,48 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
   bottom: anchor(--my-anchor-style-tag start);
   right: anchor(--my-anchor-style-tag left);
 }
+
+aside {
+	size: 25rem;
+	padding: 1rem;
+	border: 1px solid red;
+}
+
+.anchor {
+	anchor-name: --my-anchor;
+	width: fit-content;	
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+.infobox {
+  position-anchor: --my-anchor;
+  position: fixed;
+  inset-block-start: anchor(end);
+  inset-inline-start: anchor(self-end);
+  margin: 5px 0 0 5px;
+	border: 1px solid black;
+}
+
 </style>
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
-	<section class="tooltip">
+<aside >
+	<div class="anchor" >⚓︎</div>
+
+	<div class="infobox" >
+		<p>This is an information box.</p>
+	</div>
+</aside>
+
+	<!-- <section class="tooltip">
 		<div id="my-anchor-positioning" >Target</div>
 		<div id="my-target-positioning">Anchor</div>
 </section>
 <div  class="tooltip">
 	<div id="my-target-style-tag" class="target">Target</div>
 	<div id="my-anchor-style-tag" class="anchor">Anchor</div>
-</div>
+</div> -->
 
 	<Background
 		as='article'
@@ -76,7 +108,7 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 
 
 
-	<main>
+	<div>
 		<div class="scoreboard">
 		<ol>
 			<li style="--i: 1">
@@ -187,7 +219,7 @@ const optimizedBackgroundImage = await getImage({ src: heroImage })
 			/>
 		</ul>
 		
-	</main>
+	</div>
 </Layout>
 <script>
 const hueInput = document.getElementById('hue') as HTMLInputElement | null;
