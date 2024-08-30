@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.1.2",
-    "astro": "^4.11.3",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.5",
+    "astro": "^4.14.6",
     "astro-icon": "^1.1.0",
     "astro-imagekit": "^0.0.1",
     "autoprefixer": "^10.4.19",

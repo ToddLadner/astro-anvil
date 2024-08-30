@@ -27,6 +27,7 @@ Faster taps
   
   /* HTML */
   html {
+    height: 100%;
     /* ↓ Theme */
     color: var(--text-2);
     background-color: var(--surface-1);
@@ -81,13 +82,6 @@ Faster taps
   */
   :where(h1, h2, h3, h4, h5, h6, dt, label) { color: var(--text-1); }
 
-  p {
-    overflow-wrap: break-word;
-    text-wrap: pretty;
-
-    &:last-child { margin-block-end: 0; }
-  }
-
   /* Font-style: italic; */
   :is(i, em, .italic) { font-variation-settings: "ital" 1 }
   :is(strong, b, .bold) { font-variation-settings: "wght" var(--weight, 700) }
@@ -96,7 +90,7 @@ Faster taps
   :is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) { margin: 0 }
 
   /* Set shorter line heights interactive elements */
-  :is(button, input, label) { line-height: var(--lineheight-2xs) }
+  :is(input, label) { line-height: var(--lineheight-2xs) }
 
   /* Inherit fonts for inputs and buttons */
   :is(input, button, textarea, select) { font: inherit }
@@ -120,37 +114,13 @@ Faster taps
       filter: brightness(.8) contrast(1.2);
     }
   }
-  video {max-inline-size: 100%;}
-  /* 
-  // MARK: Links
-  Links */
+  
+  video { max-inline-size: 100% }
 
-  /* a {
-    margin-block: calc(var(--space-3xs) * -1);
-    margin-inline: calc(var(--space-3xs) * -1);
-    padding-block: var(--space-3xs);
-    padding-inline: var(--space-3xs);
-
-    &:not(:hover) { text-decoration: inherit; }
-
-    :link {
-      --color-hue: var(--hue-indigo);
-      text-decoration-color: var(--color-2);
-    }
-
-    :visited {
-      --color-hue: var(--hue-purple);
-      text-decoration-color: var(--color-2);
-    }
-  } */
-
-  /* 
-  // MARK: Lists
-  Lists */
 
   /* Safari do some wild shit, which includes this one: if you remove list styling, they’ll remove the semantics for VoiceOver. Some will say it’s a feature and some will say it’s a bug. But to make sure that a role is added, I remove the list styling by default for it as a little reward. */
   ul[role="list"] {
-    list-style: none;
+    list-style: "";
     padding: 0;
   }
 

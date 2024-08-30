@@ -42,7 +42,7 @@ const Tag = as;
 
 <Tag 
   class:list={['stack', classes]} 
-  data-space={space} 
+  {...(space && { 'data-space': space })}
   {...(splitAfter && { style: `--split-after: ${splitAfter}` })} 
   {...rest}
 >

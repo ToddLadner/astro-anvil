@@ -55,16 +55,20 @@ Position
 // MARK: Visually Hidden
 Visually Hidden
 */
-
-:is(.visually-hidden, .sr-only) {
+/* [1] */
+:is(.visually-hidden, .sr-only):not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0, 0, 0, 0); /* ← IE only */
   white-space: nowrap;
   border-width: 0;
 }
 
+/* [1] 
+The two :not() statements make sure that the selector only applies when the element is neither focused nor activated. 
+We have to be careful and use it intentionally when the situation allows for us to hide but still announce an element.
+*/

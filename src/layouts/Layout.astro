@@ -26,33 +26,30 @@ const {
 ---
 
 <style is:global>
-	:where( header, footer ) { grid-column: 1 / -1 }
-
-	
 	body { 
 		--asideMin: 10rem;
 		--asideMax: 20%;
-
+		
 		isolation: isolate; /* ← [1] */
 		grid-template-rows: auto 1fr auto;
 
 		&:has(aside + main) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr; }
 		&:has(main + aside) { grid-template-columns: 1fr minmax(var(--asideMin), var(--asideMax)); }
 		&:has(aside + main + aside) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr minmax(var(--asideMin), var(--asideMax)); }
-
-		&:has(aside) {
-			:where( main, aside ) { 
-				padding-inline: var(--space-md);
-				padding-block: var(--space-md);
-			}
+	
+		@media(width >= 1024px) {
+			&:has(aside + main) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr; }
+			&:has(main + aside) { grid-template-columns: 1fr minmax(var(--asideMin), var(--asideMax)); }
+			&:has(aside + main + aside) { grid-template-columns: minmax(var(--asideMin), var(--asideMax)) 1fr minmax(var(--asideMin), var(--asideMax)); }
 		}
 	}
 	
-	main { overflow: scroll; }
+	:where( header, footer ) { grid-column: 1 / -1 }
+	:where(main, aside) { padding: var(--space-sm) var(--space-md-lg); }
 
-	.sidebar { padding: 1.5rem;background-color: antiquewhite; }
+	:where(main, aside) {  border: 3px dashed black; }
+	/* main { overflow-y: scroll; } */
 
-	
 </style>
 
 <!doctype html>
@@ -61,20 +58,17 @@ const {
 	<body class="grid" class:list={[gap && `col-gap-${gap}`]}>
 		<TheHeader/>
 		
+		<!-- Sidebar | Left -->
 		{leftSidebar && (
-			<Stack as="aside" classes="sidebar left">
-				<slot name="left-sidebar" />
-			</Stack>
+			<slot name="left-sidebar" />
 		)}
 		
-		<Stack as="main">
-			<slot />
-		</Stack>
+		<!-- Main Content -->
+		<slot />
 		
+		<!-- Sidebar | Right -->
 		{rightSidebar && (
-			<Stack as="aside" classes="sidebar right">
-				<slot name="right-sidebar" />
-			</Stack>
+			<slot name="right-sidebar" />
 		)}
 		
 		<TheFooter/>

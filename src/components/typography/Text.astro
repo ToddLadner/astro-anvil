@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<"h1"> {
 
 const { 
   as = 'p',
-  size = 'md',
+  size,
   color = 'base',
   text,
   contrast = false,
@@ -25,8 +25,8 @@ const Tag = as;
 
 <style>
   p {
-    font-size: var(--font-size, var(--font-size-md));
     max-inline-size: var(--measure-lg);
+    font-size: var(--font-size, var(--font-size-md));
     text-wrap: pretty;
     overflow-wrap: break-word;
     
