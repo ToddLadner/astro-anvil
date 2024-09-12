@@ -26,7 +26,7 @@ const {
 ---
 
 <style is:global>
-	body { 
+	#app { 
 		--asideMin: 10rem;
 		--asideMax: 20%;
 		
@@ -55,7 +55,7 @@ const {
 <!doctype html>
 <html lang="en">
 	<Head {title} {description} />
-	<body class="grid" class:list={[gap && `col-gap-${gap}`]}>
+	<body id="app" class="grid" class:list={[gap && `col-gap-${gap}`]}>
 		<TheHeader/>
 		
 		<!-- Sidebar | Left -->

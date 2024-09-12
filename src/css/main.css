@@ -1,7 +1,7 @@
 @layer reset, framework, base, demo, layout, components, theme, utilities;
 
 @import "media.css";
-@import "fonts.css";
+/* @import "fonts.css"; */
 @import "reset.css"; /* reset */
 @import "theme.css";
 @import "props.css";

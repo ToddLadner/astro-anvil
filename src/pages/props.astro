@@ -3,13 +3,14 @@ import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import Button from '@components/base/Button.astro';
+import Stack from '@components/structure/Stack.astro';
 
 import heroImage from '@images/fungi.jpg';
 ---
 
 <Layout title="Welcome to Astro." description="The official site of Astro.">
   
-  <main class="stack max-inline-padding" style="--space: 2em">
+  <main class="stack max-inline-padding">
     <header class="brand-identity">
       <h1>Brand identity</h1>
       <p class="subhead">
@@ -68,7 +69,7 @@ import heroImage from '@images/fungi.jpg';
     </ul>
 
     <div class="grid-type">
-      <article class="stack" style="flex: 1">       
+      <Stack as="section" class="stack" data-space="lg" style="flex: 1">       
           <h2 id="typography">Typography</h2>
           <p class="subhead">
             This is a guide for body copy, headlines, and subheads
@@ -115,7 +116,7 @@ import heroImage from '@images/fungi.jpg';
             laborum.
           </p>
         </div>
-      </article>
+      </Stack>
       
       <hr />
       

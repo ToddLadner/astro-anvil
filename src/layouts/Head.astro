@@ -11,8 +11,57 @@ import '@styles/main.css';
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={description} />
   <title>{title}</title>
-  <!-- <ViewTransitions /> -->
+  <!-- <ViewTransitions /> ← View Transition | JS -->
   <style> 
+    /* ↓ View Transition | CSS */
     @view-transition { navigation: auto; } 
+    
+    /* 
+    Body & Variable Font with Fallback
+    */
+
+    /* Font Regular */
+    @font-face {
+      font-display: swap;
+      font-family: Roboto;
+      src: local('Roboto'), url('/fonts/static/Roboto-Regular.ttf');
+      font-weight: 400;
+    }
+
+    /* Font Variable */
+    @font-face {
+      font-display: swap;
+      font-family: 'Roboto Flex';
+      src: 
+        local('Roboto Flex'), 
+        url('/fonts/RobotoFlex.ttf') format('truetype-variations') tech(color-COLRv1),
+        url('/fonts/RobotoFlex.ttf') format('truetype-variations'); /* safari */
+      font-weight: 100 1000;
+      font-stretch: 25% 150%;
+    }
+
+    body {
+      font-family: var(--font-sans); /* ← Fallback */
+    }
+
+    /* Body - Variable Font */
+    @supports (font-variation-settings: normal) {
+      body {
+        font-family: var(--font-sans);
+        
+        font-variation-settings: 
+          "wght" var(--base-weight, 0),
+          "GRAD" var(--base-grade);
+        
+        /* when the preference is for high contrast */
+        @media (--highContrast) { --base-weight: 700; }
+        
+        /* when the preference is for low contrast */
+        @media (--lowContrast) { --base-weight: 200; }
+        
+        /* when the preference is for dark mode */
+        @media (--OSdark) { --base-grade: -25; }
+      }
+    }
   </style>
 </head>
