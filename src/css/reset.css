@@ -11,6 +11,11 @@ Faster taps
 ─────────────────────────────── */
 @layer reset {
 
+  /* Opt-in the whole page to interpolate sizes to/from keywords */
+  :root {
+    interpolate-size: allow-keywords; /* ← */
+  }
+  
   /* 
   // MARK: Box sizing
   Box sizing
@@ -49,6 +54,7 @@ Faster taps
   body {
     min-height: 100dvh;
     line-height: var(--lineheight-md);
+    margin: 0;
   }
 
   /* 
