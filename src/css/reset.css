@@ -13,7 +13,7 @@ Faster taps
 
   /* Opt-in the whole page to interpolate sizes to/from keywords */
   :root {
-    interpolate-size: allow-keywords; /* ← */
+    interpolate-size: allow-keywords;
   }
   
   /* 
@@ -34,17 +34,22 @@ Faster taps
 
   html {
     height: 100%;
+    
     /* ↓ Theme */
     color: var(--text-2);
     background-color: var(--surface-1);
+    
     /* ↓ Brand accents */
     scrollbar-color: var(--brand) transparent;
     accent-color: var(--brand);
     caret-color: var(--brand);
-     /* ↓ values: auto, block, underscore, triangle, inherit */
+    
+    /* ↓ values: auto, block, underscore, triangle, inherit */
     caret-shape: block;
+    
     /* ↓ Smooth scroll */
     scroll-behavior: smooth;
+    
     /* ↓ Prevent font size inflation */
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -106,8 +111,6 @@ Faster taps
     }
   }
   
-
-
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
   ul[role="list"], ol[role="list"] {
       list-style: "";
@@ -117,13 +120,11 @@ Faster taps
   /* 
   // MARK: Scroll Margin
   Scroll Margin | Anything anchored should have extra scroll margin */
-
   :target { scroll-margin-block: 5ex }
 
   /* 
   // MARK: Mobile Tap Delay
   Mobile Tap Delay | Make taps 300ms faster */
-
   a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"]) {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
@@ -132,7 +133,6 @@ Faster taps
   /* 
   // MARK: Container Type
   Container Type  */
-  
   header, footer, main, section, article {
     container-type: inline-size
   }
@@ -140,7 +140,6 @@ Faster taps
   /* 
   // MARK: Elements
   Elements */
-
   hr {
     --width: 100%;
     width: var(--width);

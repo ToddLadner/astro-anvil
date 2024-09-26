@@ -2,25 +2,87 @@
 import { Icon } from 'astro-icon/components';
 import TheNavigation from './TheNavigation.astro';
 ---
-<header 
-  class="max-inline-padding flex flex-wrap items-center adaptive-glass sticky" 
-  style="top:0;" >
+<header class="max-inline-padding adaptive-glas-x">
   <!-- Logo -->
   <a href="/" class="logo inline-flex">
     <Icon name="skull" title="Geometric Skull"/>
-    <span class="sr-only">Site Logo</span>
+    <span class="logo-text font-bold">SkullWerk</span>
   </a>
-  <p class="logo-text font-bold">SkullWerk</p>
   <!-- Nav -->
   <TheNavigation/>
 </header>
 
+
 <style>
   header {
+    --animationStartsAfter: 200px;
+    --animationDistance: 150px;
+    --surfaceColorStart: var(--gray-1);
+    --surfaceColorEnd: rgba(0 0 0 / .5);
+    --textColorStart: var(--purple-15);
+    --textColorEnd: var(--purple-1);
+    --headerWidth: 100%;
+    --logoAfterAnimation: none;
+
+    width: var(--headerWidth);
+    border-radius: var(--header-Radius, 0);
+    color: var(--textColorStart);
+    background-color: var(--surfaceColorStart);
+    top: 0rem;
+    margin-inline: auto; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    position: sticky;
     z-index: var(--layer-5);
-    gap: var(--space-3xs-2xs); 
+    gap: var(--space-3xs-2xs);
     padding-block: var(--space-2xs-xs);
+
+    animation: fxNavBar linear forwards;
+    
+    @supports (animation-timeline: view()) {
+      top: -6rem;
+      backdrop-filter: blur(0.35rem);
+      animation-timeline: view();
+      animation-range-start: calc(100dvh + var(--animationStartsAfter));
+      animation-range-end: calc(100dvh + var(--animationStartsAfter) + var(--animationDistance));
+    }
+
+
+
+
+    /* --glass-lightness: 100%; */
+    /* 
+    background: hsl(0 0% var(--glass-lightness) / 50%);
+    backdrop-filter: blur(40px); 
+    */
   }
 
-  [data-icon="skull"] { size: var(--space-sm-md) }
+  @keyframes fxNavBar {
+    0%,
+    100% {
+    --headerWidth: fit-content;
+    --header-Radius: var(--radius-ellipse);
+    --logoDisplay: var(--logoAfterAnimation);
+    display: table;
+    padding-inline: 3rem;
+    background-color: var(--surfaceColorEnd);
+    }
+    100% {
+      top: 1rem;
+      color: var(--textColorEnd);
+      
+      box-shadow: var(--shadow-3);
+    }
+  }
+
+  .logo {
+    display: var(--logoDisplay, block);
+  }
+
+  .logo, [data-icon="skull"] { color: currentColor }
+  
+  [data-icon="skull"]{ size: var(--space-sm-md) }
 </style>

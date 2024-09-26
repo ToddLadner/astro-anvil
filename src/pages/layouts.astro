@@ -133,9 +133,21 @@ import Text from '@components/typography/Text.astro';
 </Layout>
 
 <style>
-main {
-  container: main / inline-size;
-}
+  .wrap-fit {
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-between;
+    margin-inline: auto;
+    width: fit-content;
+    position: sticky;
+    top: 1rem;
+  }
+  
+  .test-fit { gap: 1rem; padding: 1rem; border: 1px solid red;}
+
+  main {
+    container: main / inline-size;
+  }
 
 .ram-grid {
   --grid-item: min(30ch, 100%);
@@ -213,29 +225,26 @@ main {
     > :not(img):last-child {
       margin-block-end: 1rem;
     }
-  }
-  
+}
 
-  .col-grid { --col-gap: var(--space-2xs); }
-  
-  .col-grid > * { 
-    border: 1px solid var(--purple-5); padding: 2rem;
+.col-grid { --col-gap: var(--space-2xs); }
 
-    &:nth-child(1) { grid-column: span 6; }
-    &:nth-child(2) { grid-column: span 6; }
-    &:nth-child(3) { grid-column: span 3; }
-    &:nth-child(4) { grid-column: span 9; }
-    &:nth-child(5) { grid-column: span 4; }
-    &:nth-child(6) { grid-column: span 8; }
-    &:nth-child(5) { grid-column: span 4; }
-    &:nth-child(6) { grid-column: span 8; }
-    &:nth-child(7) { grid-column: span 5; }
-    &:nth-child(8) { grid-column: span 7; }
-    &:nth-child(9) { grid-column: span 2; }
-    &:nth-child(10) { grid-column: span 3; }
-    &:nth-child(11) { grid-column: span 3; }
-    &:nth-child(12) { grid-column: span 4; }
-  }
+.col-grid > * {
+  border: 1px solid var(--purple-5); padding: 2rem;
 
-
+  &:nth-child(1) { grid-column: span 6; }
+  &:nth-child(2) { grid-column: span 6; }
+  &:nth-child(3) { grid-column: span 3; }
+  &:nth-child(4) { grid-column: span 9; }
+  &:nth-child(5) { grid-column: span 4; }
+  &:nth-child(6) { grid-column: span 8; }
+  &:nth-child(5) { grid-column: span 4; }
+  &:nth-child(6) { grid-column: span 8; }
+  &:nth-child(7) { grid-column: span 5; }
+  &:nth-child(8) { grid-column: span 7; }
+  &:nth-child(9) { grid-column: span 2; }
+  &:nth-child(10) { grid-column: span 3; }
+  &:nth-child(11) { grid-column: span 3; }
+  &:nth-child(12) { grid-column: span 4; }
+}
 </style>
