@@ -8,8 +8,15 @@ import Stack from '@components/structure/Stack.astro';
 import heroImage from '@images/fungi.jpg';
 ---
 
-<Layout title="Welcome to Astro." description="The official site of Astro.">
-  
+<Layout leftSidebar={true} title="Welcome to Astro." description="The official site of Astro.">
+  <Stack as='aside' slot="left-sidebar">
+    <h2>Categories</h2>
+    <ul class="stack" data-space='2xs' role="list">
+      <li><a href="#">Category 1</a></li>
+      <li><a href="#">Category 2</a></li>
+      <li><a href="#">Category 3</a></li>
+    </ul>
+  </Stack>
   <main class="stack max-inline-padding">
     <header class="brand-identity">
       <h1>Brand identity</h1>
